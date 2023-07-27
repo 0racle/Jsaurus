@@ -1,6 +1,6 @@
 C=_=>{
   history.replaceState({},document.title,location.pathname+(q.value?"?q="+encodeURIComponent(q.value):""))
-  u=location.toString().replace("#","").replace(/^https:\/\/aplcart\.info\//,"https://aplcart.info")
+  u=location.toString().replace("#","").replace(/^https:\/\/jsaurus\.info\//,"https://jsaurus.info")
   F(navigator.clipboard.writeText(u).catch(_=>prompt("Query URL:",u)))
 }
 F=_=>q.focus()
