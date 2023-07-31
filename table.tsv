@@ -1,45 +1,45 @@
-SYNTAX	DESCRIPTION	CLASS	TYPE	GROUP	CATEGORY	KEYWORDS	DOCS
-] Y	Same: Y	Primitive	Monadic Verb		Identity	dex righttack sameright default	https://code.jsoftware.com/wiki/Vocabulary/squarert#monadic
+SYNTAX	DESCRIPTION	CLASS	TYPE	GROUP	CATEGORY	KEYWORDS	DOCS	PLAY
+] Y	Same: Y	Primitive	Monadic Verb		Identity	dex righttack sameright default	https://code.jsoftware.com/wiki/Vocabulary/squarert#monadic	
 X ] Y	Right: Y	Primitive	Dyadic Verb		Identity	dex righttack sameright	https://code.jsoftware.com/wiki/Vocabulary/squarert#dyadic	https://jsoftware.github.io/j-playground/bin/html2/#code='L'%20%5D%20'R'
-X ] Y	Church Boolean false (X if false, else Y)	Primitive	Dyadic Verb		Boolean/Logical	falsy falsey 0	https://code.jsoftware.com/wiki/Vocabulary/squarert#dyadic
-[ Y	Same: Y	Primitive	Monadic Verb		Identity	Identity-combinator lev lefttack	https://code.jsoftware.com/wiki/Vocabulary/squarelf#mondic
-X [ Y	Left: X	Primitive	Dyadic Verb		Identity	lev lefttack sameleft defer ignore where	https://code.jsoftware.com/wiki/Vocabulary/squarelf#dyadic
-X [ Y	Church Boolean true (X if true, else Y)	Primitive	Dyadic Verb		Boolean/Logical	truthy 1	https://code.jsoftware.com/wiki/Vocabulary/squarelf#mondic
-+ N	Conjugate: ('Identity' if N not complex)	Primitive	Monadic Verb		Mathematical	greek cross plus conj() conjugating	https://code.jsoftware.com/wiki/Vocabulary/plus#monadic
-+ N	Conjugate: Mirror complex N across x-axis	Primitive	Monadic Verb		Circular/Trigonometric	greek cross conjugate negateimaginary mirroring reflecting reflection	https://code.jsoftware.com/wiki/Vocabulary/plus#monadic
-M + N	Plus: Adding N to M	Primitive	Dyadic Verb		Mathematical	greek cross plus addition	https://code.jsoftware.com/wiki/Vocabulary/plus#dyadic
-- N	Negate: Negates value of N (equivalent 0-N)	Primitive	Monadic Verb		Mathematical	minus hyphen invert additiveinverse opposite dash negation signchange − negating	https://code.jsoftware.com/wiki/Vocabulary/minus#monadic
-M - N	Minus: Subtract the value of N from M	Primitive	Dyadic Verb		Mathematical	minus dash hyphen subtraction difference −	https://code.jsoftware.com/wiki/Vocabulary/minus#dyadic
-* N	Sign: The sign of N if N is real; a point on the unit circle if N is complex	Primitive	Monadic Verb		Mathematical	cross sgn() sign() trend	https://code.jsoftware.com/wiki/Vocabulary/star#monadic
-M * N	Times: Multiply M and N	Primitive	Dyadic Verb		Mathematical	cross times multiplication product	https://code.jsoftware.com/wiki/Vocabulary/star#dyadic
-M * N	Probabilistic AND	Primitive	Dyadic Verb		Mathematical	fuzzy probability chance conjunction Kpq	https://code.jsoftware.com/wiki/Vocabulary/star#dyadic
-A * N	Selecting elements satisfying condition A, others to 0	Primitive	Dyadic Verb		Boolean/Logical	zero cells items	
-M +. N	Greatest Common Divisor of M and N	Primitive	Dyadic Verb		Mathematical	gcd() gcf() factor hcf() highest gcm() measure hcd Caron hacek invertedcircumflex checkmark hachek wedge ∨	https://code.jsoftware.com/wiki/Vocabulary/plusdot#dyadic
-A +. B	Logical OR between A and B	Primitive	Dyadic Verb		Boolean/Logical	gate disjunction vel alternation Caron hacek invertedcircumflex checkmark hachek Apq	https://code.jsoftware.com/wiki/Vocabulary/plusdot#dyadic
-M *. N	Lowest Common Multiple of M and N	Primitive	Dyadic Verb		Mathematical	least smallest lcm() denominator lcd() caret hat circumflex ^	https://code.jsoftware.com/wiki/Vocabulary/stardot#dyadic
-A *. B	Logical AND between A and B	Primitive	Dyadic Verb		Boolean/Logical	gate conjunction caret hat circumflex Kpq ^	https://code.jsoftware.com/wiki/Vocabulary/stardot#dyadic
->. N	Ceiling: Rounding N up to integer	Primitive	Monadic Verb		Mathematical	upstile roundup ceiling seiling up() ceil()	https://code.jsoftware.com/wiki/Vocabulary/gtdot
-M >. N	Larger Of (Max): Maximum of M and N	Primitive	Dyadic Verb		Mathematical	upstile greater larger max() bigger	https://code.jsoftware.com/wiki/Vocabulary/gtdot#dyadic
-<. N	Floor: Rounding N down to integer	Primitive	Monadic Verb		Mathematical	downstile rounddown down() floor()	https://code.jsoftware.com/wiki/Vocabulary/ltdot
-M <. N	Lesser Of (Min): Minimum of M and N	Primitive	Dyadic Verb		Mathematical	downstile lesser smaller min()	https://code.jsoftware.com/wiki/Vocabulary/ltdot#dyadic
-|. Y	Reverse: Rearrange leading axis of Y in reverse order	Primitive	Monadic Verb		Structural	circlestile reversing dimension	https://code.jsoftware.com/wiki/Vocabulary/bardot
-I |. Y	Rotate: Rotates items of Y along leading axis by I	Primitive	Dyadic Verb		Structural	circlestile rotating shifting cyclically dimension lists	https://code.jsoftware.com/wiki/Vocabulary/bardot#dyadic
-% N	Reciprocal: 1÷N	Primitive	Monadic Verb		Mathematical	multiplicativeinverse opposite obelus inverting reciprocating per	https://code.jsoftware.com/wiki/Vocabulary/percent
-M % N	Divide: Division of M by N	Primitive	Dyadic Verb		Mathematical	division over ⁄ divide per	https://code.jsoftware.com/wiki/Vocabulary/percent#dyadic
-| N	Magnitude: Absolute value of N	Primitive	Monadic Verb		Mathematical	verticalbar pipe stile stroke verticalline modulo modulus amplitude	https://code.jsoftware.com/wiki/Vocabulary/bar
-M | N	Residue: Remainder after dividing N by M	Primitive	Dyadic Verb		Mathematical	verticalbar pipe stile stroke verticalline modulo modulus divisionremainder divide % divmod() residual	https://code.jsoftware.com/wiki/Vocabulary/bar#dyadic
-! N	Factorial: Gamma function of N+1	Primitive	Monadic Verb		Mathematical	pling exclamation bang shriek countpermutations combinatorics fact() gamma() Γ	https://code.jsoftware.com/wiki/Vocabulary/bang
-M ! N	Out Of: Number of selections of size M from N (N pick M)	Primitive	Dyadic Verb		Mathematical	pling exclamation bang shriek binomial combinatorics countcombinations unordered selecting picking outof nCk C(n,k) choose choosing	
-A ! N	Selecting elements satisfying condition A, others to 1	Primitive	Dyadic Verb		Boolean/Logical	one cells items	
-? J	Roll: Random number selected from i. J	Primitive	Monadic Verb		Mathematical	questionmark roll randominteger interrogationpoint query eroteme	https://code.jsoftware.com/wiki/Vocabulary/query
-? B	Roll: Random real number between (0,1)	Primitive	Monadic Verb		Mathematical	questionmark roll randomfloat interrogationpoint query eroteme	https://code.jsoftware.com/wiki/Vocabulary/query
-I0 ? J0	Deal: I0 random items from i. J0 (without replacement)	Primitive	Dyadic Verb		Index Generation	questionmark interrogationpoint query eroteme distinct cells elements remove indices removing erasing erase eliminate eliminating delete deleting	https://code.jsoftware.com/wiki/Vocabulary/query#dyadic
-M < N	Less Than: Returns 1 where M is less than N, else 0	Primitive	Dyadic Verb		Comparison	lt before precedes ≺ smaller lesser	https://code.jsoftware.com/wiki/Vocabulary/lt#dyadic
-M <: N	Less Or Equal: Returns 1 where M is less than or equal to N, else 0	Primitive	Dyadic Verb		Comparison	before precedes ≤ ≦ smaller lesser same as	https://code.jsoftware.com/wiki/Vocabulary/ltco#dyadic
-X = Y	Equal: Boolean result of compare X and Y item by item	Primitive	Dyadic Verb		Comparison	sameas ===	https://code.jsoftware.com/wiki/Vocabulary/eq#dyadic
-A = B	Logical XNOR	Primitive	Dyadic Verb		Boolean/Logical	gate materialbiconditional biimplication eqv nxor bothorneither exclusivenor materialequivalence ⇔ δ ẟ Kroneckerdelta iff logicalequivalence Epq doubleimplying both-or-neither	
-M >: N	Larger Or Equal: Returns 1 where M is greater than or equal to N, else 0	Primitive	Dyadic Verb		Comparison	ge after follows ≥ ≧ larger same as succeeds	https://code.jsoftware.com/wiki/Vocabulary/gtco#dyadic
-M > N	Larger Than: Returns 1 where M is greater than N, else 0	Primitive	Dyadic Verb		Comparison	gt after follows ≻ larger succeeds	https://code.jsoftware.com/wiki/Vocabulary/gt#dyadic
-~: Y	Nub Sieve: mask for major cells to leave the distinct (∪Y)	Primitive	Monadic Verb		Sets	unique Boolean indication indicate ⍧ items elements masking indicating nub-sieve nubsieve	https://code.jsoftware.com/wiki/Vocabulary/tildeco
-X ~: Y	Not-Equal: Inverse boolean result of compare X and Y item by item	Primitive	Dyadic Verb		Comparison	ne unequal differentfrom != <> /=	https://code.jsoftware.com/wiki/Vocabulary/tildeco#duadic
-A ~: B	Logical XOR	Primitive	Dyadic Verb		Boolean/Logical	gate exclusivedisjunction eor exor ⊕ ⊻ ⇎ Jpq	
+X ] Y	Church Boolean false (X if false, else Y)	Primitive	Dyadic Verb		Boolean/Logical	falsy falsey 0	https://code.jsoftware.com/wiki/Vocabulary/squarert#dyadic	
+[ Y	Same: Y	Primitive	Monadic Verb		Identity	Identity-combinator lev lefttack	https://code.jsoftware.com/wiki/Vocabulary/squarelf#mondic	
+X [ Y	Left: X	Primitive	Dyadic Verb		Identity	lev lefttack sameleft defer ignore where	https://code.jsoftware.com/wiki/Vocabulary/squarelf#dyadic	
+X [ Y	Church Boolean true (X if true, else Y)	Primitive	Dyadic Verb		Boolean/Logical	truthy 1	https://code.jsoftware.com/wiki/Vocabulary/squarelf#mondic	
++ N	Conjugate: ('Identity' if N not complex)	Primitive	Monadic Verb		Mathematical	greek cross plus conj() conjugating	https://code.jsoftware.com/wiki/Vocabulary/plus#monadic	
++ N	Conjugate: Mirror complex N across x-axis	Primitive	Monadic Verb		Circular/Trigonometric	greek cross conjugate negateimaginary mirroring reflecting reflection	https://code.jsoftware.com/wiki/Vocabulary/plus#monadic	
+M + N	Plus: Adding N to M	Primitive	Dyadic Verb		Mathematical	greek cross plus addition	https://code.jsoftware.com/wiki/Vocabulary/plus#dyadic	
+- N	Negate: Negates value of N (equivalent 0-N)	Primitive	Monadic Verb		Mathematical	minus hyphen invert additiveinverse opposite dash negation signchange − negating	https://code.jsoftware.com/wiki/Vocabulary/minus#monadic	
+M - N	Minus: Subtract the value of N from M	Primitive	Dyadic Verb		Mathematical	minus dash hyphen subtraction difference −	https://code.jsoftware.com/wiki/Vocabulary/minus#dyadic	
+* N	Sign: The sign of N if N is real; a point on the unit circle if N is complex	Primitive	Monadic Verb		Mathematical	cross sgn() sign() trend	https://code.jsoftware.com/wiki/Vocabulary/star#monadic	
+M * N	Times: Multiply M and N	Primitive	Dyadic Verb		Mathematical	cross times multiplication product	https://code.jsoftware.com/wiki/Vocabulary/star#dyadic	
+M * N	Probabilistic AND	Primitive	Dyadic Verb		Mathematical	fuzzy probability chance conjunction Kpq	https://code.jsoftware.com/wiki/Vocabulary/star#dyadic	
+A * N	Selecting elements satisfying condition A, others to 0	Primitive	Dyadic Verb		Boolean/Logical	zero cells items		
+M +. N	Greatest Common Divisor of M and N	Primitive	Dyadic Verb		Mathematical	gcd() gcf() factor hcf() highest gcm() measure hcd Caron hacek invertedcircumflex checkmark hachek wedge ∨	https://code.jsoftware.com/wiki/Vocabulary/plusdot#dyadic	
+A +. B	Logical OR between A and B	Primitive	Dyadic Verb		Boolean/Logical	gate disjunction vel alternation Caron hacek invertedcircumflex checkmark hachek Apq	https://code.jsoftware.com/wiki/Vocabulary/plusdot#dyadic	
+M *. N	Lowest Common Multiple of M and N	Primitive	Dyadic Verb		Mathematical	least smallest lcm() denominator lcd() caret hat circumflex ^	https://code.jsoftware.com/wiki/Vocabulary/stardot#dyadic	
+A *. B	Logical AND between A and B	Primitive	Dyadic Verb		Boolean/Logical	gate conjunction caret hat circumflex Kpq ^	https://code.jsoftware.com/wiki/Vocabulary/stardot#dyadic	
+>. N	Ceiling: Rounding N up to integer	Primitive	Monadic Verb		Mathematical	upstile roundup ceiling seiling up() ceil()	https://code.jsoftware.com/wiki/Vocabulary/gtdot	
+M >. N	Larger Of (Max): Maximum of M and N	Primitive	Dyadic Verb		Mathematical	upstile greater larger max() bigger	https://code.jsoftware.com/wiki/Vocabulary/gtdot#dyadic	
+<. N	Floor: Rounding N down to integer	Primitive	Monadic Verb		Mathematical	downstile rounddown down() floor()	https://code.jsoftware.com/wiki/Vocabulary/ltdot	
+M <. N	Lesser Of (Min): Minimum of M and N	Primitive	Dyadic Verb		Mathematical	downstile lesser smaller min()	https://code.jsoftware.com/wiki/Vocabulary/ltdot#dyadic	
+|. Y	Reverse: Rearrange leading axis of Y in reverse order	Primitive	Monadic Verb		Structural	circlestile reversing dimension	https://code.jsoftware.com/wiki/Vocabulary/bardot	
+I |. Y	Rotate: Rotates items of Y along leading axis by I	Primitive	Dyadic Verb		Structural	circlestile rotating shifting cyclically dimension lists	https://code.jsoftware.com/wiki/Vocabulary/bardot#dyadic	
+% N	Reciprocal: 1÷N	Primitive	Monadic Verb		Mathematical	multiplicativeinverse opposite obelus inverting reciprocating per	https://code.jsoftware.com/wiki/Vocabulary/percent	
+M % N	Divide: Division of M by N	Primitive	Dyadic Verb		Mathematical	division over ⁄ divide per	https://code.jsoftware.com/wiki/Vocabulary/percent#dyadic	
+| N	Magnitude: Absolute value of N	Primitive	Monadic Verb		Mathematical	verticalbar pipe stile stroke verticalline modulo modulus amplitude	https://code.jsoftware.com/wiki/Vocabulary/bar	
+M | N	Residue: Remainder after dividing N by M	Primitive	Dyadic Verb		Mathematical	verticalbar pipe stile stroke verticalline modulo modulus divisionremainder divide % divmod() residual	https://code.jsoftware.com/wiki/Vocabulary/bar#dyadic	
+! N	Factorial: Gamma function of N+1	Primitive	Monadic Verb		Mathematical	pling exclamation bang shriek countpermutations combinatorics fact() gamma() Γ	https://code.jsoftware.com/wiki/Vocabulary/bang	
+M ! N	Out Of: Number of selections of size M from N (N pick M)	Primitive	Dyadic Verb		Mathematical	pling exclamation bang shriek binomial combinatorics countcombinations unordered selecting picking outof nCk C(n,k) choose choosing		
+A ! N	Selecting elements satisfying condition A, others to 1	Primitive	Dyadic Verb		Boolean/Logical	one cells items		
+? J	Roll: Random number selected from i. J	Primitive	Monadic Verb		Mathematical	questionmark roll randominteger interrogationpoint query eroteme	https://code.jsoftware.com/wiki/Vocabulary/query	
+? B	Roll: Random real number between (0,1)	Primitive	Monadic Verb		Mathematical	questionmark roll randomfloat interrogationpoint query eroteme	https://code.jsoftware.com/wiki/Vocabulary/query	
+I0 ? J0	Deal: I0 random items from i. J0 (without replacement)	Primitive	Dyadic Verb		Index Generation	questionmark interrogationpoint query eroteme distinct cells elements remove indices removing erasing erase eliminate eliminating delete deleting	https://code.jsoftware.com/wiki/Vocabulary/query#dyadic	
+M < N	Less Than: Returns 1 where M is less than N, else 0	Primitive	Dyadic Verb		Comparison	lt before precedes ≺ smaller lesser	https://code.jsoftware.com/wiki/Vocabulary/lt#dyadic	
+M <: N	Less Or Equal: Returns 1 where M is less than or equal to N, else 0	Primitive	Dyadic Verb		Comparison	before precedes ≤ ≦ smaller lesser same as	https://code.jsoftware.com/wiki/Vocabulary/ltco#dyadic	
+X = Y	Equal: Boolean result of compare X and Y item by item	Primitive	Dyadic Verb		Comparison	sameas ===	https://code.jsoftware.com/wiki/Vocabulary/eq#dyadic	
+A = B	Logical XNOR	Primitive	Dyadic Verb		Boolean/Logical	gate materialbiconditional biimplication eqv nxor bothorneither exclusivenor materialequivalence ⇔ δ ẟ Kroneckerdelta iff logicalequivalence Epq doubleimplying both-or-neither		
+M >: N	Larger Or Equal: Returns 1 where M is greater than or equal to N, else 0	Primitive	Dyadic Verb		Comparison	ge after follows ≥ ≧ larger same as succeeds	https://code.jsoftware.com/wiki/Vocabulary/gtco#dyadic	
+M > N	Larger Than: Returns 1 where M is greater than N, else 0	Primitive	Dyadic Verb		Comparison	gt after follows ≻ larger succeeds	https://code.jsoftware.com/wiki/Vocabulary/gt#dyadic	
+~: Y	Nub Sieve: mask for major cells to leave the distinct (∪Y)	Primitive	Monadic Verb		Sets	unique Boolean indication indicate ⍧ items elements masking indicating nub-sieve nubsieve	https://code.jsoftware.com/wiki/Vocabulary/tildeco	
+X ~: Y	Not-Equal: Inverse boolean result of compare X and Y item by item	Primitive	Dyadic Verb		Comparison	ne unequal differentfrom != <> /=	https://code.jsoftware.com/wiki/Vocabulary/tildeco#duadic	
+A ~: B	Logical XOR	Primitive	Dyadic Verb		Boolean/Logical	gate exclusivedisjunction eor exor ⊕ ⊻ ⇎ Jpq		
