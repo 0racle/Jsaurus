@@ -13,8 +13,8 @@ I=_=>{
     ps=d.replace(/[<>&'"]/g,x=>({'<':'&lt;','>':'&gt;','&':'&amp;',"'":'&apos;','"':'&quot;'}[x])).trim().split(/\r?\n/g).splice(1).map(r=>r.split("\t"))
     c=ps.map(r=>r[0])
     e=ps.map(r=>r[1])
-    h=ps.map(r=>r[7])
-    u=ps.map(r=>r[8])
+    h=ps.map(r=>r[5])
+    u=ps.map(r=>r[6])
     p=d.split(/\r?\n/g).splice(1).map(x=>x.toLowerCase().replace(/http\S+\t/,"(>)").replace(/http\S+$/,"(?)"))
     r=""
     for(var i=0;i<c.length;i++){r+='<tr><td>'+(u[i]?'<a href="'+u[i]+'" target="_blank" title="J Playground"></a>':'')+c[i]+'</td><td>'+(h[i]?'<a href="'+h[i]+'" target="_blank" title="Documentation">?</a>':'')+e[i]+'</td></tr>'}
