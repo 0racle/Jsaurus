@@ -126,6 +126,7 @@ i0 }."1 y2	Drop i0 columns from y2	Expression	Structural	table delete remove wit
 i0 {."1 y2	Adjust table y2 to width |i0 by truncating or padding rows	Expression	Structural	fill limit		
 _1 {."1 y2	Last column as a column matrix	Expression	Selection	rightmostcolumn trailing table list ending		
 |."1 y2	Reflect vertically	Expression	Structural	mirroring reflecting reflection right-left rightleft leftright left-right		
+x ,&.> y	Join corresponding boxed elements	Tacit	Structural	juxtapose tuples cells elements zip pair		
 i0 # ,: y1	Table with i0 rows, each consisting of y1	Expression	Structural	fill table		https://jsoftware.github.io/j-playground/bin/html2/#base64=MyAjICw6ICdoZWxsbyc=
 i0 { /:~ y	i0'th-smallest major cell of y	Expression	Selection	leastof minimum lexicographically item element		
 i0 { \:~ y	i0'th-largest major cell of y	Expression	Selection	greatestof maximum biggest lexicographically item element		
@@ -144,6 +145,7 @@ i1 $ ,: y	Array of shape i1 filled with copies of y	Expression	Structural	copy r
 i0 {. j0 $ 1	Prefix List: length i0 with j0 ones on the left, the rest zeroes	Expression	Data	1s 0s zeros falses falsehoods trues truths		
 ,"_1 y	Convert to rank 2 array by flattening each cell to a row	Tacit	Structural	commabar ravelcells flattencells razecells Merge demoterank lessenrank reduce reducing		https://jsoftware.github.io/j-playground/bin/html2/#base64=LCJfMSBpLiAzIDMgMw==
 i0 $"0 y1	Table with i0 columns, each consisting of y1	Tacit	Structural	fill table		
+,&.> y	Ensure that all boxed elements are lists	Tacit	Structural	items elements cells lists uniformity make force to be		
 x F@] y	Ignore left argument and call F monadically on y	Tacit	Function Application	to from dummy onrightargument		
 x F@[ y	Ignore right argument and call F monadically on x	Tacit	Function Application	to from dummy onleftargument		
 3&* n	Triple: 3×n	Tacit	Arithmetic	thrice		
@@ -159,6 +161,7 @@ x F@[ y	Ignore right argument and call F monadically on x	Tacit	Function Applica
 (÷ F) n	Normalise, scaling so that the norm F is equal to 1	Expression	Data	normalise arbitrary custom F=1 vector list		
 x (F@[ G H@]) y	Split-Compose: apply G between (F x) and (H y), that is (F x) G (H y)	Tacit	Composition	composewith splitover (fX)G(hY) (fX)ghY		
 x (0)} y	Replace first major cell of y with x	Expression	Structural	substitute merge amend replace update 1st item element		
+F&., y	Handle array y temporarily as a list	Tacit	Function Application	columnheadings columnnumbers ⍢, flattened ravelled raveled list		https://jsoftware.github.io/j-playground/bin/html2/#base64=KCsvXCkmLiwgaS4gMyAz
 I.inv j1	Convert set of indices j1 to a mask	Tacit	Indices	indicate masking indicating bitmask bit-mask converting change changing		
 i1 +/ j1	Addition table for i1 down and j1 across	Tacit	Arithmetic	additiontable cartesianaddition plustable matrix		
 i1 */ j1	Multiplication table for i1 down and j1 across	Tacit	Arithmetic	multiplicationtable cartesianproduct timestable matrix		
@@ -177,12 +180,13 @@ x ,"_ 0"0 _ y	Cartesian product: all pairs from x and y	Tacit	Structural	catalog
 F/ x y	Apply dyadic function as a monadic function on a two-element argument	Tacit	Function Application	calling runing converting change changing switching valence arity into dyad-to-monad dyadic-to-monadic binary-to-unary		
 F/ , y	Fold F over all elements without respect to shape	Expression	Function Application	reduce insert over rowwise reducing folding row-wise horizontally remove		
 +/ n	Column-wise sum of n	Tacit	Data	summation enlargedsigma bigsigma capitalsigma ∑ Σ vertically columnwise		
--/ n	Column-wise alternating sum: ((n_0-n_1)+n_2)-n_3+…	Tacit	Data	alternatingsum series vertically columnwise		
+-/ n	Column-wise alternating sum: ((n₀-n₁)+n₂)-n₃+…	Tacit	Data	alternatingsum series vertically columnwise		
 */ n	Column-wise product of n	Tacit	Data	enlargedpi bigpi capitalpi ∏ Π vertically columnwise		
 ./ y	Combine first two axes of y	Tacit	Structural	Merge demoterank lessenrank reduce flatten reducing table		
 {: y	Last cell of y	Tacit	Selection	topmostrow subarray dimension 1st		
 +/\ n	Cumulative sum	Tacit	Data	runningtotal		
 *./\ b	Turn off all 1s after first 0, or indicate all elements until the first 0	Tacit	Boolean	indicating flipping turning change changing inverting negating bitmask bit-mask ones zero false trues truths falsehood 1st mask		
++./\ b	Turn on all 1s after first 1, or indicate all elements except leading 0s	Tacit	Boolean	indicating flipping turning change changing inverting negating bitmask bit-mask zeros zeroes trues truths ones falses falsehoods 1st start beginning mask not		
 >./\ n	Column-wise progressive maxima	Tacit	Data	running cumulative scan columnwise vertically		
 <./\ n	Column-wise progressive minima	Tacit	Data	running cumulative scan columnwise vertically		
 ~:/\ b	Convert reflected Gray code to binary	Tacit	Boolean	flip change changing inverting negating bitmask bit-mask base-2 base2 mask Conversion converting change changing		
@@ -209,8 +213,8 @@ a1 #"1 y	Filter columns of y according to mask a1	Tacit	Selection	compressing sl
 i1 #"1 y	Replicate along last axis of y	Tacit	Selection	compressing slash solidus copying repeatingeachcolumns dimension horizontally replicating rowwise row-wise across		
 x e."1 y	Which elements of x belong to corresponding row of y (#x ↔ #y)	Tacit	Search	testif memberof isin membership containedin has cells items		
 x i."1 y	Indices of elements of x in corresponding rows of x	Tacit	Search	indexin indexof find locate positionof rowwise row-wise locating cells items location horizontally		
-1 = (<: x) I. y	Is y within the range [ x_0 , x_1 )	Expression	Data	testif ≤y< ≤x< tao totalarrayordering interval inrange?		
-1 ~: (<: x) I. y	Is y outside the range [ x_0 , x_1 )	Expression	Data	testif >y≥ >x≥ tao totalarrayordering interval outsiderange?		
+1 = (<: x) I. y	Is y within the range [x₀,x₁)	Expression	Data	testif ≤y< ≤x< tao totalarrayordering interval inrange?		
+1 ~: (<: x) I. y	Is y outside the range [x₀,x₁)	Expression	Data	testif >y≥ >x≥ tao totalarrayordering interval outsiderange?		
 {. /: y	Index of smallest cell in y (earliest index for ties)	Expression	Ordering	find locate positionof minimum lexicographically lexically locating location lesser smaller smallest lowest least		
 /: x i. y	Grade up of y according to key x	Expression	Ordering	custom sort order ascending		
 /: /: y	Rank cells of y, giving a permutation with the same ordering (first is lower in a tie)	Expression	Ordering	ascending rising up ordinals cardinals list rownumber		
@@ -238,6 +242,16 @@ F&.|: y	Apply action F defined on rows to columns instead	Tacit	Function Applica
 expr [ name =. y	Combining two lines into one	Expression	Syntax	lev lefttack where		
 o. 2	tau (2 pi)	Constant	Mathematical	Palais'circleconstant Palais'constant Palaisconstant 6.283185307179586476925286766559006 τ 𝜏		
 n + m * 0 = n	Replace zeroes in n with corresponding elements of m	Expression	Data	substitute merge amend replace update 0s zeros cells items falses falsehoods		
+1 + 2 * i. j0	Odd integers from 1 to 2×j0	Expression	Sequences	numbers 1st		
+m0 + n0 * i. j0	Arithmetic progression list: j0 elements starting at m0 with step n0	Expression	Sequences	list sequence seq() cells items		
+_128 + 256 | 128 + j	Convert from unsigned short integers to signed short integers	Expression	Fixed-Width	datarepresentation converting change changing		
+x {.~ # y	Truncate x or extend with fills to have the same length as y	Expression	Structural	compatibility sameheight adjust column-wise columnwise table		
+-. 2 | I. j1	Alternating sequence of j1₀ ones, j1₁ zeros, j1₂ ones, …	Expression	Sequences	1s 0s zeroes naughts falses falsehoods trues truths		
+i. {: $ y2	All column indices of y2	Expression	Indices	enumerate columns		
+{. I. x ~: y	Index of first differing element in x and y	Expression	Search	indexin indexof find locate positionof unequal different 1st locating cell item difference location		
+0 = $ , y	Is y an empty array?	Expression	Structural	testif isempty? isvoid? isnull?		
+1 = # , y	Is y a singleton (array with only one element)?	Expression	Array	testif unit? sole? one?		
+i1 $ ,: y	Shape i1,$y array with copies of y for cells	Expression	Structural	copy repeat repetitions duplicate reshape		
 , x1 ,. y1	Merge equal-length lists x1 and y1 alternately	Expression	Structural	faro weave dovetail zipper zipping merge interweave interweaving interleave interleaving shuffle shuffling meshing lists zip()		
 (<~ |.!.0) b	Boolean first ones in each group of ones	Tacit	Partitioning	beginningsofruns trues truths 1st binary base-2 base2 runs sequences blocks		
 (%~ i) j0	Start points when [0,1) is split into j0 intervals	Tacit	Sequences	unit normalized steps linear divide		
@@ -347,8 +361,8 @@ c e.~ < d1	Is string d1 a member of list of boxed strings c	Expression	Search	is
 c i. < d1	Position of first occurrence of string d1 in list of boxed strings c	Expression	Search	indexin indexof vtv vector 1st		
 +/\^:2 i. j0	First j0 triangular pyramidal numbers	Expression	Sequences	figurative tetrahedral oeisA000292 oeisA292 1st		
 x {~ /: /: y	Reorder x to match the ordering of y	Expression	Ordering	meshing sorting reordering ordering		
-1 = x I. y	Are cells of y within the range ( x_0 , x_1 ]?	Expression	Data	testif <y≤ <x≤ tao totalarrayordering interval inrange?		
-1 ~: x I. y	Are cells of y outside the range ( x_0 , x_1 ]?	Expression	Data	testif ≥y> ≥x> tao totalarrayordering interval outsiderange?		
+1 = x I. y	Are cells of y within the range (x₀,x₁]?	Expression	Data	testif <y≤ <x≤ tao totalarrayordering interval inrange?		
+1 ~: x I. y	Are cells of y outside the range (x₀,x₁]?	Expression	Data	testif ≥y> ≥x> tao totalarrayordering interval outsiderange?		
 <"1 |: > y1	Invert list of boxed lists, so that element i of j of the result is j of i of y1. Shorter elems are padded with fill	Expression	Structural	transpose transposing vtv cell element 1st lists zip() remixing zipping merging interweave interweaving interleave interleaving shuffle shuffling meshing		
 y $~ i0, i0 %~ # y	Reshape y1 to i0-row table (filled row-wise)	Tacit	Structural	table horizontally rowwise rows		
 y $~ i0,~ i0 %~ # y	Reshape y1 to i0-column table, filled column-wise	Expression	Structural	table vertically columnwise columns		
@@ -405,7 +419,7 @@ y #~ 0 ~: i0 | #\ y	Remove every i0'th cell of y (after 0th)	Expression	Selectio
 (i. % <:) j0	j0 evenly spaced numbers starting at 0 and ending at 1	Tacit	Sequences	unit normalized steps linear divide inclusive		
 (%~ i.@>:) j0	Evenly spaced numbers starting at 0 and ending at 1 in j0 steps	Tacit	Sequences	unit normalized steps linear divide inclusive		
 (+/ % #) n	Arithmetic mean of n	Tacit	Statistical	average arithmeticmean() AM() avg() mean()		
-*/ >: _ q: j0	Number of positive divisors of j0	Expression	Number Theory	sigma_0(n) tau(n) sigma0 σ₀(n) d(n) ν(n) τ(n) oeisA000005 oeisA5		
+*/ >: _ q: j0	Number of positive divisors of j0	Expression	Number Theory	sigma₀(n) tau(n) sigma0 σ₀(n) d(n) ν(n) τ(n) oeisA000005 oeisA5		
 1 = -/&i./ j1	Subdiagonal matrix of size j1	Expression	Linear Algebra	sub-diagonal		
 _1 = -/&i./ j1	Superdiagonal matrix of size j1	Expression	Linear Algebra	super-diagonal		
 =n2	Identity matrix with shape of table n2	Expression	Linear Algebra	diagonal table		
@@ -437,8 +451,8 @@ i + (i }. b1) i. 1	Index of first one after index i0 in b1	Expression	Search	1st
 i0 (] #~ 0 = |) j1	Elements of j1 divisible by i0	Tacit	Number Theory	filter divisors cells items		
 (i.@# -: /:~) y1	Is y1 a permutation vector?	Tacit	Combinatorics	testif		
 (* * <.@|) n	Round towards zero	Tacit	Rounding	0 truncate whole number integer int() trunc() chop clamp		
-(}. -  }:) n	Deltas: (n_1-n_0)(n_2-n_1)(n_3-n_2)…	Expression	Data	pairwisedifferences changes steps		
-(}. %  }:) n	Ratio of each number in a list to its predecessor: (n_1÷n_0)(n_2÷n_1)(n_3÷n_2)…	Expression	Data	pairwiseratios vector		
+(}. -  }:) n	Deltas: (n₁-n₀)(n₂-n₁)(n₃-n₂)…	Expression	Data	pairwisedifferences changes steps		
+(}. %  }:) n	Ratio of each number in a list to its predecessor: (n₁÷n₀)(n₂÷n₁)(n₃÷n₂)…	Expression	Data	pairwiseratios vector		
 m {{ x + (-x) | y }} n	Residue after dividing n by m but replacing 0 with m	Expression	Data	modulo modulus divisionremainder 12hourclock divide		
 (,~ i.@{:@$) m2	Attach column numbers to a numeric table	Tacit	Indices	headings table		
 (,.~ i.@{.@$) m2	Attach row numbers to a numeric table	Tacit	Indices	labels table		
