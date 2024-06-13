@@ -528,8 +528,5 @@ x ([ - (* * i.@>:@|)@-) y	Consecutive values from i0 to j0 (in any order)	Tacit	
 (~. #~ (= >./)@(#/.~)) y	Modes: Most frequent major cells of data	Tacit	Statistical	average items elements		
 (~. y) #~ (= >./) #/.~ y	Modes: Most frequent major cells of data	Expression	Statistical	average items elements		
 (i.@! A. i.) n0	All permutations of ↕n0, as table rows in lexicographical order	Tacit	Combinatorics	combinatorics ordered orderings anagrams without replacement list		
-x +//.@(*/) y	Polynomial Product	Expression	Mathematical	Polynomial product, multiplying each term in one polynomial by each term in the other polynomial	https://code.jsoftware.com/wiki/Phrases/Polynomials	https://jsoftware.github.io/j-playground/bin/html2/#base64=aHR0cHM6Ly9qc29mdHdhcmUuZ2l0aHViLmlvL2otcGxheWdyb3VuZC9iaW4vaHRtbDIvI2Jhc2U2
-ND1NU0F4SURGeU1pQXJMeTh1UUNncUx5a2dNU0F4Y2pNPQ==
-(%: %~ 0j2p1&% ^@* */~@i.)@# y	Fourier basis	Expression	Mathematical	Fourier basis, representing the fundamental frequencies associated with a sequence of samples	https://code.jsoftware.com/wiki/Guides/Fourier_Transform	https://jsoftware.github.io/j-playground/bin/html2/#base64=aHR0cHM6Ly9qc29mdHdhcmUuZ2l0aHViLmlvL2otcGxheWdyb3VuZC9iaW4vaHRtbDIvI2Jhc2U2
-ND1LQ1U2SUNWK0lEQnFNbkF4SmlVZ1hrQXFJQ292ZmtCcExpa2dOQW9vS3k4Z0xpb2dLQ1U2SUNW
-K0lEQnFNbkF4SmlVZ1hrQXFJQ292ZmtCcExpbEFJeWtnYVM0MA==
+x +//.@(*/) y	Polynomial Product	Expression	Mathematical	Polynomial product, multiplying each term in one polynomial by each term in the other polynomial	https://code.jsoftware.com/wiki/Phrases/Polynomials	https://jsoftware.github.io/j-playground/bin/html2/#base64=MSAxIDFyMiArLy8uQCgqLykgMSAxcjM=
+(%: %~ 0j2p1&% ^@* */~@i.)@# y	Fourier basis	Expression	Mathematical	Fourier basis, representing the fundamental frequencies associated with a sequence of samples	https://code.jsoftware.com/wiki/Guides/Fourier_Transform	https://jsoftware.github.io/j-playground/bin/html2/#base64=KCU6ICV+IDBqMnAxJiUgXkAqICovfkBpLikgNA==
