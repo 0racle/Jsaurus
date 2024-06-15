@@ -484,8 +484,15 @@ x1 ,@:(,"0 1~) y1	Insert x1 after every element of y1	Tacit	Structural	merge cel
 +/@(*./\)"1 b	Number of leading ones in each row of b	Tacit	Boolean	ones trues truths start beginning		
 {. (+/\)@|.^:(n0) i. 2	The n0'th Fibonacci number	Expression	Mathematical	sequence series recurrence golden ratio growth rabbit population		
 (i.@# -: /:) n	Is n non-decreasing?	Tacit	Ordering	testif ascending? increasing? rising? up ordered? sorted?		
+(i.@# -: \:) n	Is n non-increasing?	Tacit	Ordering	testif descending? falling? down ordered? decreasing? sorted?		
+({~ {.@/:@:|) n1	Element with the smallest magnitude (first in case of ties)	Tacit	Ordering	minimum absolute value closest nearest to 0 zero		
+({~ {.@\:@:|) n1	Element with largest magnitude (first in case of ties)	Tacit	Ordering	maximum absolute value biggest farthest furthest away from 0 zero		
+(|. \: +/\ a1) { y	Reverse sublists of y indicated by starting mask a1	Expression	Structural			
 x (] /: i.) y	Move major cells of y that appear in x to the front	Tacit	Search	promote cells items		
 x (] \: i.) y	Move major cells of y that appear in x to the end	Tacit	Search	major cells elements trailing ending		
+({~ n0 ? #) y	n0 random cells of y, chosen without replacement	Tacit	Random	srs draw without replacement removing		
+(-.&' ')&.> d	Remove spaces in each boxed string	Tacit	Text	deletespaces blanks drop without		
+*./\ *./ ' ' = d2	Locate leading blank columns in text table d2	Expression	Text	spaces beginning masking indicate indications allspace all-space start blanks		
 I. 0 = (|~ i.) j0	Proper divisors of j0	Expression	Number Theory	factorisation factorization		
 y #~ y ~: |.!.'' y	Remove consecutive duplicate major cells	Tacit	Search	list		
 0 = (>: i. >./ j1) |/ j1	Divisibility table	Expression	Number Theory	divides divisor matrix		
@@ -561,6 +568,8 @@ i.@>.&.((m0 + c0 * ])inv) n0	Range starting at m0 with step size c0, ending befo
 (* =@i.@#) n1	Diagonal numeric matrix with n1 along diagonal	Block Function	Linear Algebra	cells items table		
 ((* =@i.@#)@(#\) { x0, ]) y1	Diagonal matrix of x0, with y1 along diagonal	Block Function	Linear Algebra	cells items table		
 (-@i.@# |."0 1 # {."1 ,.) y1	Diagonal matrix with y1 along diagonal (uses y1's fill value for matrix)	Block Function	Linear Algebra	cells items table		
+(#"1~ +./@(' ' ~: ])) d2	Remove blank columns	Block Function	Text	all-space allspace empty remove delete drop space without		
+(' ' = d2)} d2 ,: '-'	Replace all spaces with dashes in d	Expression	Text	blanks substitute format		
 x ([ - (* * i.@>:@|)@-) y	Consecutive values from i0 to j0 (in any order)	Tacit	Sequences	inclusive range closed interval seq() sequence … any either direction unordered		
 (<. 0.5 + ])&.((10 ^ x) * ])	Round n to i0 decimal places	Expression	Rounding	precision banking banker's bank's (⍎⍕)		
 +/ m ^/~ I. 0 = (|~ i.@>:) j0	Sum of m'th powers of positive divisors of j0	Expression	Number Theory	sigma_x sigma_2 sigma_3 sigma_4 sigmax sigma2 sigma3 sigma4 σₓ(n) σ₂(n) σ₃(n) σ₄(n)		
