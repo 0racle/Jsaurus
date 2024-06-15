@@ -453,9 +453,25 @@ i0 (] #~ 0 = |) j1	Elements of j1 divisible by i0	Tacit	Number Theory	filter div
 (* * <.@|) n	Round towards zero	Tacit	Rounding	0 truncate whole number integer int() trunc() chop clamp		
 (}. -  }:) n	Deltas: (n₁-n₀)(n₂-n₁)(n₃-n₂)…	Expression	Data	pairwisedifferences changes steps		
 (}. %  }:) n	Ratio of each number in a list to its predecessor: (n₁÷n₀)(n₂÷n₁)(n₃÷n₂)…	Expression	Data	pairwiseratios vector		
-m {{ x + (-x) | y }} n	Residue after dividing n by m but replacing 0 with m	Expression	Data	modulo modulus divisionremainder 12hourclock divide		
+m + (-m) | n	Residue after dividing n by m but replacing 0 with m	Expression	Data	modulo modulus divisionremainder 12hourclock divide		https://jsoftware.github.io/j-playground/bin/html2/#base64=NCAoWyArICh8fiAtKX4pIGkuMTA=
 (,~ i.@{:@$) m2	Attach column numbers to a numeric table	Tacit	Indices	headings table		
 (,.~ i.@{.@$) m2	Attach row numbers to a numeric table	Tacit	Indices	labels table		
+m1 +"1 n1 *"1 (#: i.) j1	Multi-dimensional arithmetic progression with dimensions j1 starting at m1 with steps n1	Expression	Sequences	sequence seq() multidimensional axes		
+m ((<: |) * ]) n	Round to zero values of n within m of zero	Tacit	Rounding	precision fuzz 0		
+b1} x ,: y	Merge x and y using b1 (1 for x's element, 0 for y1's element)	Tacit	Structural	faro weave dovetail zipper zipping merging interweave interweaving interleave interleaving shuffle shuffling meshing alternative choose indicate masking indicating elements items major cells bitmask bit-mask		
+({: , }.@}: , {.) y	Swap first and last major cells	Tacit	Structural	exchange swap head tail leading trailing elements items 1st start beginning ending		
+m1 +/@:|@:- n1	Manhattan distance between two points in n-space	Tacit	Geometric	taxicab L1 L-1 L1-distance ℓ1 ℓ-1 ℓ₁ L¹ d()		
+*/ >: i0 ({.~ -)~ i. j0	Number of ordered selections (permutations) of i0 items from j0 choices	Expression	Combinatorics	combinatorics permutations		
+10 #. d1	Natural number from base-10 digits	Expression	Mathematical	frombase10 base-10 dec() decimal Conversion converting change changing		
+#. d1	Natural number from binary representation	Expression	Mathematical	frombase2 base-2 binary Conversion converting change changing		
+(+ %)/\ n1	Continued fraction convergents with terms n1	Expression	Mathematical	series sequence	https://code.jsoftware.com/wiki/Essays/Continued_Fractions	
++/&.(*~) n1	Length of vector n1	Tacit	Geometric	absolute value magnitude distance from origin 0 zero		
+, +// i0 $ ,: i. 10	Sum of digits of the first 10⋆i0 numbers	Expression	Sequences	sod()		
+1 >: | -/&i./ j1	Tridiagonal matrix of size j1	Expression	Linear Algebra	tri-diagonal banded		
+2 >: | -/&i./ j1	Pentadiagonal matrix of size j1	Expression	Linear Algebra	penta-diagonal banded		
+(100 * ] % +/) n	Column-wise percentage per column	Tacit	Data	≢ vertically columnwise		
+~:/ 0 = 400 100 4 |/ j	Is year j a leap year?	Expression	Specialty	testif gregoriancalendar 29thfeb29 29february29th		
+>./@(([ >. +)/\.) n1	Largest sum of any contiguous sublist	Expression	Data	maximum subarray sublist sub-array sub-list sub-vector biggest highest kadane's kadanes algorithm		
 (~: *. ~:&.|.) y	Indicate which cells of y appear exactly once	Tacit	Search	unique indication indicate items masking indicating		
 (i. >./) n1	Index of maximum value in n1	Tacit	Search	greater larger bigger greatest biggest largest highest		
 (i. <./) n1	Index of minimum value in n1	Tacit	Search	lesser smaller smallest lowest least		
@@ -470,7 +486,7 @@ i0 (* $ -@] {. 1:) j0	Mark ending points for i0 sublists of width j0	Tacit	Parti
 (3 %~ 2&^ - _1&^) j0	Jacobsthal number	Tacit	Mathematical	sequence Ernst j(n) A001045() A1045()		
 (-. (i. # y) e. i) # y	Remove major cells with indices i from y	Expression	Selection	without remove indices delete drop		
 x _1:`i:@.(e.~) y	Last indices in x of major cells y (¯1 if not found)	Expression	Search	indexin indexof finding locating locate positionof items elements location		
-i1 {{ x {^:y i. # x }} j0	Permutation i1 to the power of j0	Block Function	Combinatorics	repeated		
+i1 {^:j0 i. # i1	Permutation i1 to the power of j0	Block Function	Combinatorics	repeated		
 (i.@# -: |.@/:) n	Is n Strictly Decreasing?	Tacit	Ordering	testif descending? falling? down ordered? sorted?		
 (i.@# -: |.@\:) n	Is n Strictly Increasing?	Tacit	Ordering	testif ascending? rising? up ordered? sorted?		
 -: >: %: 5	Golden ratio	Constant	Mathematical	phi φ ϕ ɸ 1.618033988749894848204586834365638 0.618033988749894848204586834365638		
