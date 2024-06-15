@@ -471,10 +471,19 @@ m1 +/@:|@:- n1	Manhattan distance between two points in n-space	Tacit	Geometric	
 2 >: | -/&i./ j1	Pentadiagonal matrix of size j1	Expression	Linear Algebra	penta-diagonal banded		
 (100 * ] % +/) n	Column-wise percentage per column	Tacit	Data	≢ vertically columnwise		
 ~:/ 0 = 400 100 4 |/ j	Is year j a leap year?	Expression	Specialty	testif gregoriancalendar 29thfeb29 29february29th		
->./@(([ >. +)/\.) n1	Largest sum of any contiguous sublist	Expression	Data	maximum subarray sublist sub-array sub-list sub-vector biggest highest kadane's kadanes algorithm		
+>./@(([ >. +)/\.) n1	Largest sum of any contiguous sublist	Expression	Data	maximum subarray sublist sub-array sub-list sub-vector biggest highest kadane's kadanes algorithm	https://code.jsoftware.com/wiki/Essays/Kadane_Algorithm;_J_Tutorial	
+; (+/\ a1) <@(F/\)/. y	Segmented scan: like F` but starting over whenever indicated by a1	Expression	Function Application	cumulativereduce rowwise sub-vectors sub-lists partitioned subvectors sublists row-wise horizontally		
+(F * 0 ~: [)/\.&.|. n	Segmented scan: like F` but starting over whenever 0 is seen	Expression	Function Application	cumulativereduce rowwise sub-vectors sub-lists partitioned subvectors sublists		
+i0 (* $ ] {. 1:) j0	Mark starting points for i0 sublists of width j0	Tacit	Partitioning	segmented partitioned vector starts beginnings list		
+x (<i j)} y2	Replace element i,j of matrix y2 with x	Tacit	Structural	modify change at index		
 (~: *. ~:&.|.) y	Indicate which cells of y appear exactly once	Tacit	Search	unique indication indicate items masking indicating		
 (i. >./) n1	Index of maximum value in n1	Tacit	Search	greater larger bigger greatest biggest largest highest		
 (i. <./) n1	Index of minimum value in n1	Tacit	Search	lesser smaller smallest lowest least		
+x1 +//. n1	Sum n1 by buckets x1 (#n1 ↔ #x1)	Expression	Data	groups classify bins		
+x1 ,@:(,"0 1~) y1	Insert x1 after every element of y1	Tacit	Structural	merge cell item		
++/@(*./\)"1 b	Number of leading ones in each row of b	Tacit	Boolean	ones trues truths start beginning		
+{. (+/\)@|.^:(n0) i. 2	The n0'th Fibonacci number	Expression	Mathematical	sequence series recurrence golden ratio growth rabbit population		
+(i.@# -: /:) n	Is n non-decreasing?	Tacit	Ordering	testif ascending? increasing? rising? up ordered? sorted?		
 x (] /: i.) y	Move major cells of y that appear in x to the front	Tacit	Search	promote cells items		
 x (] \: i.) y	Move major cells of y that appear in x to the end	Tacit	Search	major cells elements trailing ending		
 I. 0 = (|~ i.) j0	Proper divisors of j0	Expression	Number Theory	factorisation factorization		
