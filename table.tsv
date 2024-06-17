@@ -162,7 +162,7 @@ x F@[ y	Ignore right argument and call F monadically on x	Tacit	Function Applica
 x (F@[ G H@]) y	Split-Compose: apply G between (F x) and (H y), that is (F x) G (H y)	Tacit	Composition	composewith splitover (fX)G(hY) (fX)ghY		
 x (0)} y	Replace first major cell of y with x	Expression	Structural	substitute merge amend replace update 1st item element		
 F&., y	Handle array y temporarily as a list	Tacit	Function Application	columnheadings columnnumbers ⍢, flattened ravelled raveled list		https://jsoftware.github.io/j-playground/bin/html2/#base64=KCsvXCkmLiwgaS4gMyAz
-I.inv j1	Convert set of indices j1 to a mask	Tacit	Indices	indicate masking indicating bitmask bit-mask converting change changing		
+I.inv j1	Convert set of indices j1 to a mask (I.inv reqiuires J9.6)	Tacit	Indices	indicate masking indicating bitmask bit-mask converting change changing		
 i1 +/ j1	Addition table for i1 down and j1 across	Tacit	Arithmetic	additiontable cartesianaddition plustable matrix		
 i1 */ j1	Multiplication table for i1 down and j1 across	Tacit	Arithmetic	multiplicationtable cartesianproduct timestable matrix		
 x ,"_ 0"0 _ y	Cartesian product: all pairs from x and y	Tacit	Structural	catalog pairings tuples table matrix		
@@ -268,7 +268,7 @@ i1 (</.~ I.)~ y	Cut y into partitions of length i1 (+/i1 ↔ #y)	Tacit	Structura
 m *&-. n	Probabilistic NOR	Tacit	Statistical	fuzzy probability chance peirce'sarrow quine'sdagger ampheck neithernor jointdenial Xpq ⊽		
 x -:&(/:~) y	Are x and y permutations of each other?	Tacit	Data	testif permutation? permutationof?		
 ];.0 y2	Rotate 180°	Tacit	Structural	turning rotating rotation half-turn halfturn		
-j0 }. I.inv i	Boolean list of length j0 with ones in locations i	Expression	Boolean	inversion 1s trues truths list binary base-2 base2		
+j0 {. I.inv i	Boolean list of length j0 with ones in locations i (	Expression	Boolean	inversion 1s trues truths list binary base-2 base2		
 1 _1 */ n	±n as two major cells of the result	Expression	Arithmetic	plusminus dimensions axes		
 _1 1 */ n	∓n as two major cells of the result	Expression	Arithmetic	minusplus dimensions axes		
 (# # ,:) y1	Square matrix with y1 as rows	Tacit	Structural	tomatrixof table		
@@ -385,8 +385,8 @@ x _1:} y	Replace last major cell of y with x	Expression	Structural	substitute me
 +/~ >: i. j0	Addition table for numbers up to j0	Expression	Arithmetic	additiontable cartesianaddition plustable matrix integers		
 */~ >: i. j0	Multiplication table for numbers up to j0	Expression	Arithmetic	multiplicationtable cartesianproduct timestable matrix integers		
 2 * +/ n1 * 1 |. n1	Surface area of box with side lengths n1	Expression	Geometric	block edge lengths		
-i1 >/ i. >./ i1	Matrix with i⊑i1 leading ones on row i	Expression	Linear Algebra	1st trues truths first table start beginning		
-i1 <:/ i. >./ i1	Matrix with i⊑i1 leading zeroes on row i	Expression	Linear Algebra	0s zeros falses falsehoods table start beginning		
+i1 >/ i. >./ i1	Matrix with i{i1 leading ones on row i	Expression	Linear Algebra	1st trues truths first table start beginning		
+i1 <:/ i. >./ i1	Matrix with i{i1 leading zeroes on row i	Expression	Linear Algebra	0s zeros falses falsehoods table start beginning		
 m ({. =@i.@]) n	Diagonal matrix of size m×n	Tacit	Linear Algebra	mono-diagonal banded		
 (<~ |.!.0) +./\ b	Turn off all 1s after first 1, or indicate only the first 1	Expression	Boolean	indicating flipping turning change changing inverting negating bitmask bit-mask zeros zeroes falses ones trues truths falsehoods 1st mask		
 (<:~ |.!.0) *./\ b	Turn on all 0s after first 0, or indicate all elements except the first 0	Expression	Boolean	indicating flipping turning change changing inverting negating bitmask bit-mask zeros zeroes falsehoods 1st mask not		
@@ -477,6 +477,7 @@ m1 +/@:|@:- n1	Manhattan distance between two points in n-space	Tacit	Geometric	
 i0 (* $ ] {. 1:) j0	Mark starting points for i0 sublists of width j0	Tacit	Partitioning	segmented partitioned vector starts beginnings list		
 x (<i j)} y2	Replace element i,j of matrix y2 with x	Tacit	Structural	modify change at index		
 (~: *. ~:&.|.) y	Indicate which cells of y appear exactly once	Tacit	Search	unique indication indicate items masking indicating		
+({ #/.~)@(i.~ ~.) y	Indicate number of cells matching each cell of y	Expression	Search	count duplicate repetitions appearances		
 (i. >./) n1	Index of maximum value in n1	Tacit	Search	greater larger bigger greatest biggest largest highest		
 (i. <./) n1	Index of minimum value in n1	Tacit	Search	lesser smaller smallest lowest least		
 x1 +//. n1	Sum n1 by buckets x1 (#n1 ↔ #x1)	Expression	Data	groups classify bins		
@@ -570,11 +571,32 @@ i.@>.&.((m0 + c0 * ])inv) n0	Range starting at m0 with step size c0, ending befo
 (-@i.@# |."0 1 # {."1 ,.) y1	Diagonal matrix with y1 along diagonal (uses y1's fill value for matrix)	Block Function	Linear Algebra	cells items table		
 (#"1~ +./@(' ' ~: ])) d2	Remove blank columns	Block Function	Text	all-space allspace empty remove delete drop space without		
 (' ' = d2)} d2 ,: '-'	Replace all spaces with dashes in d	Expression	Text	blanks substitute format		
+m0 + c0 * i. >: >. c0 %~ n0 - m0	Range starting at m0 with step size c0, ending after n0	Expression	Sequences	sequence interval		
+m0 + c0 * i. >: <. c0 %~ n0 - m0	Range starting at m0 with step size c0, ending at or before n0	Expression	Sequences	sequence interval		
+i0 (!@] % [ *&! -~) j0	Number of unordered selections (combinations) of i0 items from j0 choices	Tacit	Combinatorics	exclamation bang shriek binomial combinatorics countcombinations choose unordered selecting picking outof nCk C(n,k)		
 x ([ - (* * i.@>:@|)@-) y	Consecutive values from i0 to j0 (in any order)	Tacit	Sequences	inclusive range closed interval seq() sequence … any either direction unordered		
 (<. 0.5 + ])&.((10 ^ x) * ])	Round n to i0 decimal places	Expression	Rounding	precision banking banker's bank's (⍎⍕)		
++/&.(*~)@:-"1"1 _~ n2	Euclidean distance table given one point in each row of n2	Tacit	Geometric	L2-distance L-2 ℓ2 ℓ-2 ℓ₂ L² Cartesian metric Pythagorean d() matrix		
+'.,:;?!' -.~ d1	Remove punctuation	Tacit	Text	delete symbols drop without		
+(,2#{:),~'(,2#{:),~'''	An expression giving itself	Constant	Text	quine	https://code.jsoftware.com/wiki/Puzzles/Quine	
+x0 (y0 = y)} y	Replace all values y0 in y with x0	Block Function	Structural	substitute merge amend replace update		
+(= i. +/@#~ 0 = i. | ]) j0	Is j0 a perfect number?	Tacit	Number Theory	testif perfect?		
+(= 1 +/@, i. #~ 0 = i. | ]) j0	Is j0 an almost perfect number?	Tacit	Number Theory	testif almostperfect? almost-perfect?		
+(= _1 +/@, i. #~ 0 = i. | ]) j0	Is j0 a quasiperfect number? (none are known)	Tacit	Number Theory	testif quasiperfect? quasi-perfect?		
+(= i. +/@#~ 0 < i. | ]) j0	Is j0 a deficient number?	Tacit	Number Theory	testif deficient?		
+(= i. +/@#~ 0 > i. | ]) j0	Is j0 an abundant number?	Tacit	Number Theory	testif abundant?		
+<;._1 x0,y1	Box y1 at occurrences of separators x0, removing the separators	Tacit	Partitioning	cut separate chop divide chunk dividing partitions strings lists segments delimiters spaces words		
+AlphaNum_j_ -.~ d1	Remove non-alphanumeric ASCII characters	Tacit	Text	punctuation		
+' #' {~ (>/ i.@(>./)) I.inv j1	Histogram (distribution barchart, down the page) (	Expression	Data			
+(*./\ '0' = d)} d,:' '	Replace leading zeros with spaces in d	Expression	Text	blanks nulls zeroes nils naughts noughts 0s falses falsehoods start beginning		
+(I. i1) +//. n	Sums (+´) of sublists of n with lengths given by i1	Expression	Data	segmented partitioned sub-vectors		
+1:`(<: ((0,]) + [ * ],0:) $:@<:)@.* i0	Stirling numbers of the first kind s(i0,k) for all k	Expression	Combinatorics		https://code.jsoftware.com/wiki/Essays/Stirling_Numbers	
+(z e. y)} z,:x	Replace all occurrences of elements from y in array z with x	Block Function	Structural	substitute merge amend update cells items		
 +/ m ^/~ I. 0 = (|~ i.@>:) j0	Sum of m'th powers of positive divisors of j0	Expression	Number Theory	sigma_x sigma_2 sigma_3 sigma_4 sigmax sigma2 sigma3 sigma4 σₓ(n) σ₂(n) σ₃(n) σ₄(n)		
 (~. #~ (= >./)@(#/.~)) y	Modes: Most frequent major cells of data	Tacit	Statistical	average items elements		
 (~. y) #~ (= >./) #/.~ y	Modes: Most frequent major cells of data	Expression	Statistical	average items elements		
+- +/ 2 (^. * ]) (#/. % #) y	Shannon entropy of array y	Expression	Statistical	informationtheory text message string		
+a1 (] * * (] e. #) +/\@(<~ |.!.0)@]) b1	Groups of ones in b1 pointed to by at least one 1 in a1	Expression	Partitioning	runs sequences 1s indicated trues truths		
 (i.@! A. i.) n0	All permutations of ↕n0, as table rows in lexicographical order	Tacit	Combinatorics	combinatorics ordered orderings anagrams without replacement list		
 x +//.@(*/) y	Polynomial Product	Expression	Mathematical	Polynomial product, multiplying each term in one polynomial by each term in the other polynomial	https://code.jsoftware.com/wiki/Phrases/Polynomials	https://jsoftware.github.io/j-playground/bin/html2/#base64=MSAxIDFyMiArLy8uQCgqLykgMSAxcjM=
 (%: %~ 0j2p1&% ^@* */~@i.)@# y	Fourier basis	Expression	Mathematical	Fourier basis, representing the fundamental frequencies associated with a sequence of samples	https://code.jsoftware.com/wiki/Guides/Fourier_Transform	https://jsoftware.github.io/j-playground/bin/html2/#base64=KCU6ICV+IDBqMnAxJiUgXkAqICovfkBpLikgNA==
