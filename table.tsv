@@ -268,7 +268,7 @@ i1 (</.~ I.)~ y	Cut y into partitions of length i1 (+/i1 ↔ #y)	Tacit	Structura
 m *&-. n	Probabilistic NOR	Tacit	Statistical	fuzzy probability chance peirce'sarrow quine'sdagger ampheck neithernor jointdenial Xpq ⊽		
 x -:&(/:~) y	Are x and y permutations of each other?	Tacit	Data	testif permutation? permutationof?		
 ];.0 y2	Rotate 180°	Tacit	Structural	turning rotating rotation half-turn halfturn		
-j0 {. I.inv i	Boolean list of length j0 with ones in locations i (	Expression	Boolean	inversion 1s trues truths list binary base-2 base2		
+j0 {. I.inv i	Boolean list of length j0 with ones in locations i (I.inv requires J9.6)	Expression	Boolean	inversion 1s trues truths list binary base-2 base2		
 1 _1 */ n	±n as two major cells of the result	Expression	Arithmetic	plusminus dimensions axes		
 _1 1 */ n	∓n as two major cells of the result	Expression	Arithmetic	minusplus dimensions axes		
 (# # ,:) y1	Square matrix with y1 as rows	Tacit	Structural	tomatrixof table		
@@ -587,7 +587,7 @@ x0 (y0 = y)} y	Replace all values y0 in y with x0	Block Function	Structural	subs
 (= i. +/@#~ 0 > i. | ]) j0	Is j0 an abundant number?	Tacit	Number Theory	testif abundant?		
 <;._1 x0,y1	Box y1 at occurrences of separators x0, removing the separators	Tacit	Partitioning	cut separate chop divide chunk dividing partitions strings lists segments delimiters spaces words		
 AlphaNum_j_ -.~ d1	Remove non-alphanumeric ASCII characters	Tacit	Text	punctuation		
-' #' {~ (>/ i.@(>./)) I.inv j1	Histogram (distribution barchart, down the page) (	Expression	Data			
+' #' {~ (>/ i.@(>./)) I.inv j1	Histogram (distribution barchart, down the page) (I.inv requires J9.6)	Expression	Data			
 (*./\ '0' = d)} d,:' '	Replace leading zeros with spaces in d	Expression	Text	blanks nulls zeroes nils naughts noughts 0s falses falsehoods start beginning		
 (I. i1) +//. n	Sums (+´) of sublists of n with lengths given by i1	Expression	Data	segmented partitioned sub-vectors		
 1:`(<: ((0,]) + [ * ],0:) $:@<:)@.* i0	Stirling numbers of the first kind s(i0,k) for all k	Expression	Combinatorics		https://code.jsoftware.com/wiki/Essays/Stirling_Numbers	
