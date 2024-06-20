@@ -400,7 +400,7 @@ x0 ,@,.~ y1	Insert x0 after each element of y1	Tacit	Structural	cell item
 x F^:(i. >: y0) z	Apply F y0 times to z, returning initial value z and all intermediate results	Tacit	Function Application	apply application repeated converge repeating looping power intermediaries intermediate all sequence		
 y #~ 5 > /: /: y	The i0 smallest cells of y in order of occurrence	Expression	Ordering	least items elements		
 y #~ 5 > /: \: y	The i0 largest cells of y in order of occurrence	Expression	Ordering	biggest greatestif items elements		
-(|: -: -) y2	Is y2 an anti-symmetric matrix?	Tacit	Linear Algebra	testif antisymmetric skewsymmetric skew-symmetric		https://jsoftware.github.io/j-playground/bin/html2/#base64=eTIgPS4gKDwvfiAtID4vfikgaS4gNQ==
+(|: -: -) y2	Is y2 an anti-symmetric matrix?	Tacit	Linear Algebra	testif antisymmetric skewsymmetric skew-symmetric		https://jsoftware.github.io/j-playground/bin/html2/#base64=eTIgPS4gKDwvfiAtID4vfikgaS4gNQoofDogOyAtKSB5MgoofDogLTogLSkgeTI=
 (<@i.@#@$ |: ]) y	Main diagonal of any rank array	Tacit	Selection	maindiagonal nwse nw-se majordiagonal	https://code.jsoftware.com/wiki/Fifty_Shades_of_J/Chapter_08	
 /:"1~&.|:"2 y	Sort each column in ascending order	Tacit	Ordering	up increasing sorting reordering ordering		
 *./127 > 3 u: 7 u: d	Is string d ASCII-only?	Expression	Text	plain exclusively		
@@ -453,7 +453,7 @@ i0 (] #~ 0 = |) j1	Elements of j1 divisible by i0	Tacit	Number Theory	filter div
 (* * <.@|) n	Round towards zero	Tacit	Rounding	0 truncate whole number integer int() trunc() chop clamp		
 (}. -  }:) n	Deltas: (n₁-n₀)(n₂-n₁)(n₃-n₂)…	Expression	Data	pairwisedifferences changes steps		
 (}. %  }:) n	Ratio of each number in a list to its predecessor: (n₁÷n₀)(n₂÷n₁)(n₃÷n₂)…	Expression	Data	pairwiseratios vector		
-m + (-m) | n	Residue after dividing n by m but replacing 0 with m	Expression	Data	modulo modulus divisionremainder 12hourclock divide		https://jsoftware.github.io/j-playground/bin/html2/#base64=NCAoWyArICh8fiAtKX4pIGkuMTA=
+m + (-m) | n	Residue after dividing n by m but replacing 0 with m	Expression	Data	modulo modulus divisionremainder 12hourclock divide		https://jsoftware.github.io/j-playground/bin/html2/#base64=NCAoWyArICh8fiAtKX4pIGkuMTAgICBOQi4gVGFjaXQgdmVyc2lvbg==
 (,~ i.@{:@$) m2	Attach column numbers to a numeric table	Tacit	Indices	headings table		
 (,.~ i.@{.@$) m2	Attach row numbers to a numeric table	Tacit	Indices	labels table		
 m1 +"1 n1 *"1 (#: i.) j1	Multi-dimensional arithmetic progression with dimensions j1 starting at m1 with steps n1	Expression	Sequences	sequence seq() multidimensional axes		
@@ -598,15 +598,18 @@ AlphaNum_j_ -.~ d1	Remove non-alphanumeric ASCII characters	Tacit	Text	punctuati
 (~. #~ (= >./)@(#/.~)) y	Modes: Most frequent major cells of data	Tacit	Statistical	average items elements		
 (~. y) #~ (= >./) #/.~ y	Modes: Most frequent major cells of data	Expression	Statistical	average items elements		
 - +/ 2 (^. * ]) (#/. % #) y	Shannon entropy of array y	Expression	Statistical	informationtheory text message string		
-(+/ % # - 1:)&.(*~)@(- +/ % #) n1	Sample standard deviation	Tacit	Statistical	stddev σ sigma SD empirical		https://jsoftware.github.io/j-playground/bin/html2/#base64=RiA9OiAoKy8gJSAjIC0gMTopJi4oKn4pQCgtICsvICUgIyk=
-(+/ % #)&.(*~)@(- +/ % #) n1	Theoretical standard deviation	Tacit	Statistical	stddev σ sigma SD		https://jsoftware.github.io/j-playground/bin/html2/#base64=RiA9OiAoKy8gJSAjKSYuKCp+KUA6KC0gKy8gJSAjKQ==
+(+/ % # - 1:)&.(*~)@(- +/ % #) n1	Sample standard deviation	Tacit	Statistical	stddev σ sigma SD empirical		https://jsoftware.github.io/j-playground/bin/html2/#base64=RiA9OiAoKy8gJSAjIC0gMTopJi4oKn4pQCgtICsvICUgIykKRiBuMSA9LiAyIDEzIDkgMTkgMTIg
+NCA2IDQKTkIuIHByZWZlciBzdGF0cy9zdGRkZXYKbG9hZCAnc3RhdHMnCihzdGRkZXYgLTogRikg
+bjE=
+(+/ % #)&.(*~)@(- +/ % #) n1	Theoretical standard deviation	Tacit	Statistical	stddev σ sigma SD		https://jsoftware.github.io/j-playground/bin/html2/#base64=RiA9OiAoKy8gJSAjKSYuKCp+KUA6KC0gKy8gJSAjKQpGIG4xID0uIDIgMTMgOSAxOSAxMiA0IDYg
+NApOQi4gcHJlZmVyIHN0YXRzL3N0ZGRldnAKbG9hZCAnc3RhdHMnCihzdGRkZXZwIC06IEYpIG4x
 i0 (+/ % #) {{ u (y - u y) ^ x }} n1	i0'th moment of n1	Tacit	Statistical			
 1 = i0 +. j0	Are i0 and j0 co-prime?	Tacit	Number Theory	coprime? relatively mutually testif		
 (= -: +/@(*"1 _ |:)) n2	Is square matrix n2 orthogonal?	Expression	Linear Algebra	testif Orthogonal?		
 ' ' (] #~ (+./\. *. +./\)@:~:) d1	Remove leading and trailing spaces from d1 (stdlib: dltb)	Tacit	Text	trim left right blanks start beginning ending		
 (,: ' -' {~ ' ' ~: ]) d1	Underline non-spaces in a string	Tacit	Text	blanks wordunderlinewords wordunderscorewords		
 a1 (*. +. +. ([ #inv 2 </\ 0, #) ]) b1	Indicate first one in each sublist of b1 indicated by starting mask a1	Tacit	Partitioning	sub-vector 1st		
--:@(+/)@((<. , >.)@(-:@<:@#) { /:~) n1	Median of non-empty n1, averaging two values for even lengths	Tacit	Statistical	average	https://code.jsoftware.com/wiki/Addons/stats/base/univariate#median	https://jsoftware.github.io/j-playground/bin/html2/#base64=bG9hZCAnc3RhdHMn
+-:@(+/)@((<. , >.)@(-:@<:@#) { /:~) n1	Median of non-empty n1, averaging two values for even lengths	Tacit	Statistical	average	https://code.jsoftware.com/wiki/Addons/stats/base/univariate#median	https://jsoftware.github.io/j-playground/bin/html2/#base64=bG9hZCAnc3RhdHMnCm1lZGlhbiBmLgptZWRpYW4gMiAxMyA5IDE5IDEyIDQgNiA0
 a1 ~:/\@(+. ([ #inv 2 ~:/\ 0, #) ]) b1	State of switch when b1 turns on and a1 turns off (initially off)	Tacit	Partitioning	signal on/off		
 a1 ~:/\@(+. ([ #inv 2 ~:/\ 0, #) ]) b1	Not leading zeroes (+./\) in each sublist of b1 indicated by starting mask a1	Tacit	Partitioning	zeros 0s falses falsehoods start beginning		
 a1 (] * * (] e. #) +/\@(<~ |.!.0)@]) b1	Groups of ones in b1 pointed to by at least one 1 in a1	Expression	Partitioning	runs sequences 1s indicated trues truths		
@@ -617,5 +620,6 @@ c1 (-.@e.~ {{ (1, 2 </\ x) <;.1&(x&#) y }} ]) d1	Split list d1 at any sequence o
 c1 {:@((#@] # 0:) ]F..(] >. [ >./\@:+ |.!.0@]) =/) d1	Length of longest common substring	Tacit	Text	fuzzy match lcs		
 (i.@! A. i.) n0	All permutations of ↕n0, as table rows in lexicographical order	Tacit	Combinatorics	combinatorics ordered orderings anagrams without replacement list		
 x +//.@(*/) y	Polynomial Product	Expression	Mathematical	Polynomial product, multiplying each term in one polynomial by each term in the other polynomial	https://code.jsoftware.com/wiki/Phrases/Polynomials	https://jsoftware.github.io/j-playground/bin/html2/#base64=MSAxIDFyMiArLy8uQCgqLykgMSAxcjM=
-(%: %~ 0j2p1&% ^@* */~@i.)@# y	Fourier basis	Expression	Mathematical	Fourier basis, representing the fundamental frequencies associated with a sequence of samples	https://code.jsoftware.com/wiki/Guides/Fourier_Transform	https://jsoftware.github.io/j-playground/bin/html2/#base64=KCU6ICV+IDBqMnAxJiUgXkAqICovfkBpLikgNA==
+(%: %~ 0j2p1&% ^@* */~@i.)@# y	Fourier basis	Expression	Mathematical	Fourier basis, representing the fundamental frequencies associated with a sequence of samples	https://code.jsoftware.com/wiki/Guides/Fourier_Transform	https://jsoftware.github.io/j-playground/bin/html2/#base64=KCU6ICV+IDBqMnAxJiUgXkAqICovfkBpLikgNAooKy8gLiogKCU6ICV+IDBqMnAxJiUgXkAqICov
+fkBpLilAIykgaS40
 x +/ .* y	Inner Product	Expression	Mathematical	Inner Product, Dot Product, Vector Product, Matrix Product	https://code.jsoftware.com/wiki/Help/Learning/Ch_22:_Vectors_and_Matrices#22.1_The_Dot_Product_Conjunction	
