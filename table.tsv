@@ -598,11 +598,8 @@ AlphaNum_j_ -.~ d1	Remove non-alphanumeric ASCII characters	Tacit	Text	punctuati
 (~. #~ (= >./)@(#/.~)) y	Modes: Most frequent major cells of data	Tacit	Statistical	average items elements		
 (~. y) #~ (= >./) #/.~ y	Modes: Most frequent major cells of data	Expression	Statistical	average items elements		
 - +/ 2 (^. * ]) (#/. % #) y	Shannon entropy of array y	Expression	Statistical	informationtheory text message string		
-(+/ % # - 1:)&.(*~)@(- +/ % #) n1	Sample standard deviation	Tacit	Statistical	stddev σ sigma SD empirical		https://jsoftware.github.io/j-playground/bin/html2/#base64=RiA9OiAoKy8gJSAjIC0gMTopJi4oKn4pQCgtICsvICUgIykKRiBuMSA9LiAyIDEzIDkgMTkgMTIg
-NCA2IDQKTkIuIHByZWZlciBzdGF0cy9zdGRkZXYKbG9hZCAnc3RhdHMnCihzdGRkZXYgLTogRikg
-bjE=
-(+/ % #)&.(*~)@(- +/ % #) n1	Theoretical standard deviation	Tacit	Statistical	stddev σ sigma SD		https://jsoftware.github.io/j-playground/bin/html2/#base64=RiA9OiAoKy8gJSAjKSYuKCp+KUA6KC0gKy8gJSAjKQpGIG4xID0uIDIgMTMgOSAxOSAxMiA0IDYg
-NApOQi4gcHJlZmVyIHN0YXRzL3N0ZGRldnAKbG9hZCAnc3RhdHMnCihzdGRkZXZwIC06IEYpIG4x
+(+/ % # - 1:)&.(*~)@(- +/ % #) n1	Sample standard deviation	Tacit	Statistical	stddev σ sigma SD empirical		https://jsoftware.github.io/j-playground/bin/html2/#base64=RiA9OiAoKy8gJSAjIC0gMTopJi4oKn4pQCgtICsvICUgIykKRiBuMSA9LiAyIDEzIDkgMTkgMTIgNCA2IDQKTkIuIHByZWZlciBzdGF0cy9zdGRkZXYKbG9hZCAnc3RhdHMnCihzdGRkZXYgLTogRikgbjE=
+(+/ % #)&.(*~)@(- +/ % #) n1	Theoretical standard deviation	Tacit	Statistical	stddev σ sigma SD		https://jsoftware.github.io/j-playground/bin/html2/#base64=RiA9OiAoKy8gJSAjKSYuKCp+KUA6KC0gKy8gJSAjKQpGIG4xID0uIDIgMTMgOSAxOSAxMiA0IDYgNApOQi4gcHJlZmVyIHN0YXRzL3N0ZGRldnAKbG9hZCAnc3RhdHMnCihzdGRkZXZwIC06IEYpIG4x
 i0 (+/ % #) {{ u (y - u y) ^ x }} n1	i0'th moment of n1	Tacit	Statistical			
 1 = i0 +. j0	Are i0 and j0 co-prime?	Tacit	Number Theory	coprime? relatively mutually testif		
 (= -: +/@(*"1 _ |:)) n2	Is square matrix n2 orthogonal?	Expression	Linear Algebra	testif Orthogonal?		
@@ -620,6 +617,5 @@ c1 (-.@e.~ {{ (1, 2 </\ x) <;.1&(x&#) y }} ]) d1	Split list d1 at any sequence o
 c1 {:@((#@] # 0:) ]F..(] >. [ >./\@:+ |.!.0@]) =/) d1	Length of longest common substring	Tacit	Text	fuzzy match lcs		
 (i.@! A. i.) n0	All permutations of ↕n0, as table rows in lexicographical order	Tacit	Combinatorics	combinatorics ordered orderings anagrams without replacement list		
 x +//.@(*/) y	Polynomial Product	Expression	Mathematical	Polynomial product, multiplying each term in one polynomial by each term in the other polynomial	https://code.jsoftware.com/wiki/Phrases/Polynomials	https://jsoftware.github.io/j-playground/bin/html2/#base64=MSAxIDFyMiArLy8uQCgqLykgMSAxcjM=
-(%: %~ 0j2p1&% ^@* */~@i.)@# y	Fourier basis	Expression	Mathematical	Fourier basis, representing the fundamental frequencies associated with a sequence of samples	https://code.jsoftware.com/wiki/Guides/Fourier_Transform	https://jsoftware.github.io/j-playground/bin/html2/#base64=KCU6ICV+IDBqMnAxJiUgXkAqICovfkBpLikgNAooKy8gLiogKCU6ICV+IDBqMnAxJiUgXkAqICov
-fkBpLilAIykgaS40
+(%: %~ 0j2p1&% ^@* */~@i.)@# y	Fourier basis	Expression	Mathematical	Fourier basis, representing the fundamental frequencies associated with a sequence of samples	https://code.jsoftware.com/wiki/Guides/Fourier_Transform	https://jsoftware.github.io/j-playground/bin/html2/#base64=KCU6ICV+IDBqMnAxJiUgXkAqICovfkBpLikgNAooKy8gLiogKCU6ICV+IDBqMnAxJiUgXkAqICovfkBpLilAIykgaS40
 x +/ .* y	Inner Product	Expression	Mathematical	Inner Product, Dot Product, Vector Product, Matrix Product	https://code.jsoftware.com/wiki/Help/Learning/Ch_22:_Vectors_and_Matrices#22.1_The_Dot_Product_Conjunction	
