@@ -589,6 +589,7 @@ x0 (y0 = y)} y	Replace all values y0 in y with x0	Block Function	Structural	subs
 AlphaNum_j_ -.~ d1	Remove non-alphanumeric ASCII characters	Tacit	Text	punctuation		
 ' #' {~ (>/ i.@(>./)) I.inv j1	Histogram (distribution barchart, down the page) (I.inv requires J9.6)	Expression	Data			
 (*./\ '0' = d)} d,:' '	Replace leading zeros with spaces in d	Expression	Text	blanks nulls zeroes nils naughts noughts 0s falses falsehoods start beginning		
+{{ for_j. i. # y do. y =. y <. j ({"1 +/ {) y end. }} n2	Shortest path length matrix from weighted adjacency matrix n2, using Floyd-Warshall	Block Function	Graph Theory	roy wfi directed transitive closure algorithm pathfinding search lengths dense edges vertices follow connections	https://code.jsoftware.com/wiki/Essays/Floyd	
 (I. i1) +//. n	Sums (+´) of sublists of n with lengths given by i1	Expression	Data	segmented partitioned sub-vectors		
 1:`(<: ((0,]) + [ * ],0:) $:@<:)@.* i0	Stirling numbers of the first kind s(i0,k) for all k	Expression	Combinatorics		https://code.jsoftware.com/wiki/Essays/Stirling_Numbers	
 (z e. y)} z,:x	Replace all occurrences of elements from y in array z with x	Block Function	Structural	substitute merge amend update cells items		
@@ -596,6 +597,13 @@ AlphaNum_j_ -.~ d1	Remove non-alphanumeric ASCII characters	Tacit	Text	punctuati
 (~. #~ (= >./)@(#/.~)) y	Modes: Most frequent major cells of data	Tacit	Statistical	average items elements		
 (~. y) #~ (= >./) #/.~ y	Modes: Most frequent major cells of data	Expression	Statistical	average items elements		
 - +/ 2 (^. * ]) (#/. % #) y	Shannon entropy of array y	Expression	Statistical	informationtheory text message string		
+1 = i0 +. j0	Are i0 and j0 co-prime?	Tacit	Number Theory	coprime? relatively mutually testif		
+(= -: +/@(*"1 _ |:)) n2	Is square matrix n2 orthogonal?	Expression	Linear Algebra	testif Orthogonal?		
+' ' (] #~ (+./\. *. +./\)@:~:) d1	Remove leading and trailing spaces from d1 (stdlib: dltb)	Tacit	Text	trim left right blanks start beginning ending		
+(,: ' -' {~ ' ' ~: ]) d1	Underline non-spaces in a string	Tacit	Text	blanks wordunderlinewords wordunderscorewords		
+a1 (*. +. +. ([ #inv 2 </\ 0 , #) ]) b1	Indicate first one in each sublist of b1 indicated by starting mask a1	Tacit	Partitioning	sub-vector 1st		
+a1 ~:/\@(+. ([ #inv 2 ~:/\ 0 , #) ]) b1	State of switch when b1 turns on and a1 turns off (initially off)	Tacit	Partitioning	signal on/off		
+a1 ~:/\@(+. ([ #inv 2 ~:/\ 0 , #) ]) b1	Not leading zeroes (+./\) in each sublist of b1 indicated by starting mask a1	Tacit	Partitioning	zeros 0s falses falsehoods start beginning		
 a1 (] * * (] e. #) +/\@(<~ |.!.0)@]) b1	Groups of ones in b1 pointed to by at least one 1 in a1	Expression	Partitioning	runs sequences 1s indicated trues truths		
 (i.@! A. i.) n0	All permutations of ↕n0, as table rows in lexicographical order	Tacit	Combinatorics	combinatorics ordered orderings anagrams without replacement list		
 x +//.@(*/) y	Polynomial Product	Expression	Mathematical	Polynomial product, multiplying each term in one polynomial by each term in the other polynomial	https://code.jsoftware.com/wiki/Phrases/Polynomials	https://jsoftware.github.io/j-playground/bin/html2/#base64=MSAxIDFyMiArLy8uQCgqLykgMSAxcjM=
