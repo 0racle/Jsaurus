@@ -563,7 +563,15 @@ x (-. , -.~) y	Symmetric set difference: cells that appear in exactly one argume
 -. 1 (, # ,~) a1 (+. # [) b1	Any element true (+./) for each sublist of b1 indicated by starting mask a1	Expression	Boolean	sub-vector cell item ∨/¨a1⊂[1]b1		
 I. 0 = (|~ i.@>:) j0	All divisors of j0	Expression	Number Theory	factorisation factorization		
 i.@>.&.((m0 + c0 * ])inv) n0	Range starting at m0 with step size c0, ending before n0	Expression	Sequences	sequence interval		
+-: -/ , (* 1 1&|.) n2	Signed area of 2-dimensional polygon given by 2-column matrix n2	Expression	Geometric	triangle shape region size points coordinates shoelace surveyor's gauss's formula determinant		
 +/ I. 0 = (|~ i.@>:) j0	Sum of positive divisors of j0	Tacit	Number Theory	sigma σ(n)		
+*./ , (0 ~: b2) <: </~ i. # b2	Is b2 an upper triangular matrix without diagonal?	Expression	Linear Algebra	testif triangle NE northeast north-east table triangular? remove strict		
+*./ , (0 ~: b2) <: >/~ i. # b2	Is b2 a lower triangular matrix without diagonal?	Expression	Linear Algebra	testif triangle SW southwest south-west table triangular? remove strict		
+*./ , (0 ~: b2) <: <:/~ i. # b2	Is b2 an upper triangular matrix with diagonal?	Expression	Linear Algebra	testif triangle NE northeast north-east table triangular?		
+*./ , (0 ~: b2) <: >:/~ i. # b2	Is b2 a lower triangular matrix with diagonal?	Expression	Linear Algebra	testif triangle SW southwest south-west table triangular?		
+%: */ (0, n) - -: +/ n	Area of triangle with side lengths n	Expression	Geometric	Heron's formula herons		
+x ({."1@e.~ # ]) y2	Rows of non-empty table y starting with an element in x	Tacit	Selection	cell item table		
+m1 (+/@:*"1%+/@[) n2	Weighted average of rows of n2 with column weights m1	Tacit	Data			
 (I. i1) (] ({~ /:) {~) /: y	Grade up (/:) for sorting subarrays of y having lengths i1 (#y ↔ +/i1)	Expression	Ordering	sub-arrays sub-vectors subvectors substrings sub-strings		
 (I. i1) (] ({~ /:) {~) \: y	Grade down (\:) for sorting subarrays of y having lengths i1 (#y ↔ +/i1)	Expression	Ordering	sub-arrays sub-vectors subvectors substrings sub-strings		
 (* =@i.@#) n1	Diagonal numeric matrix with n1 along diagonal	Block Function	Linear Algebra	cells items table		
