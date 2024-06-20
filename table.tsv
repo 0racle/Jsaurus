@@ -570,7 +570,7 @@ i.@>.&.((m0 + c0 * ])inv) n0	Range starting at m0 with step size c0, ending befo
 ((* =@i.@#)@(#\) { x0, ]) y1	Diagonal matrix of x0, with y1 along diagonal	Block Function	Linear Algebra	cells items table		
 (-@i.@# |."0 1 # {."1 ,.) y1	Diagonal matrix with y1 along diagonal (uses y1's fill value for matrix)	Block Function	Linear Algebra	cells items table		
 (#"1~ +./@(' ' ~: ])) d2	Remove blank columns	Block Function	Text	all-space allspace empty remove delete drop space without		
-(' ' = d2)} d2 ,: '-'	Replace all spaces with dashes in d	Expression	Text	blanks substitute format		
+(' ' = d2)} d2 ,: '-'	Replace all spaces with dashes in d2	Expression	Text	blanks substitute format		
 m0 + c0 * i. >: >. c0 %~ n0 - m0	Range starting at m0 with step size c0, ending after n0	Expression	Sequences	sequence interval		
 m0 + c0 * i. >: <. c0 %~ n0 - m0	Range starting at m0 with step size c0, ending at or before n0	Expression	Sequences	sequence interval		
 i0 (!@] % [ *&! -~) j0	Number of unordered selections (combinations) of i0 items from j0 choices	Tacit	Combinatorics	exclamation bang shriek binomial combinatorics countcombinations choose unordered selecting picking outof nCk C(n,k)		
@@ -592,19 +592,29 @@ AlphaNum_j_ -.~ d1	Remove non-alphanumeric ASCII characters	Tacit	Text	punctuati
 {{ for_j. i. # y do. y =. y <. j ({"1 +/ {) y end. }} n2	Shortest path length matrix from weighted adjacency matrix n2, using Floyd-Warshall	Block Function	Graph Theory	roy wfi directed transitive closure algorithm pathfinding search lengths dense edges vertices follow connections	https://code.jsoftware.com/wiki/Essays/Floyd	
 (I. i1) +//. n	Sums (+´) of sublists of n with lengths given by i1	Expression	Data	segmented partitioned sub-vectors		
 1:`(<: ((0,]) + [ * ],0:) $:@<:)@.* i0	Stirling numbers of the first kind s(i0,k) for all k	Expression	Combinatorics		https://code.jsoftware.com/wiki/Essays/Stirling_Numbers	
+1:`(i.@>: ((0,]) + [ * ],0:) $:@<:)@.* i0	Stirling numbers of the second kind S(i0,k) for all k	Expression	Combinatorics		https://code.jsoftware.com/wiki/Essays/Stirling_Numbers	
 (z e. y)} z,:x	Replace all occurrences of elements from y in array z with x	Block Function	Structural	substitute merge amend update cells items		
 +/ m ^/~ I. 0 = (|~ i.@>:) j0	Sum of m'th powers of positive divisors of j0	Expression	Number Theory	sigma_x sigma_2 sigma_3 sigma_4 sigmax sigma2 sigma3 sigma4 σₓ(n) σ₂(n) σ₃(n) σ₄(n)		
 (~. #~ (= >./)@(#/.~)) y	Modes: Most frequent major cells of data	Tacit	Statistical	average items elements		
 (~. y) #~ (= >./) #/.~ y	Modes: Most frequent major cells of data	Expression	Statistical	average items elements		
 - +/ 2 (^. * ]) (#/. % #) y	Shannon entropy of array y	Expression	Statistical	informationtheory text message string		
+(+/ % # - 1:)&.(*~)@(- +/ % #) n1	Sample standard deviation	Tacit	Statistical	stddev σ sigma SD empirical		https://jsoftware.github.io/j-playground/bin/html2/#base64=RiA9OiAoKy8gJSAjIC0gMTopJi4oKn4pQCgtICsvICUgIyk=
+(+/ % #)&.(*~)@(- +/ % #) n1	Theoretical standard deviation	Tacit	Statistical	stddev σ sigma SD		https://jsoftware.github.io/j-playground/bin/html2/#base64=RiA9OiAoKy8gJSAjKSYuKCp+KUA6KC0gKy8gJSAjKQ==
+i0 (+/ % #) {{ u (y - u y) ^ x }} n1	i0'th moment of n1	Tacit	Statistical			
 1 = i0 +. j0	Are i0 and j0 co-prime?	Tacit	Number Theory	coprime? relatively mutually testif		
 (= -: +/@(*"1 _ |:)) n2	Is square matrix n2 orthogonal?	Expression	Linear Algebra	testif Orthogonal?		
 ' ' (] #~ (+./\. *. +./\)@:~:) d1	Remove leading and trailing spaces from d1 (stdlib: dltb)	Tacit	Text	trim left right blanks start beginning ending		
 (,: ' -' {~ ' ' ~: ]) d1	Underline non-spaces in a string	Tacit	Text	blanks wordunderlinewords wordunderscorewords		
-a1 (*. +. +. ([ #inv 2 </\ 0 , #) ]) b1	Indicate first one in each sublist of b1 indicated by starting mask a1	Tacit	Partitioning	sub-vector 1st		
-a1 ~:/\@(+. ([ #inv 2 ~:/\ 0 , #) ]) b1	State of switch when b1 turns on and a1 turns off (initially off)	Tacit	Partitioning	signal on/off		
-a1 ~:/\@(+. ([ #inv 2 ~:/\ 0 , #) ]) b1	Not leading zeroes (+./\) in each sublist of b1 indicated by starting mask a1	Tacit	Partitioning	zeros 0s falses falsehoods start beginning		
+a1 (*. +. +. ([ #inv 2 </\ 0, #) ]) b1	Indicate first one in each sublist of b1 indicated by starting mask a1	Tacit	Partitioning	sub-vector 1st		
+-:@(+/)@((<. , >.)@(-:@<:@#) { /:~) n1	Median of non-empty n1, averaging two values for even lengths	Tacit	Statistical	average	https://code.jsoftware.com/wiki/Addons/stats/base/univariate#median	https://jsoftware.github.io/j-playground/bin/html2/#base64=bG9hZCAnc3RhdHMn
+a1 ~:/\@(+. ([ #inv 2 ~:/\ 0, #) ]) b1	State of switch when b1 turns on and a1 turns off (initially off)	Tacit	Partitioning	signal on/off		
+a1 ~:/\@(+. ([ #inv 2 ~:/\ 0, #) ]) b1	Not leading zeroes (+./\) in each sublist of b1 indicated by starting mask a1	Tacit	Partitioning	zeros 0s falses falsehoods start beginning		
 a1 (] * * (] e. #) +/\@(<~ |.!.0)@]) b1	Groups of ones in b1 pointed to by at least one 1 in a1	Expression	Partitioning	runs sequences 1s indicated trues truths		
+a1 (<: *. >: -.@([ #inv 2 </\ 0, #) -.@]) b1	Not first zero in each sublist of b1 indicated by starting mask a1	Tacit	Partitioning	segmented partitioned 1st		
+c1 (-.@e.~ {{ (1, 2 </\ x) <;.1&(x&#) y }} ]) d1	Split list d1 at any sequence of characters in c1	DirectDef	Text	cut chop divide linebreak newline carriagereturn crnl crlf linefeed vec2vtv separate chunk list dividing segments partitions		
+(|.~ (2 -@<.@%~ [: +/ ' ' *./\@:= |.))"1 d2	Center flush left character array	Tacit	Text	centre align		
+{{ +./ (1 ,: y) *. 3 4 =/ +/ y |.~ ,/ ,"0/~ i: 1 }} b2	Conway's Game of Life: next generation	DirectDef	Recreational	gol conways cellularautomaton sub-array		
+c1 {:@((#@] # 0:) ]F..(] >. [ >./\@:+ |.!.0@]) =/) d1	Length of longest common substring	Tacit	Text	fuzzy match lcs		
 (i.@! A. i.) n0	All permutations of ↕n0, as table rows in lexicographical order	Tacit	Combinatorics	combinatorics ordered orderings anagrams without replacement list		
 x +//.@(*/) y	Polynomial Product	Expression	Mathematical	Polynomial product, multiplying each term in one polynomial by each term in the other polynomial	https://code.jsoftware.com/wiki/Phrases/Polynomials	https://jsoftware.github.io/j-playground/bin/html2/#base64=MSAxIDFyMiArLy8uQCgqLykgMSAxcjM=
 (%: %~ 0j2p1&% ^@* */~@i.)@# y	Fourier basis	Expression	Mathematical	Fourier basis, representing the fundamental frequencies associated with a sequence of samples	https://code.jsoftware.com/wiki/Guides/Fourier_Transform	https://jsoftware.github.io/j-playground/bin/html2/#base64=KCU6ICV+IDBqMnAxJiUgXkAqICovfkBpLikgNA==
