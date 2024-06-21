@@ -108,6 +108,8 @@ i. # $ y	All axes of array y	Expression	Indices	dimensions
 -. 2 | j	Is j even?	Expression	Combinatorics			
 1 | | n	Magnitude of fractional part of n	Expression	Arithmetic	absolutedecimals		
 ,:^:(0 >. n - #@$) y	Increase rank of y to at least n by adding leading axes	Expression	Structural	number of dimensions 2D axes matrify matricise matricize make		
+x ,:@]^:(0 >. -&(#@$)) y	Increase rank of y to rank of x	Tacit	Structural	conform align number dimensions axes		
+i0 ,:@]^:((> * -) #@$@]) y	Increase rank of y to i0	Tacit	Structural	number dimensions axes		
 }. $ y	Dimensions of major cells	Expression	Array	shape items elements axes		
 }: $ y	Lengths of leading axes	Expression	Array	shape dimensions start beginning		
 =~ y	Ones, same shape and structure	Expression	Data	1s trues truths		
@@ -191,7 +193,9 @@ F/ , y	Fold F over all elements without respect to shape	Expression	Function App
 <./\ n	Column-wise progressive minima	Tacit	Data	running cumulative scan columnwise vertically		
 ~:/\ b	Convert reflected Gray code to binary	Tacit	Boolean	flip change changing inverting negating bitmask bit-mask base-2 base2 mask Conversion converting change changing		
 ~:/\ b	Parity: Connect odd and even ones	Tacit	Boolean	flip change changing inverting negating bitmask bit-mask 1s running trues truths mask		
+<~/\.&.|. b	Indicate 1s preceded by an even number of 1s in their group	Tacit	Partitioning	indicating flipping turning change changing inverting negating bitmask bit-mask zeros zeroes falses ones trues truths falsehoods 1st mask		
 n * ¯1 ^ a	Change sign of n where a is 1	Expression	Arithmetic	signum conditionalnegation changing converting conversion element-wise		
+10&^ n	Common anti-logarithm	Tacit	Arithmetic	log⁻¹() log^1() lg⁻¹() lg10^1() log10⁻¹() log10^1() lg10⁻¹() lg10^1() log₁₀⁻¹() log₁₀^1() lg₁₀⁻¹() lg₁₀^1() antilogarithm		
 ^&3 n	Cube	Tacit	Arithmetic	³ ^3		
 3&%: n	Cube Root	Tacit	Arithmetic	squareroot cbrt ³√ ∛ ^0.333 ^.333 ^(1/3)		
 -. x e. y	Boolean elements in x that are not in y	Expression	Search	isnotin membership notcontainedin hasn't doesnothave elementof ∉ cells elements binary base-2 base2		
@@ -243,7 +247,11 @@ F&.|: y	Apply action F defined on rows to columns instead	Tacit	Function Applica
 expr [ name =. y	Combining two lines into one	Expression	Syntax	lev lefttack where		
 o. 2	tau (2 pi)	Constant	Mathematical	Palais'circleconstant Palais'constant Palaisconstant 6.283185307179586476925286766559006 τ 𝜏		
 n + m * 0 = n	Replace zeroes in n with corresponding elements of m	Expression	Data	substitute merge amend replace update 0s zeros cells items falses falsehoods		
-1 + 2 * i. j0	Odd integers from 1 to 2×j0	Expression	Sequences	numbers 1st		
+,/ a */ b	Expand a by replacing 1s with same-rank array b, and 0s with 0×b	Expression	Structural	nest fractal replace copies		
+1 _1 */ n	±n as two major cells of the result	Expression	Arithmetic	plusminus dimensions axes		
+_1 1 */ n	∓n as two major cells of the result	Expression	Arithmetic	minusplus dimensions axes		
+m0 (+ , -) n0	m0±n0	Tacit	Arithmetic	plusminus		
+m0 (- , +) n0	m0∓n0	Tacit	Arithmetic	minusplus		
 m0 + n0 * i. j0	Arithmetic progression list: j0 elements starting at m0 with step n0	Expression	Sequences	list sequence seq() cells items		
 i0 ]\ i. # y	Moving width-i0 window of indices for array y	Expression	Indices			
 _128 + 256 | 128 + j	Convert from unsigned short integers to signed short integers	Expression	Fixed-Width	datarepresentation converting change changing		
@@ -261,6 +269,23 @@ i0 (] $~ [, #@] <.@% [) y1	Reshape y1 to i0-row table (truncated)	Tacit	Structur
 i0 (] $~ [,~ #@] >.@% [) y1	Reshape y1 to i0-column table (filled column-wise)	Expression	Structural	table vertically columnwise columns		https://jsoftware.github.io/j-playground/bin/html2/#base64=XSB5MSA9LiBfMjYgey4gQWxwaGFfal8KXSBpMCA9LiA0CgpSZiA9OiAoXSAkfiBbLCAjQF0gPi5AJSBbKSAgICBOQi4gUm93LXdpc2UgZmlsbGVkClJ0ID06IChdICR+IFssICNAXSA8LkAlIFspICAgIE5CLiBSb3ctd2lzZSB0cnVuY2F0ZWQKQ2YgPTogKF0gJH4gWyx+ICNAXSA+LkAlIFspICAgTkIuIENvbHVtbi13aXNlIGZpbGxlZApDdCA9OiAoXSAkfiBbLH4gI0BdIDwuQCUgWykgICBOQi4gQ29sdW1uLXdpc2UgdHJ1bmNhdGVkCgooJ1JmJzsnUnQnOydDZic7J0N0JykgLDogaTAgKFJmO1J0O0NmO0N0KSB5MQoKUncgPTogKChAKFsgLCAjQF0gJSBbKSkgJCBdKSAgTkIuIFJvdy13aXNlIGFkdmVyYgpDdyA9OiAoKEAoWyAsfiAjQF0gJSBbKSkgJCBdKSBOQi4gQ29sdW1uLXdpc2UgYWR2ZXJiCgooJz4uUncnOyc8LlJ3JzsnPi5Ddyc7JzwuQ3cnKSAsOiBpMCAoKD4uUncpOyg8LlJ3KTsoPi5Ddyk7KDwuQ3cpKSB5MQ==
 i0 (] $~ [,~ #@] <.@% [) y1	Reshape y1 to i0-column table (truncated)	Expression	Structural	table vertically columnwise columns		https://jsoftware.github.io/j-playground/bin/html2/#base64=XSB5MSA9LiBfMjYgey4gQWxwaGFfal8KXSBpMCA9LiA0CgpSZiA9OiAoXSAkfiBbLCAjQF0gPi5AJSBbKSAgICBOQi4gUm93LXdpc2UgZmlsbGVkClJ0ID06IChdICR+IFssICNAXSA8LkAlIFspICAgIE5CLiBSb3ctd2lzZSB0cnVuY2F0ZWQKQ2YgPTogKF0gJH4gWyx+ICNAXSA+LkAlIFspICAgTkIuIENvbHVtbi13aXNlIGZpbGxlZApDdCA9OiAoXSAkfiBbLH4gI0BdIDwuQCUgWykgICBOQi4gQ29sdW1uLXdpc2UgdHJ1bmNhdGVkCgooJ1JmJzsnUnQnOydDZic7J0N0JykgLDogaTAgKFJmO1J0O0NmO0N0KSB5MQoKUncgPTogKChAKFsgLCAjQF0gJSBbKSkgJCBdKSAgTkIuIFJvdy13aXNlIGFkdmVyYgpDdyA9OiAoKEAoWyAsfiAjQF0gJSBbKSkgJCBdKSBOQi4gQ29sdW1uLXdpc2UgYWR2ZXJiCgooJz4uUncnOyc8LlJ3JzsnPi5Ddyc7JzwuQ3cnKSAsOiBpMCAoKD4uUncpOyg8LlJ3KTsoPi5Ddyk7KDwuQ3cpKSB5MQ==
 , x1 ,. y1	Merge equal-length lists x1 and y1 alternately	Expression	Structural	faro weave dovetail zipper zipping merge interweave interweaving interleave interleaving shuffle shuffling meshing lists zip()		
+{. 0 $ y	Fill element of y	Expression	Structural	fillelement padding 0s zeroes type cell item blanks falses falsehoods		
+{: , y	The last element of y	Expression	Selection	cell element		
++@- n	Negate real part (“real conjugate”)	Tacit	Complex Numbers			
+-@+ n	Mirror complex n across y-axis	Tacit	Complex Numbers	negatereal mirroring reflecting reflection		
+m *@- n	Sign of difference (¯1:m is smaller, 0:m=n, 1:m is bigger)	Tacit	Data	signum cmp() <=> >-< spaceship space-ship three-way compare comparing comparison		
+m <.@% n	Integer Division	Tacit	Arithmetic	intdiv() ≢ // divmod()		
+i.@# y	Indices of Major Cells of y	Tacit	Indices	enumerate number count items elements		
+i.@# y2	All row indices of table y2	Tacit	Indices	enumerate rows table		
+m0 (#: i.)@, n0	Catalogue of all pairs from ↕m0 and ↕n0	Tacit	Indices	pairings tuples table matrix		
+(#: i.) $ y	All indices of y, as a matching-shape array	Tacit	Indices	indicesof		
+m |@- n	Absolute distance between x and y	Tacit	Geometric	magnitudeof cartesian		
+_2 ]\ y1	Reshape list y1 into a two-column table (fills if too short)	Expression	Structural	2-column table list		
+(= +) n	Is n a real number?	Tacit	Complex Numbers	testif		
+(= <.) n	Is n integer?	Tacit	Arithmetic	testif whole number?		
+(~: +) n	Is n complex but not real?	Tacit	Complex Numbers	testif		
+(- -.) n	Convert 0 to 1 and 1 to -1 with a linear transformation	Tacit	Arithmetic	affine unit interval boolean sign reverse negative		
+(1 - m) * n	Probabilistic converse nonimplication	Expression	Statistical	fuzzy probability chance ⇍ Mpq		
 (<~ |.!.0) b	Boolean first ones in each group of ones	Tacit	Partitioning	beginningsofruns trues truths 1st binary base-2 base2 runs sequences blocks		
 (%~ i) j0	Start points when [0,1) is split into j0 intervals	Tacit	Sequences	unit normalized steps linear divide		
 i. >: j0	Integers from 0 to j0 inclusive	Expression	Sequences	unsigned natural whole numbers additional extra		
@@ -271,14 +296,13 @@ i0 ({.~ -)~ y	Pad y1 on the left to width i0	Tacit	Structural	extend left-align 
 x ($@[ $ ,@]) y	Array with shape of x and content of y	Tacit	Structural	reshape mould mold form fill		
 i1 (</.~ I.)~ y	Cut y into partitions of length i1 (+/i1 ↔ #y)	Tacit	Structural	chop split separate chunks segments		
 (- -.) n1	Convert range [0,1] to [-1,1] with a linear transformation	Tacit	Arithmetic	affine unit interval boolean sign		
+m * 1 - n	Probabilistic nonimplication	Tacit	Statistical	fuzzy probability chance abjunction ⇏ not butnot Lpq		
 (> 1 |.!.0 ]) b	Boolean last ones in each group of ones	Tacit	Partitioning	endsofruns 1s trues truths binary base-2 base2		
 (* |) n	Square without changing sign	Tacit	Arithmetic	remove change converting conversion		
 m *&-. n	Probabilistic NOR	Tacit	Statistical	fuzzy probability chance peirce'sarrow quine'sdagger ampheck neithernor jointdenial Xpq ⊽		
 x -:&(/:~) y	Are x and y permutations of each other?	Tacit	Data	testif permutation? permutationof?		
 ];.0 y2	Rotate 180°	Tacit	Structural	turning rotating rotation half-turn halfturn		
 j0 {. I.inv i	Boolean list of length j0 with ones in locations i (I.inv requires J9.6)	Expression	Boolean	inversion 1s trues truths list binary base-2 base2		
-1 _1 */ n	±n as two major cells of the result	Expression	Arithmetic	plusminus dimensions axes		
-_1 1 */ n	∓n as two major cells of the result	Expression	Arithmetic	minusplus dimensions axes		
 (# # ,:) y1	Square matrix with y1 as rows	Tacit	Structural	tomatrixof table		
 (#"0~ #) y1	Square matrix with y1 as columns	Tacit	Structural	tomatrixof table		
 +/ a1 * n1	Summation over subsets of n1 specified by a1	Expression	Partitioning			
@@ -316,10 +340,20 @@ _1 + m %: 1 + n	Annual rate to modal rate	Expression	Finance
 x i. y	Index of first occurrence in x of any cell of y	Primitive	Search	cell element find locate 1st position find location		
 (-: ~.) y	Are all major cells of y distinct?	Expression	Search	testif alldifferent? allunequal? noduplicates? nodups? items elements alldistinct? allunique?		
 *./ x1 e. y1	Is x1 a subset of y1?	Expression	Sets	testif subset? containedin ⊆		
++./ x1 e. y1	Do x1 and y1 have any elements in common?	Expression	Search	testif anyshared? anycommon? cells items		
+i1 e. +/\ b1	Mask to get sublists with indices i1 as indicated by b1	Expression	Selection	sub-vectors masking indicating bitmask bit-mask		
 (i.~ /:~) y	Rank y ascending; tied cells share the lowest rank	Tacit	Ordering	rising up ordinals cardinals list minrank		
 (i.~ \:~) y	Rank y descending; tied cells share the lowest rank	Tacit	Ordering	falling down ordinals cardinals list minrank		
 x (|.@[ i. ]) y	Last indices in x of major cells y, counted from the rear	Tacit	Search	indexin indexof find locate positionof locating items elements location		
 #/.~ y	Count of occurrences of each unique major cell	Expression	Data	elements items how many repetitions times repeated occurrences statistics items elements		
+>./ x i. y	Index of last occurrence in x of any major cell of y	Expression	Search	element find locate location indexin indexof positionof locating cells items		
+<./ x i. y	Index of first occurrence in x of any major cell of y	Expression	Search	element find locate 1st location indexin indexof positionof locating cells items		
+m1 F"1 n2	Apply F between list m1 and each row of n2	Tacit	Function Application	rank prefixargeement rows distribute rowwise row-wise list dimensions axes horizontally		
+x F"0 y	Run F on atoms	Tacit	Function Application	apply		
++/"1 n	Row-wise sum of n	Tacit	Data	summation enlargedsigma bigsigma capitalsigma ∑ Σ sum() horizontally rowwise		
+*/"1 n	Row-wise product of n	Tacit	Data	enlargedpi bigpi capitalpi ∏ Π horizontally rowwise		
+>./\"1 n	Row-wise progressive maxima	Tacit	Data	running cumulative scan rowwise horizontally		
+<./\"1 n	Row-wise progressive minima	Tacit	Data	running cumulative scan rowwise horizontally		
 x {.@/:@,&< y	Is x lexically greater than y?	Tacit	Ordering	testif tao totalarrayordering after follows ≻ ⋠ ⋩ lexicographically succeeds		
 x {.@\:@,&< y	Is x lexically less than y?	Tacit	Ordering	testif totalarrayordering tao before precedes ≺ ⋡ ⋨ lexicographically		
 x {:@/:@,&< y	Is x lexically less than or equal to y?	Tacit	Ordering	testif tao totalarrayordering notafter precedesorequivalentto ≼ ⊁ lexicographically		
@@ -330,7 +364,10 @@ y ({~ \:) a1	Moving cells of y indicated by a1 to the start of y	Tacit	Structura
 1 >: # ~. n	Are all major cells of y identical?	Expression	Search	testif allsame? allequal? nounique? items elements allidentical allequal		
 (-: ~.) y	Are all major cells of y distinct?	Tacit	Search	testif alldifferent? allunequal? noduplicates? nodups? items elements alldistinct? allunique?		
 |:;.0 y	Reflect counter-diagonally	Expression	Structural	mirroring reflecting reflection counterdiagonally mirror		
+<"1 |: y2	Table to list of boxed column lists	Expression	Structural	split table lists into columns vertically column-wise columnwise boxed enclosed table matrix transforming transformation change changing into inverting inversion		
+|:@+ n2	Conjugate Transpose	Tacit	Linear Algebra	self-adjoint selfadjoin Yᴴ y^H y† y^† Aᴴ a^H a† a^�		
 (-: |:) y2	Is y2 a symmetric matrix?	Tacit	Linear Algebra	testif		
+'name1 name2' =. name2;name1	Swap variable values	Expression	Assignment	leftarrow get are copula let redefine redefining list renaming denote mean unpacking redistributing redistribution vector exchange exchanging swapping variables		
 32 + 1.8 * n	Celsius to Fahrenheit	Expression	Specialty	°Fahrenheit °Celsius f2c() ftoc() converting change changing		
 o. m * n	Area of cone with height m and radius n, excluding base	Expression	Geometric	lengths bottom		
 <. 0.5 + n	Round to nearest integer, ties towards ∞	Expression	Rounding	precision favoring whole number favoring closestinteger nearestinteger nint()		https://jsoftware.github.io/j-playground/bin/html2/#base64=RiA9OiB7eyA8LiAwLjUgKyB5IH19ICAgICAgIE5CLiBEaXJlY3REZWYKRyA9OiA8LkArJjAuNSAgICAgICAgICAgICAgIE5CLiBUYWNpdAowIDEgLTogRiAwLjQgMC41ICAgICAgICAgICAgTkIuIHRpZXMgdG93YXJkcyDiiJ4KbiA9LiArLyA/IHw6IDEwMDAgJCAsOjAsMTAgIE5CLiBtb3JlIHNhbXBsZSBkYXRhCihGIC06IEcpIG4gICAgICAgICAgICAgICAgICBOQi4gRG8gcmVzdWx0cyBtYXRjaD8=
@@ -352,12 +389,21 @@ o. *: n	Area of circle with radius n	Expression	Geometric	length
 97 -~ a. i. d	Convert lowercase letters to their positions in the alphabet	Expression	Text	nth ordinals Conversion converting change changing		
 ''''	Quote character	Constant	Text	apostrophe ’ U+27 0x27 ≢27 quotationmark prime singlequoted in string symbol escape literal		
 (a * i1) }. y	Conditional drop of i1 elements from array y only if a is true	Expression	Structural	major cells items delete remove without		
+; <@<\\. y1	All boxed slices of y1 ordered by starting index (excl. 0-length slices)	Expression	Selection	sub-strings substrings sub-vectors sub-sequences subsequences segmented sub-lists partitioned sublists		
 (a1 + 1) # y	Duplicate y cells where indicated by a1	Expression	Structural	replicate double items elements		
+}. , x0 ,. y2	Table to list using x0 as delimiter	Expression	Structural	vectorise vectorize serialise serialize list table		
 }. x0 ,. y1	Insert x0 in between each pair of elements of list y1	Expression	Structural	combine merge list string character joiner joining merging combining		
 {. 1 {. 0 $ ,: y	Convert to fill element, replacing numbers with 0 and characters with space	Expression	Structural	prototype ⍷ datatypeof 0s zeroes spaces blanks zeros falses falsehoods		
 1 |. (~: |.!.'') y	Which elements differ from next ones	Expression	Data	testif neighbouring neightbors neighboring neighbours neighbors righthand cells items 1s trues truths		
 1 |. (~: |.!.'') y	Indicate end of each group of consecutive equal elements	Expression	Partitioning	runs sequences Boolean major cells items indicate masking indicating trailing binary base-2 base2		
+2 * (,~ i.) j0	Even integers from 0 to 2×j0	Expression	Sequences	numbers 1st		
+1 + 2 * i. j0	Odd integers from 1 to 2×j0	Expression	Sequences	numbers 1st		
 (-i0) {. 1 $~ j0	Suffix List: length i0 with j0 ones on the right, the rest zeroes	Expression	Sequences	1s 0s zeros Is𝕩Js falses falsehoods trues truths		
+1, 2 ~:/\ y1	Which elements differ from previous ones	Expression	Data	testif neighboring neighbours neighbors lefthand cells items 1s trues truths		
+1, 2 ~:/\ y1	Indicate start of each group of consecutive equal elements	Expression	Partitioning	runs sequences Boolean major cells items indicate masking indicating starting starts beginnings leading binary base-2 base2		
+(- |.!.0) I. y	Segment lengths given the number of segments that end at each position	Expression	Partitioning	chunk trailing converting change changing segments partitions		
+i0 |.!.'' y1	Shift y1 left by i0, padding with fill element on right	Tacit	Selection	leftshift list		
+(-i0) |.!.'' y1	Shift y1 right by i0, padding with fill element on left	Tacit	Selection	rightshift list		
 -. i e.~ i. j0	Boolean list of length j0 with zeros in locations i	Expression	Boolean	zeroes 0s falses falsehoods list binary base-2 base2		
 >./~ i. j0	Maximum table of 0…j0-1	Expression	Arithmetic	matrix		
 =/~ i. j0	Identity matrix of order j0	Expression	Linear Algebra	unitmatrix table		
@@ -366,9 +412,23 @@ o. *: n	Area of circle with radius n	Expression	Geometric	length
 >/~ i. j0	Lower triangular matrix without diagonal: j0 by j0	Expression	Linear Algebra	triangle SW southwest south-west table remove strict		
 <:/~ i. j0	Upper triangular matrix with diagonal: j0 by j0	Expression	Linear Algebra	triangle NE northeast north-east table		
 >:/~ i. j0	Lower triangular matrix with diagonal: j0 by j0	Expression	Linear Algebra	triangle SW southwest south-west table		
+*/ }. $ i. y	Number of elements in a major cell of y	Expression	Array	shape items		
+*/ }: $ i. y	Number of rows (1-cells) in array y	Expression	Array	list		
+-/ m1 * |: n1	Scalar cross product of 2-dimensional vectors m1 and n1	Expression	Geometric	vectorproduct signed area parallelogram		
++/ *: n1	Sum of squares of n1	Expression	Data	∑x² Σx² sum(x^2) Pythagorean trigonometry		
+3 %~ */ n1	Volume of pyramid with height, width, length n1	Expression	Geometric	lengths sides		
++/ , x0 = y	Number of occurrences of atom x0 in array y	Expression	Search	count tally		
+=. *./ , b	Not all true?	Expression	Boolean	notall somenot all?		
+-. +./ , b	Are none true?	Expression	Boolean	testif theredoesnotexist ∄		
++/@:| n	Sum of magnitude of n	Expression	Data	absolutesummation sumabs		
+>./@:| n	Infinity-norm	Tacit	Geometric	L∞-normal L-∞ ℓ∞ ℓ-∞ Linf		
+(+ %)/ n	Evaluate continued fraction with terms n	Tacit	Mathematical	series sequence		
++/&.:% n1	Ohm's Law: resistance of parallel resistors/capacitance of serial capacitors	Tacit	Specialty	electronics electrics circuits Ω series inparallel		
+*./"1 x2 = y0	Boolean rows of x2 all equal to unit y0	Expression	Search	findall lookup binary base-2 base2 compare equality match		
 +./"1 x0 ~: y2	Do rows of y2 contain elements differing from x0?	Expression	Search	testif hasdifferent cells items		
 ,/ i0 # ,: y	Repeat all of y i0 times along the first axis	Expression	Structural	duplicate copying extending recycling recycle list		
 (-: [/\) y	Are all major cells of y identical?	Tacit	Search	testif allsame? allequal? nounique? items elements allidentical allequal		
+(+/\ a1) </. y	Partitioned y at 1s in a1 along first axis	Expression	Selection	chop split cut separate chunk sub-vectors segmented sub-lists subvectors sublists dimension		
 +/ *./\ b1	Count of leading ones	Tacit	Boolean	1s trues truths at start beginning		
 % >: ^ - n	Logistic function, approaching 0 for small n and 1 for large n	Expression	Mathematical	standard sigmoid curve limited exponential population growth		
 >: <. i ^. j	Length to represent j in base i	Expression	Mathematical	width representation required digits positions	https://code.jsoftware.com/wiki/JPhrases/Representations	
@@ -379,23 +439,24 @@ c e.~ < d1	Is string d1 a member of list of boxed strings c	Expression	Search	is
 *./ x1 e.~ y1	Is x1 a superset of y1?	Expression	Sets	testif superset? contains ⊇		
 c i. < d1	Position of first occurrence of string d1 in list of boxed strings c	Expression	Search	indexin indexof vtv vector 1st		
 +/\^:2 i. j0	First j0 triangular pyramidal numbers	Expression	Sequences	figurative tetrahedral oeisA000292 oeisA292 1st		
+F`G@.(-. a0) y	Ternary: if a0 then apply F to y else apply G to y	Tacit	Function Application	conditionaloperator inlineiff ternaryiff ?:		
 x {~ /: /: y	Reorder x to match the ordering of y	Expression	Ordering	meshing sorting reordering ordering		
 1 = x I. y	Are cells of y within the range (x₀,x₁]?	Expression	Data	testif <y≤ <x≤ tao totalarrayordering interval inrange?		
 1 ~: x I. y	Are cells of y outside the range (x₀,x₁]?	Expression	Data	testif ≥y> ≥x> tao totalarrayordering interval outsiderange?		
 <"1 |: > y1	Invert list of boxed lists, so that element i of j of the result is j of i of y1. Shorter elems are padded with fill	Expression	Structural	transpose transposing vtv cell element 1st lists zip() remixing zipping merging interweave interweaving interleave interleaving shuffle shuffling meshing		
+1 3 |: m2 */ n2	Direct matrix product	Expression	Linear Algebra	table		
 32 }. 127 {. a.	Printable ASCII characters	Expression	Text	characters		
 f {{ (x`:6) y }} y	Function to apply gerund f to y as a function	Block Function	Function Application	call tacit dynamic value subject		
 1.8 %~ _32 + n	Fahrenheit to Celsius	Expression	Specialty	°Fahrenheit °Celsius c2f() ctof() converting change changing		
 m (*"1 _) n	Mid product of m and n	Tacit	Arithmetic	midproduct		
 Num_j_	The digits from 0 to 9	Constant	Text	123456789 numbers arabicnumerals 0-9 0123456789		
 26 }. Alpha_j_	The letters from a to z	Constant	Text	abcdefghijklmnopqrstuvwxyz latinalphabet englishletters uppercase a-z ABCDEFGHIJKLMNOPQRSTUVWXYZ		
-m0 (+ , -) n0	m0±n0	Tacit	Arithmetic	plusminus		
-m0 (- , +) n0	m0∓n0	Tacit	Arithmetic	minusplus		
 (* m) * | n	Transfer sign, n with the sign of m	Expression	Data	signum resign		
 1 ({. ; }.) y	First element (as list) and remaining elements, returns boxed list	Expression	Structural	headtail split divide separate dividing leading		
 i0 ({. ; }.) y	First and last i0 major cells of y	Tacit	Structural	headtail split divide separate dividing first leading remaining		
 m ([ - |) n	Largest whole multiple of m less than or equal to n (n rounded down to closest smaller multiple of m)	Tacit	Data	without less nodivisionremainder bar() noresidual intmultiples smaller ≤ integer unit floor		
 i0 { I. x e. ,: y	Position of the i0'th instance of y in x	Expression	Search	nthindexin nthindexof nthposition		
+1 , y	Preface a row of 1s	Expression	Data	ones trues truths		
 (%~ i.@>:) j0	Endpoints when [0,1] is split into j0 intervals (including 0 and 1: j0+1 total)	Tacit	Sequences	unit normalized steps linear divide		
 (}: , F@{:) y	Apply function F to last cell of y	Tacit	Function Application	onlast item element		
 x _1:} y	Replace last major cell of y with x	Expression	Structural	substitute merge amend replace update item element		
@@ -411,9 +472,11 @@ m ({. =@i.@]) n	Diagonal matrix of size m×n	Tacit	Linear Algebra	mono-diagonal 
 +/ */\ x ~: y	Count number of leading elements that are unequal	Expression	Search	different onleft cells items start beginning		
 +/ *./\ |. b1	Count of trailing ones	Expression	Boolean	0s zeroes falses at end		
 +/\ +/\ i. j0	First j0 figurate numbers	Expression	Sequences	1st		
+10&^. n	Common logarithm	Tacit	Arithmetic	log() log-10 log10() 10-log₁₀() lg() lg-10 lg10() 10-lg₁₀()		
 x (e. # [) y	Intersection: major cells of x that appear in y	Tacit	Sets	setand items elements		
 x0 ,@,. y1	Insert x0 before each element of y1	Tacit	Structural	cell item		
 x0 ,@,.~ y1	Insert x0 after each element of y1	Tacit	Structural	cell item		
+x *./@:="1 y1	Compare list y1 with rows of array x	Tacit	Search	list compare equality match		https://jsoftware.github.io/j-playground/bin/html2/#base64=XSB5MSA9LiA+OiBpLiAzCl0geCAgPS4gKCsvfiAxMCAkIF0pIGkuIDMKeCAqLi9AOj0iMSB5MQ==
 x F^:(i. >: y0) z	Apply F y0 times to z, returning initial value z and all intermediate results	Tacit	Function Application	apply application repeated converge repeating looping power intermediaries intermediate all sequence		
 y #~ 5 > /: /: y	The i0 smallest cells of y in order of occurrence	Expression	Ordering	least items elements		
 y #~ 5 > /: \: y	The i0 largest cells of y in order of occurrence	Expression	Ordering	biggest greatestif items elements		
@@ -422,11 +485,13 @@ y #~ 5 > /: \: y	The i0 largest cells of y in order of occurrence	Expression	Ord
 /:"1~&.|:"2 y	Sort each column in ascending order	Tacit	Ordering	up increasing sorting reordering ordering		
 *./127 > 3 u: 7 u: d	Is string d ASCII-only?	Expression	Text	plain exclusively		
 (2 * o. 1) * n	Circumference of circle with radius n	Expression	Geometric	edge length		
+180p_1 * n	n Radians in Degrees	Expression	Trigonometry		https://code.jsoftware.com/wiki/User:Andrew_Nikitin/Angular	
 180p_1 %~ n	n Degrees in Radians	Expression	Trigonometry		https://code.jsoftware.com/wiki/User:Andrew_Nikitin/Angular	
 4p1 * n ^ 2	Area of sphere with radius n	Expression	Geometric	length ball	https://code.jsoftware.com/wiki/JPhrases/Geometry	
 4r3p1 * n ^ 3	Volume of sphere with radius n	Expression	Geometric	length ball	https://code.jsoftware.com/wiki/JPhrases/Geometry	
 *./ ' ' = d	Mask for blank columns	Expression	Text	spaces empty filter indicate masking indicating blanks bitmask bit-mask		
 i.&' '"1 d2	Indices of first space in each row of text table d2	Tacit	Search	1st blanks row-wise rowwise text horizontally		
+(* * m + |) n	Increase absolute value of n by m without change of sign	Expression	Data	adjust decrease magnitude preserve signum direction remove changing converting conversion		
 y #~ 0 = i0 | i. # y	Keep every i0'th major cell of y	Expression	Selection	nth element item		
 y #~ 0 ~: i0 | i. # y	Remove every i0'th cell of y (from 0th)	Expression	Selection	filter item element		
 y #~ 0 ~: i0 | #\ y	Remove every i0'th cell of y (after 0th)	Expression	Selection	filter item element		
@@ -435,6 +500,8 @@ y #~ 0 ~: i0 | #\ y	Remove every i0'th cell of y (after 0th)	Expression	Selectio
 (<. , 1&|)  n0	Integral and fractional part of positive number	Tacit	Mathematical	parts split whole decimals		
 (i. % <:) j0	j0 evenly spaced numbers starting at 0 and ending at 1	Tacit	Sequences	unit normalized steps linear divide inclusive		
 (%~ i.@>:) j0	Evenly spaced numbers starting at 0 and ending at 1 in j0 steps	Tacit	Sequences	unit normalized steps linear divide inclusive		
+x0 (I. b1) y1	Replace elements of y1 with x0 where b1 is 1 ((#y1) {:I.b1)	Tacit	Structural	substitute merge amend replace update major cells items indicate masking indicating		
+% >: +/~ j0	Hilbert matrix of order j0	Expression	Linear Algebra	table sorting reordering ordering		
 (+/ % #) n	Arithmetic mean of n	Tacit	Statistical	average arithmeticmean() AM() avg() mean()		
 */ >: _ q: j0	Number of positive divisors of j0	Expression	Number Theory	sigma₀(n) tau(n) sigma0 σ₀(n) d(n) ν(n) τ(n) oeisA000005 oeisA5		
 1 = -/&i./ j1	Subdiagonal matrix of size j1	Expression	Linear Algebra	sub-diagonal		
