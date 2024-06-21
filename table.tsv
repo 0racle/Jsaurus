@@ -227,11 +227,12 @@ x i."1 y	Indices of elements of x in corresponding rows of x	Tacit	Search	indexi
 F&.|: y	Apply action F defined on rows to columns instead	Tacit	Function Application			
 |:"2 y	Transpose every submatrix of y	Tacit	Structural	cant ^T ⸆ ᵀ sub-matrix sub-table subtable planes		
 {. a.	Null character (NUL)	Constant	Text	\0 ^@ U+00 0x00h \u00 ≢00		
-10 { a.	Line Feed (LF)	Constant	Text	\n ^j U+0D 0x0Ah \u0A ≢0A newline linefeed		
+10 { a.	Line Feed (stdlib: LF)	Constant	Text	\n ^j U+0D 0x0Ah \u0A ≢0A newline linefeed		
 11 { a.	Vertical Tab character (VT)	Constant	Text	\v ^K U+00 0x00h \u00 ≢00 tabulation		
-12 { a.	Form Feed character (FF)	Constant	Text	\F ^L U+00 0x00h \u00 ≢00		
-127 { a.	Delete character (DEL)	Constant	Text	\e ^[ U+0A 0x0Dh \u0D ≢0D carriagereturn		
-13 { a.	Carriage Return character (CR)	Constant	Text	\r ^m U+0D 0x0Dh \u0D ≢0D carriagereturn		
+12 { a.	Form Feed character (stdlib: FF)	Constant	Text	\F ^L U+00 0x00h \u00 ≢00		
+127 { a.	Delete character (stdlib: DEL)	Constant	Text	\e ^[ U+0A 0x0Dh \u0D ≢0D carriagereturn		
+13 { a.	Carriage Return character (stdlib: CR)	Constant	Text	\r ^m U+0D 0x0Dh \u0D ≢0D carriagereturn		
+13 10 { a.	Carriage Return-Line Feed pair (stdlib: CRLF)	Constant	Text	\r\n U+0DU+0A 0x0D0x0A \u0D\u0A ≢0D≢0A enter linebreak windows		
 26 { a.	End-Of-File character (EOF)	Constant	Text	SUB ^z U+0A 0x0Dh \u0D ≢0D carriagereturn		
 27 { a.	Escape character (ESC)	Constant	Text	\e ^[ U+0A 0x0Dh \u0D ≢0D carriagereturn		
 7 { a.	Bell character (BEL)	Constant	Text	\a ^G U+07 0x07h \u07 ≢07 beep		
@@ -244,14 +245,21 @@ o. 2	tau (2 pi)	Constant	Mathematical	Palais'circleconstant Palais'constant Pala
 n + m * 0 = n	Replace zeroes in n with corresponding elements of m	Expression	Data	substitute merge amend replace update 0s zeros cells items falses falsehoods		
 1 + 2 * i. j0	Odd integers from 1 to 2×j0	Expression	Sequences	numbers 1st		
 m0 + n0 * i. j0	Arithmetic progression list: j0 elements starting at m0 with step n0	Expression	Sequences	list sequence seq() cells items		
+i0 ]\ i. # y	Moving width-i0 window of indices for array y	Expression	Indices			
 _128 + 256 | 128 + j	Convert from unsigned short integers to signed short integers	Expression	Fixed-Width	datarepresentation converting change changing		
+i. _1 {. $ y	Indices for trailing axes of y	Expression	Indices	shape dimension ending		
 x {.~ # y	Truncate x or extend with fills to have the same length as y	Expression	Structural	compatibility sameheight adjust column-wise columnwise table		
+<"_1 y	List of boxed major cells for any rank	Expression	Structural	vectorise vectorize list dimensions higher high-rank any-rank highrank anyrank items elements axes		
 -. 2 | I. j1	Alternating sequence of j1₀ ones, j1₁ zeros, j1₂ ones, …	Expression	Sequences	1s 0s zeroes naughts falses falsehoods trues truths		
 i. {: $ y2	All column indices of y2	Expression	Indices	enumerate columns		
 {. I. x ~: y	Index of first differing element in x and y	Expression	Search	indexin indexof find locate positionof unequal different 1st locating cell item difference location		
 0 = $ , y	Is y an empty array?	Expression	Structural	testif isempty? isvoid? isnull?		
 1 = # , y	Is y a singleton (array with only one element)?	Expression	Array	testif unit? sole? one?		
 i1 $ ,: y	Shape i1,$y array with copies of y for cells	Expression	Structural	copy repeat repetitions duplicate reshape		
+i0 (] $~ [, #@] >.@% [) y1	Reshape y1 to i0-row table (filled row-wise)	Tacit	Structural	table horizontally rowwise rows		https://jsoftware.github.io/j-playground/bin/html2/#base64=XSB5MSA9LiBfMjYgey4gQWxwaGFfal8KXSBpMCA9LiA0CgpSZiA9OiAoXSAkfiBbLCAjQF0gPi5AJSBbKSAgICBOQi4gUm93LXdpc2UgZmlsbGVkClJ0ID06IChdICR+IFssICNAXSA8LkAlIFspICAgIE5CLiBSb3ctd2lzZSB0cnVuY2F0ZWQKQ2YgPTogKF0gJH4gWyx+ICNAXSA+LkAlIFspICAgTkIuIENvbHVtbi13aXNlIGZpbGxlZApDdCA9OiAoXSAkfiBbLH4gI0BdIDwuQCUgWykgICBOQi4gQ29sdW1uLXdpc2UgdHJ1bmNhdGVkCgooJ1JmJzsnUnQnOydDZic7J0N0JykgLDogaTAgKFJmO1J0O0NmO0N0KSB5MQoKUncgPTogKChAKFsgLCAjQF0gJSBbKSkgJCBdKSAgTkIuIFJvdy13aXNlIGFkdmVyYgpDdyA9OiAoKEAoWyAsfiAjQF0gJSBbKSkgJCBdKSBOQi4gQ29sdW1uLXdpc2UgYWR2ZXJiCgooJz4uUncnOyc8LlJ3JzsnPi5Ddyc7JzwuQ3cnKSAsOiBpMCAoKD4uUncpOyg8LlJ3KTsoPi5Ddyk7KDwuQ3cpKSB5MQ==
+i0 (] $~ [, #@] <.@% [) y1	Reshape y1 to i0-row table (truncated)	Tacit	Structural	table horizontally rowwise rows		https://jsoftware.github.io/j-playground/bin/html2/#base64=XSB5MSA9LiBfMjYgey4gQWxwaGFfal8KXSBpMCA9LiA0CgpSZiA9OiAoXSAkfiBbLCAjQF0gPi5AJSBbKSAgICBOQi4gUm93LXdpc2UgZmlsbGVkClJ0ID06IChdICR+IFssICNAXSA8LkAlIFspICAgIE5CLiBSb3ctd2lzZSB0cnVuY2F0ZWQKQ2YgPTogKF0gJH4gWyx+ICNAXSA+LkAlIFspICAgTkIuIENvbHVtbi13aXNlIGZpbGxlZApDdCA9OiAoXSAkfiBbLH4gI0BdIDwuQCUgWykgICBOQi4gQ29sdW1uLXdpc2UgdHJ1bmNhdGVkCgooJ1JmJzsnUnQnOydDZic7J0N0JykgLDogaTAgKFJmO1J0O0NmO0N0KSB5MQoKUncgPTogKChAKFsgLCAjQF0gJSBbKSkgJCBdKSAgTkIuIFJvdy13aXNlIGFkdmVyYgpDdyA9OiAoKEAoWyAsfiAjQF0gJSBbKSkgJCBdKSBOQi4gQ29sdW1uLXdpc2UgYWR2ZXJiCgooJz4uUncnOyc8LlJ3JzsnPi5Ddyc7JzwuQ3cnKSAsOiBpMCAoKD4uUncpOyg8LlJ3KTsoPi5Ddyk7KDwuQ3cpKSB5MQ==
+i0 (] $~ [,~ #@] >.@% [) y1	Reshape y1 to i0-column table (filled column-wise)	Expression	Structural	table vertically columnwise columns		https://jsoftware.github.io/j-playground/bin/html2/#base64=XSB5MSA9LiBfMjYgey4gQWxwaGFfal8KXSBpMCA9LiA0CgpSZiA9OiAoXSAkfiBbLCAjQF0gPi5AJSBbKSAgICBOQi4gUm93LXdpc2UgZmlsbGVkClJ0ID06IChdICR+IFssICNAXSA8LkAlIFspICAgIE5CLiBSb3ctd2lzZSB0cnVuY2F0ZWQKQ2YgPTogKF0gJH4gWyx+ICNAXSA+LkAlIFspICAgTkIuIENvbHVtbi13aXNlIGZpbGxlZApDdCA9OiAoXSAkfiBbLH4gI0BdIDwuQCUgWykgICBOQi4gQ29sdW1uLXdpc2UgdHJ1bmNhdGVkCgooJ1JmJzsnUnQnOydDZic7J0N0JykgLDogaTAgKFJmO1J0O0NmO0N0KSB5MQoKUncgPTogKChAKFsgLCAjQF0gJSBbKSkgJCBdKSAgTkIuIFJvdy13aXNlIGFkdmVyYgpDdyA9OiAoKEAoWyAsfiAjQF0gJSBbKSkgJCBdKSBOQi4gQ29sdW1uLXdpc2UgYWR2ZXJiCgooJz4uUncnOyc8LlJ3JzsnPi5Ddyc7JzwuQ3cnKSAsOiBpMCAoKD4uUncpOyg8LlJ3KTsoPi5Ddyk7KDwuQ3cpKSB5MQ==
+i0 (] $~ [,~ #@] <.@% [) y1	Reshape y1 to i0-column table (truncated)	Expression	Structural	table vertically columnwise columns		https://jsoftware.github.io/j-playground/bin/html2/#base64=XSB5MSA9LiBfMjYgey4gQWxwaGFfal8KXSBpMCA9LiA0CgpSZiA9OiAoXSAkfiBbLCAjQF0gPi5AJSBbKSAgICBOQi4gUm93LXdpc2UgZmlsbGVkClJ0ID06IChdICR+IFssICNAXSA8LkAlIFspICAgIE5CLiBSb3ctd2lzZSB0cnVuY2F0ZWQKQ2YgPTogKF0gJH4gWyx+ICNAXSA+LkAlIFspICAgTkIuIENvbHVtbi13aXNlIGZpbGxlZApDdCA9OiAoXSAkfiBbLH4gI0BdIDwuQCUgWykgICBOQi4gQ29sdW1uLXdpc2UgdHJ1bmNhdGVkCgooJ1JmJzsnUnQnOydDZic7J0N0JykgLDogaTAgKFJmO1J0O0NmO0N0KSB5MQoKUncgPTogKChAKFsgLCAjQF0gJSBbKSkgJCBdKSAgTkIuIFJvdy13aXNlIGFkdmVyYgpDdyA9OiAoKEAoWyAsfiAjQF0gJSBbKSkgJCBdKSBOQi4gQ29sdW1uLXdpc2UgYWR2ZXJiCgooJz4uUncnOyc8LlJ3JzsnPi5Ddyc7JzwuQ3cnKSAsOiBpMCAoKD4uUncpOyg8LlJ3KTsoPi5Ddyk7KDwuQ3cpKSB5MQ==
 , x1 ,. y1	Merge equal-length lists x1 and y1 alternately	Expression	Structural	faro weave dovetail zipper zipping merge interweave interweaving interleave interleaving shuffle shuffling meshing lists zip()		
 (<~ |.!.0) b	Boolean first ones in each group of ones	Tacit	Partitioning	beginningsofruns trues truths 1st binary base-2 base2 runs sequences blocks		
 (%~ i) j0	Start points when [0,1) is split into j0 intervals	Tacit	Sequences	unit normalized steps linear divide		
@@ -325,8 +333,19 @@ y ({~ \:) a1	Moving cells of y indicated by a1 to the start of y	Tacit	Structura
 (-: |:) y2	Is y2 a symmetric matrix?	Tacit	Linear Algebra	testif		
 32 + 1.8 * n	Celsius to Fahrenheit	Expression	Specialty	°Fahrenheit °Celsius f2c() ftoc() converting change changing		
 o. m * n	Area of cone with height m and radius n, excluding base	Expression	Geometric	lengths bottom		
-<. 0.5 + n	Round to nearest integer, ties towards ∞	Expression	Rounding	precision favoring whole number favoring closestinteger nearestinteger nint()		
+<. 0.5 + n	Round to nearest integer, ties towards ∞	Expression	Rounding	precision favoring whole number favoring closestinteger nearestinteger nint()		https://jsoftware.github.io/j-playground/bin/html2/#base64=RiA9OiB7eyA8LiAwLjUgKyB5IH19ICAgICAgIE5CLiBEaXJlY3REZWYKRyA9OiA8LkArJjAuNSAgICAgICAgICAgICAgIE5CLiBUYWNpdAowIDEgLTogRiAwLjQgMC41ICAgICAgICAgICAgTkIuIHRpZXMgdG93YXJkcyDiiJ4KbiA9LiArLyA/IHw6IDEwMDAgJCAsOjAsMTAgIE5CLiBtb3JlIHNhbXBsZSBkYXRhCihGIC06IEcpIG4gICAgICAgICAgICAgICAgICBOQi4gRG8gcmVzdWx0cyBtYXRjaD8=
 (* * _0.5 >.@+ |) n	Round to nearest integer, ties towards 0	Tacit	Rounding	precision favoring integer round()		
+(* * <.@|) n	Round towards zero	Tacit	Rounding	0 truncate whole number integer int() trunc() chop clamp		
+m ((<: |) * ]) n	Round to zero values of n within m of zero	Tacit	Rounding	precision fuzz 0		
+{{ <. y + 1 <: 2 | y }} n	Round to nearest even number, ties towards ∞	DirectDef	Rounding	precision favoring whole number favoring		
+(* * _0.5 >.@+ |)	Round to nearest integer, ties away from 0	Tacit	Rounding	precision favoring integer round()		
+(* * <.@| + 1 > 2 | |) n	Round to nearest odd number, ties towards ∞	Tacit	Rounding	precision favoring		
+(<.@+ 1 <: 2 | ]) n	Round to nearest even number, ties towards ∞	Tacit	Rounding	precision favoring		
+(* * 2 <:@* 2 >.@%~ |) n	Round to nearest odd number, ties towards 0	Tacit	Rounding	precision favoring		
+(* * 2 * 2 >.@%~ <:@|) n	Round to nearest even number, ties towards 0	Tacit	Rounding	precision favoring		
+(⌊⊢+2÷˜0.5≠2|⊢)n	Round to nearest integer, ties to even	Tacit	Rounding	precision whole number favoring		
+(0.5 <.@+ ])&.(100&*) n	Round to nearest hundredth, ties towards ∞	Tacit	Rounding	precision favoring whole number favoring		
+(0.5 <.@+ ])&.(20&*) n	Round currency to nearest five hundredths	Tacit	Rounding	cents nickels ¢5¢		
 o. *: n	Area of circle with radius n	Expression	Geometric	length		
 ,/ ":"0 i	Translate single-digit integers to characters	Expression	Text	base-2 base2 binary Boolean decimal converting change changing		
 "."0 d	Translate character digits to numbers	Expression	Text	base-2 base2 binary Boolean decimal converting change changing		
@@ -364,8 +383,6 @@ x {~ /: /: y	Reorder x to match the ordering of y	Expression	Ordering	meshing so
 1 = x I. y	Are cells of y within the range (x₀,x₁]?	Expression	Data	testif <y≤ <x≤ tao totalarrayordering interval inrange?		
 1 ~: x I. y	Are cells of y outside the range (x₀,x₁]?	Expression	Data	testif ≥y> ≥x> tao totalarrayordering interval outsiderange?		
 <"1 |: > y1	Invert list of boxed lists, so that element i of j of the result is j of i of y1. Shorter elems are padded with fill	Expression	Structural	transpose transposing vtv cell element 1st lists zip() remixing zipping merging interweave interweaving interleave interleaving shuffle shuffling meshing		
-y $~ i0, i0 %~ # y	Reshape y1 to i0-row table (filled row-wise)	Tacit	Structural	table horizontally rowwise rows		
-y $~ i0,~ i0 %~ # y	Reshape y1 to i0-column table, filled column-wise	Expression	Structural	table vertically columnwise columns		
 32 }. 127 {. a.	Printable ASCII characters	Expression	Text	characters		
 f {{ (x`:6) y }} y	Function to apply gerund f to y as a function	Block Function	Function Application	call tacit dynamic value subject		
 1.8 %~ _32 + n	Fahrenheit to Celsius	Expression	Specialty	°Fahrenheit °Celsius c2f() ctof() converting change changing		
@@ -450,14 +467,12 @@ i + (i }. b1) i. 1	Index of first one after index i0 in b1	Expression	Search	1st
 (d1 i. ' ') {. d1	First word in d1	Expression	Text	initial leading leftmost nonspace non-space 1st start beginning		
 i0 (] #~ 0 = |) j1	Elements of j1 divisible by i0	Tacit	Number Theory	filter divisors cells items		
 (i.@# -: /:~) y1	Is y1 a permutation vector?	Tacit	Combinatorics	testif		
-(* * <.@|) n	Round towards zero	Tacit	Rounding	0 truncate whole number integer int() trunc() chop clamp		
 (}. -  }:) n	Deltas: (n₁-n₀)(n₂-n₁)(n₃-n₂)…	Expression	Data	pairwisedifferences changes steps		
 (}. %  }:) n	Ratio of each number in a list to its predecessor: (n₁÷n₀)(n₂÷n₁)(n₃÷n₂)…	Expression	Data	pairwiseratios vector		
 m + (-m) | n	Residue after dividing n by m but replacing 0 with m	Expression	Data	modulo modulus divisionremainder 12hourclock divide		https://jsoftware.github.io/j-playground/bin/html2/#base64=NCAoWyArICh8fiAtKX4pIGkuMTAgICBOQi4gVGFjaXQgdmVyc2lvbg==
 (,~ i.@{:@$) m2	Attach column numbers to a numeric table	Tacit	Indices	headings table		
 (,.~ i.@{.@$) m2	Attach row numbers to a numeric table	Tacit	Indices	labels table		
 m1 +"1 n1 *"1 (#: i.) j1	Multi-dimensional arithmetic progression with dimensions j1 starting at m1 with steps n1	Expression	Sequences	sequence seq() multidimensional axes		
-m ((<: |) * ]) n	Round to zero values of n within m of zero	Tacit	Rounding	precision fuzz 0		
 b1} x ,: y	Merge x and y using b1 (1 for x's element, 0 for y1's element)	Tacit	Structural	faro weave dovetail zipper zipping merging interweave interweaving interleave interleaving shuffle shuffling meshing alternative choose indicate masking indicating elements items major cells bitmask bit-mask		
 ({: , }.@}: , {.) y	Swap first and last major cells	Tacit	Structural	exchange swap head tail leading trailing elements items 1st start beginning ending		
 m1 +/@:|@:- n1	Manhattan distance between two points in n-space	Tacit	Geometric	taxicab L1 L-1 L1-distance ℓ1 ℓ-1 ℓ₁ L¹ d()		
@@ -507,7 +522,6 @@ i1 {^:j0 i. # i1	Permutation i1 to the power of j0	Block Function	Combinatorics	
 (i.@# -: |.@/:) n	Is n Strictly Decreasing?	Tacit	Ordering	testif descending? falling? down ordered? sorted?		
 (i.@# -: |.@\:) n	Is n Strictly Increasing?	Tacit	Ordering	testif ascending? rising? up ordered? sorted?		
 -: >: %: 5	Golden ratio	Constant	Mathematical	phi φ ϕ ɸ 1.618033988749894848204586834365638 0.618033988749894848204586834365638		
-(* * _0.5 >.@+ |)	Round to nearest integer, ties away from 0	Tacit	Rounding	precision favoring integer round()		
 j { u: ; 48 65 +&.> i.&.> 10 26	Translate digits to characters (bases 2 through 36)	Expression	Text	base-2 base2 binary Boolean base16 base-16 hexadecimal base36 base-36 letters 0123456789abcdef converting change changing		
 -/ (n0 + i. 2) ! 2 * n0	Catalan number C_n0: number of ways to nest n0 pairs of parentheses	Expression	Combinatorics	numbers dyck words binary trees mountain ranges		
 (/: ' '&=) d1	Move all spaces to end	Tacit	Text	blanks trailing ending		
@@ -547,13 +561,6 @@ x (] #~ +./\@:-.@e.~) y	Remove cells that appear in x from beginning of y	Tacit	
 x (-. , -.~) y	Symmetric set difference: cells that appear in exactly one argument	Tacit	Sets	⊖		
 {."1 (+/\@|.)^:(i. n0) 0 1x	First n0 Fibonacci numbers	Expression	Mathematical	sequence series recurrence golden ratio growth rabbit population	https://code.jsoftware.com/wiki/Essays/Fibonacci_Sequence	
 {. ({: +/\@, ])^:(n0) 1	Bell number B_n0: number of ways to partition a set of size n0	Expression	Combinatorics	count equivalence relations rhyme schemes		
-(* * <.@| + 1 > 2 | |) n	Round to nearest odd number, ties away from 0	Tacit	Rounding	precision favoring		
-(* * <.@| + 1 <: 2 | |) n	Round to nearest even number, ties away from 0	Tacit	Rounding	precision favoring		
-(* * 2 <:@* 2 >.@%~ |) n	Round to nearest odd number, ties towards 0	Tacit	Rounding	precision favoring		
-(* * 2 * 2 >.@%~ <:@|) n	Round to nearest even number, ties towards 0	Tacit	Rounding	precision favoring		
-(⌊⊢+2÷˜0.5≠2|⊢)n	Round to nearest integer, ties to even	Tacit	Rounding	precision whole number favoring		
-(0.5 <.@+ ])&.(100&*) n	Round to nearest hundredth, ties towards ∞	Tacit	Rounding	precision favoring whole number favoring		
-(0.5 <.@+ ])&.(20&*) n	Round currency to nearest five hundredths	Tacit	Rounding	cents nickels ¢5¢		
 ({.~ -@>:@$)@({.~ >:@$) y	Pad y with a layer of fill elements on all sides	Tacit	Structural	expand enlarge outer outside around edges boundary border surround frame	https://code.jsoftware.com/wiki/NYCJUG/2023-10-10#Padding_an_Array	
 (#~ (+. |.!.1)@(' '&~:)) d1	Remove duplicate spaces, turning each sequence of spaces into one	Tacit	Text	delete trim reformat extraneous blanks multiple remove drop without		
 (#~ (+. |.!.0)@(' '&~:)) d1	Remove leading and duplicate spaces	Tacit	Text	delete trim without consecutive extraneous normalise normalize blanks multiple drop start beginning		
