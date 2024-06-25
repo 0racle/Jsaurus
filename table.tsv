@@ -374,6 +374,8 @@ o. m * n	Area of cone with height m and radius n, excluding base	Expression	Geom
 (* * _0.5 >.@+ |) n	Round to nearest integer, ties towards 0	Tacit	Rounding	precision favoring integer round()		
 (* * <.@|) n	Round towards zero	Tacit	Rounding	0 truncate whole number integer int() trunc() chop clamp		
 m ((<: |) * ]) n	Round to zero values of n within m of zero	Tacit	Rounding	precision fuzz 0		
+((<.@+&0.5)&.(%&m)@| * *) n	Round n to nearest multiple of m, ties towards ∞	Tacit	Rounding	precision favoring		
+((>.@-&0.5)&.(%&m)@| * *) n	Round n to nearest multiple of m, ties towards 0	Tacit	Rounding	precision favoring		
 {{ <. y + 1 <: 2 | y }} n	Round to nearest even number, ties towards ∞	DirectDef	Rounding	precision favoring whole number favoring		
 (* * _0.5 >.@+ |)	Round to nearest integer, ties away from 0	Tacit	Rounding	precision favoring integer round()		
 (* * <.@| + 1 > 2 | |) n	Round to nearest odd number, ties towards ∞	Tacit	Rounding	precision favoring		
@@ -529,6 +531,8 @@ _1 = -/&i./ j1	Superdiagonal matrix of size j1	Expression	Linear Algebra	super-d
 *./ , y e. 0 1	Is y an array of booleans?	Expression	Boolean	testif binary base-2 base2		
 i + (i }. b1) i. 1	Index of first one after index i0 in b1	Expression	Search	1st		
 , x1 ,"1 0 y1	Insert x1 before every element of y1	Expression	Structural	merge cell item		
+, 1 0 1 *./^:(j0) 1	Cantor set iteration j0	Expression	Geometric	fractal ternary middle third		
+(|. \: I. i1) { y	Reverse sublists of y having lengths i1	Expression	Partitioning			
 (~.@#~ -.@~:) y	Distinct major cells that appear at least twice	Tacit	Search	duplicated duplicates nonunique items elements		
 ((i.~ ~.) { F@~.) y	Apply deterministic cell-wise F to cells of y, avoiding extra calls for duplicate cells	Tacit	Function Application	performance memoisation memoization quick speed		
 (=/~ ~.) (i.~ ~.) y	Table of which unique matches each major cell of y	Expression	Search	nub distinctitems uniqueelemenets matrix items elements		
@@ -586,10 +590,24 @@ x1 ,@:(,"0 1~) y1	Insert x1 after every element of y1	Tacit	Structural	merge cel
 (|. \: +/\ a1) { y	Reverse sublists of y indicated by starting mask a1	Expression	Structural			
 x (] /: i.) y	Move major cells of y that appear in x to the front	Tacit	Search	promote cells items		
 x (] \: i.) y	Move major cells of y that appear in x to the end	Tacit	Search	major cells elements trailing ending		
+(<"1 i2) { y	Select: each row of i2 selects a cell from y	Expression	Selection	rightshoeunderbar saneindexing ⊇ items elements index		
+m (+/ . *) n	Matrix product of m and n (¯1↑m ↔ 1↑≢n)	Tacit	Linear Algebra	dotproduct multiplication multiply		
+m (-/ . *) n	Alternating matrix product of m and n (¯1↑m ↔ 1↑≢n)	Tacit	Linear Algebra			
+a2 (+./ . *.) b2	Extend a transitive binary relation	Tacit	Graph Theory	extension base-2 base2		
+m2 (<./ . +) n2	Extend a distance table to next leg	Tacit	Graph Theory	extension matrix		
 ({~ n0 ? #) y	n0 random cells of y, chosen without replacement	Tacit	Random	srs draw without replacement removing		
 (-.&' ')&.> d	Remove spaces in each boxed string	Tacit	Text	deletespaces blanks drop without		
+'-' ,:~ d1	Underline a string	Tacit	Text	underscore		
 *./\ *./ ' ' = d2	Locate leading blank columns in text table d2	Expression	Text	spaces beginning masking indicate indications allspace all-space start blanks		
+n0 (-.&i.~ , ]) m0	Consecutive integers from n0 to m0 inclusive (both numbers, or both characters, with n0≤m0)	Block Function	Sequences	inclusive range closed interval seq() sequence …		
+(* * <.@|) m % n	Truncated division	Expression	Data	integer intdiv() % // divmod() T-division		
 (|."_1~ i.@#) y2	Skew y2 to turn diagonals into columns (with wrap-around)	Tacit	Structural	table		
+(<@(]\)"0 _~ #\) y1	All possible slices grouped in arrays by length	Tacit	Selection	sub-strings substrings sub-vectors sub-sequences subsequences segmented sub-lists partitioned sublists		
+m1 (* % +/@:*) n1	Bayes' formula	Tacit	Statistical	Bayesformula statistical statistics probability probabilities		
+(# * +/&.:%) n	Harmonic mean	Tacit	Statistical	average subcontrary H() HM() harmonicmean		
++/&.(*~) m1 - n1	Euclidean distance between two points in n-space	Expression	Geometric	L2-distance L-2 ℓ2 ℓ-2 ℓ₂ L² Pythagorean d()		
+(>./ - <./) , n	Statistical range, or difference between largest and smallest element, of n	Expression	Statistical	span minmaxmin extremes of		
+(% >./@:|) n	Normalize by infinity-norm (maximum absolute value)	Tacit	Geometric	L∞-normalise L∞-normalize L∞-normalization L-∞		
 I. 0 = (|~ i.) j0	Proper divisors of j0	Expression	Number Theory	factorisation factorization		
 y #~ y ~: |.!.'' y	Remove consecutive duplicate major cells	Tacit	Search	list		
 0 = (>: i. >./ j1) |/ j1	Divisibility table	Expression	Number Theory	divides divisor matrix		
@@ -667,7 +685,7 @@ m1 (+/@:*"1%+/@[) n2	Weighted average of rows of n2 with column weights m1	Tacit
 (* =@i.@#) n1	Diagonal numeric matrix with n1 along diagonal	Tacit	Linear Algebra	cells items table		
 x0 ((* =@i.@#)@(#\)@] { ,) y1	Diagonal matrix of x0, with y1 along diagonal	Tacit	Linear Algebra	cells items table		
 (-@i.@# |."_1 # {."1 ,.) y1	Diagonal matrix with y1 along diagonal (uses y1's fill value for matrix)	Tacit	Linear Algebra	cells items table		
-x1 (-@i.@#@] |."_1&.|: 0})&.|: y2	Matrix y2 with main diagonal changed to x1 ((#x1)=(<.$y2))	Tacit	Linear Algebra	inplace update table		
+x1 (<@,~"0 i. # y2)} y2	Matrix y2 with main diagonal changed to x1 ((#x1)=(<.$y2))	Tacit	Linear Algebra	inplace update table		
 (0 ~:/ .= 4 100 400 |/ ]) j	Number of days in February of year j (YYYY)	Tacit	Specialty	gregoriancalendar feb29 29february29th feb28 28february28th length	https://code.jsoftware.com/wiki/JPhrases/DateTime	
 +/@:(|@-)"1/~ n2	Manhattan distance table given one point in each row of n2	Tacit	Geometric	taxicab L1 L-1 L1-distance ℓ1 ℓ-1 ℓ₁ L¹ d() matrix		
 (#~ +./\&.|.@(' '&~:)) d1	Remove trailing spaces	Tacit	Text	delete blanks drop ending without		
@@ -686,7 +704,7 @@ i0 (] % [ %: +/@(^~ |)) n	Normalisation by i0-norm	Tacit	Geometric	Lp-normalise 
 m0 + c0 * i. >: >. c0 %~ n0 - m0	Range starting at m0 with step size c0, ending after n0	Expression	Sequences	sequence interval		
 m0 + c0 * i. >: <. c0 %~ n0 - m0	Range starting at m0 with step size c0, ending at or before n0	Expression	Sequences	sequence interval		
 i0 (!@] % [ *&! -~) j0	Number of unordered selections (combinations) of i0 items from j0 choices	Tacit	Combinatorics	exclamation bang shriek binomial combinatorics countcombinations choose unordered selecting picking outof nCk C(n,k)		
-x ([ - (* * i.@>:@|)@-) y	Consecutive values from i0 to j0 (in any order)	Tacit	Sequences	inclusive range closed interval seq() sequence … any either direction unordered		
+i0 ([ - (* * i.@>:@|)@-) j0	Consecutive integers from i0 to j0 inclusive (in any order)	Tacit	Sequences	inclusive range closed interval seq() sequence … any either direction unordered		
 (<. 0.5 + ])&.((10 ^ x) * ])	Round n to i0 decimal places	Expression	Rounding	precision banking banker's bank's (⍎⍕)		
 +/&.(*~)@:-"1"1 _~ n2	Euclidean distance table given one point in each row of n2	Tacit	Geometric	L2-distance L-2 ℓ2 ℓ-2 ℓ₂ L² Cartesian metric Pythagorean d() matrix		
 '.,:;?!' -.~ d1	Remove punctuation	Tacit	Text	delete symbols drop without		
@@ -703,8 +721,8 @@ AlphaNum_j_ -.~ d1	Remove non-alphanumeric ASCII characters	Tacit	Text	punctuati
 (*./\ '0' = d)} d,:' '	Replace leading zeros with spaces in d	Expression	Text	blanks nulls zeroes nils naughts noughts 0s falses falsehoods start beginning		
 {{ for_j. i. # y do. y =. y <. j ({"1 +/ {) y end. }} n2	Shortest path length matrix from weighted adjacency matrix n2, using Floyd-Warshall	Block Function	Graph Theory	roy wfi directed transitive closure algorithm pathfinding search lengths dense edges vertices follow connections	https://code.jsoftware.com/wiki/Essays/Floyd	
 (I. i1) +//. n	Sums (+´) of sublists of n with lengths given by i1	Expression	Data	segmented partitioned sub-vectors		
-1:`(<: ((0,]) + [ * ],0:) $:@<:)@.* i0	Stirling numbers of the first kind s(i0,k) for all k	Expression	Combinatorics		https://code.jsoftware.com/wiki/Essays/Stirling_Numbers	
-1:`(i.@>: ((0,]) + [ * ],0:) $:@<:)@.* i0	Stirling numbers of the second kind S(i0,k) for all k	Expression	Combinatorics		https://code.jsoftware.com/wiki/Essays/Stirling_Numbers	
+1:`(<: ((0,]) + [ * ],0:) $:@<:)@.* i0	Stirling numbers of the first kind s(i0,k) for all k (see addon: math/misc/numbers)	Expression	Combinatorics	cycles	https://code.jsoftware.com/wiki/Essays/Stirling_Numbers	https://jsoftware.github.io/j-playground/bin/html2/#base64=MTpgKDw6ICgoMCxdKSArIFsgKiBdLDA6KSAkOkA8OilALiogMTAKbG9hZCAnbWF0aC9taXNjL251bWJlcnMnCns6IGN5Y2xlcyAxMA==
+1:`(i.@>: ((0,]) + [ * ],0:) $:@<:)@.* i0	Stirling numbers of the second kind S(i0,k) for all k (see  addon: math/misc/numbers)	Expression	Combinatorics	subsets	https://code.jsoftware.com/wiki/Essays/Stirling_Numbers	https://jsoftware.github.io/j-playground/bin/html2/#base64=MTpgKGkuQD46ICgoMCxdKSArIFsgKiBdLDA6KSAkOkA8OilALiogMTAKbG9hZCAnbWF0aC9taXNjL251bWJlcnMnCns6IHN1YnNldHMgMTA=
 (z e. y)} z,:x	Replace all occurrences of elements from y in array z with x	Block Function	Structural	substitute merge amend update cells items		
 +/ m ^/~ I. 0 = (|~ i.@>:) j0	Sum of m'th powers of positive divisors of j0	Expression	Number Theory	sigma_x sigma_2 sigma_3 sigma_4 sigmax sigma2 sigma3 sigma4 σₓ(n) σ₂(n) σ₃(n) σ₄(n)		
 (~. #~ (= >./)@(#/.~)) y	Modes: Most frequent major cells of data	Tacit	Statistical	average items elements		
@@ -721,6 +739,7 @@ a1 (*. +. +. ([ #inv 2 </\ 0, #) ]) b1	Indicate first one in each sublist of b1 
 -:@(+/)@((<. , >.)@(-:@<:@#) { /:~) n1	Median of non-empty n1, averaging two values for even lengths	Tacit	Statistical	average	https://code.jsoftware.com/wiki/Addons/stats/base/univariate#median	https://jsoftware.github.io/j-playground/bin/html2/#base64=bG9hZCAnc3RhdHMnCm1lZGlhbiBmLgptZWRpYW4gMiAxMyA5IDE5IDEyIDQgNiA0
 a1 ~:/\@(+. ([ #inv 2 ~:/\ 0, #) ]) b1	State of switch when b1 turns on and a1 turns off (initially off)	Tacit	Partitioning	signal on/off		
 a1 ~:/\@(+. ([ #inv 2 ~:/\ 0, #) ]) b1	Not leading zeroes (+./\) in each sublist of b1 indicated by starting mask a1	Tacit	Partitioning	zeros 0s falses falsehoods start beginning		
+(-/ .*) n2	Determinant of 3x3 matrix, or vector triple product of its rows or columns	Expression	Linear Algebra	scalar box signed volume parallelepiped		
 a1 (] * * (] e. #) +/\@(<~ |.!.0)@]) b1	Groups of ones in b1 pointed to by at least one 1 in a1	Expression	Partitioning	runs sequences 1s indicated trues truths		
 a1 (<: *. >: -.@([ #inv 2 </\ 0, #) -.@]) b1	Not first zero in each sublist of b1 indicated by starting mask a1	Tacit	Partitioning	segmented partitioned 1st		
 c1 (-.@e.~ {{ (1, 2 </\ x) <;.1&(x&#) y }} ]) d1	Split list d1 at any sequence of characters in c1	DirectDef	Text	cut chop divide linebreak newline carriagereturn crnl crlf linefeed vec2vtv separate chunk list dividing segments partitions		
