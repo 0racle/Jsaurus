@@ -608,6 +608,11 @@ m1 (* % +/@:*) n1	Bayes' formula	Tacit	Statistical	Bayesformula statistical stat
 +/&.(*~) m1 - n1	Euclidean distance between two points in n-space	Expression	Geometric	L2-distance L-2 ℓ2 ℓ-2 ℓ₂ L² Pythagorean d()		
 (>./ - <./) , n	Statistical range, or difference between largest and smallest element, of n	Expression	Statistical	span minmaxmin extremes of		
 (% >./@:|) n	Normalize by infinity-norm (maximum absolute value)	Tacit	Geometric	L∞-normalise L∞-normalize L∞-normalization L-∞		
+(% {.) |. +/\ 0, i. j0	Outstanding balances on rule of 78s	Expression	Finance	sum-of-the-digits method		
+-/ 1,~ */\&.|. >: i. n0	Number of derangements (permutations that move all elements) of length n0	Expression	Combinatorics	subfactorial de Montmort count change every		
+i ([ ^~ 1 + %~) n	Effective rate of interest with nominal rate n for i periods	Tacit	Finance			
+x1 (e.~ *./@, e.) y1	Are x1 and y1 equivalent as sets?	Tacit	Sets	equivalence		
+0 (, + ,~)^:(i0) 1	Row i0 of Pascal's triangle	Expression	Combinatorics	pascal'striangle numberofcombinations pascalstriangle		
 I. 0 = (|~ i.) j0	Proper divisors of j0	Expression	Number Theory	factorisation factorization		
 y #~ y ~: |.!.'' y	Remove consecutive duplicate major cells	Tacit	Search	list		
 0 = (>: i. >./ j1) |/ j1	Divisibility table	Expression	Number Theory	divides divisor matrix		
@@ -622,7 +627,6 @@ i1 {^:j0 i. # i1	Permutation i1 to the power of j0	Expression	Combinatorics	repe
 (i.@# -: |.@\:) n	Is n Strictly Increasing?	Tacit	Ordering	testif ascending? rising? up ordered? sorted?		
 -: >: %: 5	Golden ratio	Constant	Mathematical	phi φ ϕ ɸ 1.618033988749894848204586834365638 0.618033988749894848204586834365638		
 j { u: ; 48 65 +&.> i.&.> 10 26	Translate digits to characters (bases 2 through 36)	Expression	Text	base-2 base2 binary Boolean base16 base-16 hexadecimal base36 base-36 letters 0123456789abcdef converting change changing		
--/ (n0 + i. 2) ! 2 * n0	Catalan number C_n0: number of ways to nest n0 pairs of parentheses	Expression	Combinatorics	numbers dyck words binary trees mountain ranges		
 (/: ' '&=) d1	Move all spaces to end	Tacit	Text	blanks trailing ending		
 (<@#~ 2 #:@i.@^ #) y	Power set: a boxed list of all subsets of the cells of y	Tacit	Sets	powerset power-set all combinations choices at most one	https://rosettacode.org/wiki/Power_set#J	https://jsoftware.github.io/j-playground/bin/html2/#base64=KDxAI34gMiAjOkBpLkBeICMpICdhYmNkJw==
 (<.@-:@# { /:~) n1	Median of non-empty n1, taking larger value for even lengths	Tacit	Statistical	average		
@@ -659,7 +663,7 @@ m1 +//. n1	Sum elements of n1 marked by successive identicals in m1	Expression	P
 x (] #~ +./\@:-.@e.~) y	Remove cells that appear in x from beginning of y	Tacit	Selection	trim leading left cells items list start		
 x (-. , -.~) y	Symmetric set difference: cells that appear in exactly one argument	Tacit	Sets	⊖		
 {."1 (+/\@|.)^:(i. n0) 0 1x	First n0 Fibonacci numbers	Expression	Mathematical	sequence series recurrence golden ratio growth rabbit population	https://code.jsoftware.com/wiki/Essays/Fibonacci_Sequence	
-{. ({: +/\@, ])^:(n0) 1	Bell number B_n0: number of ways to partition a set of size n0	Expression	Combinatorics	count equivalence relations rhyme schemes		
+{. ({: +/\@, ])^:(n0) 1	Bell number Bₙ: number of ways to partition a set of size n0	Expression	Combinatorics	count equivalence relations rhyme schemes		
 ({.~ -@>:@$)@({.~ >:@$) y	Pad y with a layer of fill elements on all sides	Tacit	Structural	expand enlarge outer outside around edges boundary border surround frame	https://code.jsoftware.com/wiki/NYCJUG/2023-10-10#Padding_an_Array	
 (#~ (+. |.!.1)@(' '&~:)) d1	Remove duplicate spaces, turning each sequence of spaces into one	Tacit	Text	delete trim reformat extraneous blanks multiple remove drop without		
 (#~ (+. |.!.0)@(' '&~:)) d1	Remove leading and duplicate spaces	Tacit	Text	delete trim without consecutive extraneous normalise normalize blanks multiple drop start beginning		
@@ -680,8 +684,8 @@ x ({."1@e.~ # ]) y2	Rows of non-empty table y starting with an element in x	Taci
 m1 (+/@:*"1%+/@[) n2	Weighted average of rows of n2 with column weights m1	Tacit	Data			
 (I. i1) (] ({~ /:) {~) /: y	Grade up (/:) for sorting subarrays of y having lengths i1 (#y ↔ +/i1)	Expression	Ordering	sub-arrays sub-vectors subvectors substrings sub-strings		
 (I. i1) (] ({~ /:) {~) \: y	Grade down (\:) for sorting subarrays of y having lengths i1 (#y ↔ +/i1)	Expression	Ordering	sub-arrays sub-vectors subvectors substrings sub-strings		
-(+/\ a1) (] ({~ /:) {~) /: y	Grade up (⍋) for sorting subarrays of y indicated by a1	Expression	Ordering	sub-arrays sub-vectors subvectors substrings sub-strings		
-(+/\ a1) (] ({~ /:) {~) \: y	Grade down (⍒) for sorting subarrays of y indicated by a1	Expression	Ordering	sub-arrays sub-vectors subvectors substrings sub-strings		
+(+/\ a1) (] ({~ /:) {~) /: y	Grade up (/:) for sorting subarrays of y indicated by a1	Expression	Ordering	sub-arrays sub-vectors subvectors substrings sub-strings		
+(+/\ a1) (] ({~ /:) {~) \: y	Grade down (\:) for sorting subarrays of y indicated by a1	Expression	Ordering	sub-arrays sub-vectors subvectors substrings sub-strings		
 (* =@i.@#) n1	Diagonal numeric matrix with n1 along diagonal	Tacit	Linear Algebra	cells items table		
 x0 ((* =@i.@#)@(#\)@] { ,) y1	Diagonal matrix of x0, with y1 along diagonal	Tacit	Linear Algebra	cells items table		
 (-@i.@# |."_1 # {."1 ,.) y1	Diagonal matrix with y1 along diagonal (uses y1's fill value for matrix)	Tacit	Linear Algebra	cells items table		
