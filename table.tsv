@@ -447,7 +447,6 @@ x {~ /: /: y	Reorder x to match the ordering of y	Expression	Ordering	meshing so
 <"1 |: > y1	Invert list of boxed lists, so that element i of j of the result is j of i of y1. Shorter elems are padded with fill	Expression	Structural	transpose transposing vtv cell element 1st lists zip() remixing zipping merging interweave interweaving interleave interleaving shuffle shuffling meshing		
 1 3 |: m2 */ n2	Direct matrix product	Expression	Linear Algebra	table		
 32 }. 127 {. a.	Printable ASCII characters	Expression	Text	characters		
-f {{ (x`:6) y }} y	Function to apply gerund f to y as a function	Block Function	Function Application	call tacit dynamic value subject		
 1.8 %~ _32 + n	Fahrenheit to Celsius	Expression	Specialty	°Fahrenheit °Celsius c2f() ctof() converting change changing		
 m (*"1 _) n	Mid product of m and n	Tacit	Arithmetic	midproduct		
 Num_j_	The digits from 0 to 9	Constant	Text	123456789 numbers arabicnumerals 0-9 0123456789		
@@ -533,13 +532,19 @@ i + (i }. b1) i. 1	Index of first one after index i0 in b1	Expression	Search	1st
 (~.@#~ -.@~:) y	Distinct major cells that appear at least twice	Tacit	Search	duplicated duplicates nonunique items elements		
 ((i.~ ~.) { F@~.) y	Apply deterministic cell-wise F to cells of y, avoiding extra calls for duplicate cells	Tacit	Function Application	performance memoisation memoization quick speed		
 (=/~ ~.) (i.~ ~.) y	Table of which unique matches each major cell of y	Expression	Search	nub distinctitems uniqueelemenets matrix items elements		
-(f`:0) y	Apply each function in gerund f to the whole of y	Expression	Function Application	functions each every list gerund elements collect		
+f&{{ (x`:0) y }}	Function that applies all functions in gerund f and returns all results	Adverb	Function Application	each every list gerund elements to both arguments collect		
+(f`:0)"_ y	Apply each function in gerund f to the whole of y	Expression	Function Application	functions each every list gerund elements collect		
+f {{ (x`:6) y }} y	Function to apply gerund f to y as a function	DirectDef	Function Application	call tacit dynamic value subject		
 ({~ ?~@#) y	Randomly reorder (shuffle) cells of y	Tacit	Random	permutation knuth fisher yates		
 ({~ ?~@#) y	Random element of list y	Tacit	Random	deal one select		
 ' ' -.~ d1	Remove spaces from string	Expression	Text	deletespaces blanks drop without		
 *./"1 ' ' = d2	Mask indicating all-blank rows of table d2	Expression	Text	spaces empty filter indicate masking indicating blanks bitmask bit-mask		
 +/"1 ' ' ~: d2	Lengths of words in table d2 if padded with trailing spaces	Expression	Text	spaces blanks count varchar		
++./\"1 ' ' ~: d2	Locate leading spaces in rows of table d2	Expression	Text	blanks beginning mask indicate indications start bitmask bit-mask		
 (d1 i. ' ') {. d1	First word in d1	Expression	Text	initial leading leftmost nonspace non-space 1st start beginning		
+a} m,:n	Select each element from m where a is 0 and from n where it's 1	Tacit	Selection	conditional selector meshing merge cells items indicate masking indicating		
+(F"0&.> <\.) y1	Apply F to all pairs of elements in y1 including self-pairs	Tacit	Function Application	all-pairs combinations ordered every each		https://jsoftware.github.io/j-playground/bin/html2/#base64=RiA9OiA8QCwKOyAoRiIwJi4+IDxcLikgJ2FiY2Qn
+(}: F"0&.> <\.@}.) y1	Apply F to all pairs of elements in y1 excluding self-pairs	Tacit	Function Application	all-pairs combinations ordered every each		https://jsoftware.github.io/j-playground/bin/html2/#base64=RiA9OiA8QCwKOyAofTogRiIwJi4+IDxcLkB9LikgJ2FiY2Qn
 i0 (] #~ 0 = |) j1	Elements of j1 divisible by i0	Tacit	Number Theory	filter divisors cells items		
 (i.@# -: /:~) y1	Is y1 a permutation vector?	Tacit	Combinatorics	testif		
 (}. -  }:) n	Deltas: (n₁-n₀)(n₂-n₁)(n₃-n₂)…	Expression	Data	pairwisedifferences changes steps		
@@ -660,16 +665,22 @@ m1 (+/@:*"1%+/@[) n2	Weighted average of rows of n2 with column weights m1	Tacit
 (+/\ a1) (] ({~ /:) {~) /: y	Grade up (⍋) for sorting subarrays of y indicated by a1	Expression	Ordering	sub-arrays sub-vectors subvectors substrings sub-strings		
 (+/\ a1) (] ({~ /:) {~) \: y	Grade down (⍒) for sorting subarrays of y indicated by a1	Expression	Ordering	sub-arrays sub-vectors subvectors substrings sub-strings		
 (* =@i.@#) n1	Diagonal numeric matrix with n1 along diagonal	Tacit	Linear Algebra	cells items table		
-((* =@i.@#)@(#\) { x0, ]) y1	Diagonal matrix of x0, with y1 along diagonal	Tacit	Linear Algebra	cells items table		
+x0 ((* =@i.@#)@(#\)@] { ,) y1	Diagonal matrix of x0, with y1 along diagonal	Tacit	Linear Algebra	cells items table		
 (-@i.@# |."_1 # {."1 ,.) y1	Diagonal matrix with y1 along diagonal (uses y1's fill value for matrix)	Tacit	Linear Algebra	cells items table		
 x1 (-@i.@#@] |."_1&.|: 0})&.|: y2	Matrix y2 with main diagonal changed to x1 ((#x1)=(<.$y2))	Tacit	Linear Algebra	inplace update table		
 (0 ~:/ .= 4 100 400 |/ ]) j	Number of days in February of year j (YYYY)	Tacit	Specialty	gregoriancalendar feb29 29february29th feb28 28february28th length	https://code.jsoftware.com/wiki/JPhrases/DateTime	
 +/@:(|@-)"1/~ n2	Manhattan distance table given one point in each row of n2	Tacit	Geometric	taxicab L1 L-1 L1-distance ℓ1 ℓ-1 ℓ₁ L¹ d() matrix		
 (#~ +./\&.|.@(' '&~:)) d1	Remove trailing spaces	Tacit	Text	delete blanks drop ending without		
 +/\ (- |.!.'')/ '()' =/ d1	Depth of parentheses	Expression	Text	bracket brace nesting level parenthesis parens		
+y1 #;.1~ 1, 2 ~:/\ y1	Lengths of sublists of y1 having equal elements	Expression	Partitioning	runs changes identical consistent cells items		
+(- i0) <\ y	Split y into boxed groups of length i0, plus a shorter one at the end if needed	Tacit	Partitioning	chunk divide dividing cut partition distribute greedy		
+i0 (] {.~ #@] + [ | -@#@]) y	Increase the leading dimension of y to multiple of i0	Tacit	Structural	1st axis divisibleby pad extend first start beginning		
+i1  (] {.~ $@] + [ | -@$@]) y	Increase the dimensions of y to multiples of i1	Tacit	Structural	allaxes divisibleby pad extend axes		
+((! +:) % >:) n	Catalan number Cₙ: number of ways to nest n pairs of parentheses	Expression	Combinatorics	numbers dyck words binary trees mountain ranges		https://jsoftware.github.io/j-playground/bin/html2/#base64=bG9hZCAnbWF0aC9taXNjL251bWJlcnMnCig1ITo1KSA8J2NhdGFsYW4nCmNhdGFsYW4gNQ==
 i1 (] #~ [ -.@e.~ i.@#@]) y	Remove major cells at indices i1 from y	Tacit	Selection	elements items without positions		
 (# *./@~:@:| (+ i.@#)) j1	Valid siteswap pattern for juggling?	Tacit	Specialty	testif beat		
 x (*./\&.|.@e.~ (#~ -.)~ ]) y	Remove cells that appear in x from end of y	Tacit	Selection	trim trailing right cells items list ending		
+i0 (] % [ %: +/@(^~ |)) n	Normalisation by i0-norm	Tacit	Geometric	Lp-normalise Lp-normalize Lp-normalization L-p ℓp ℓ-p		
 (#"1~ +./@(' ' ~: ])) d2	Remove blank columns	Block Function	Text	all-space allspace empty remove delete drop space without		
 (' ' = d2)} d2 ,: '-'	Replace all spaces with dashes in d2	Expression	Text	blanks substitute format		
 m0 + c0 * i. >: >. c0 %~ n0 - m0	Range starting at m0 with step size c0, ending after n0	Expression	Sequences	sequence interval		
