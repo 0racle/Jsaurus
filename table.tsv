@@ -613,6 +613,15 @@ m1 (* % +/@:*) n1	Bayes' formula	Tacit	Statistical	Bayesformula statistical stat
 i ([ ^~ 1 + %~) n	Effective rate of interest with nominal rate n for i periods	Tacit	Finance			
 x1 (e.~ *./@, e.) y1	Are x1 and y1 equivalent as sets?	Tacit	Sets	equivalence		
 0 (, + ,~)^:(i0) 1	Row i0 of Pascal's triangle	Expression	Combinatorics	pascal'striangle numberofcombinations pascalstriangle		
+x ({~ ({~ /:)~ ]) j1	Sort indices j1 according to data x	Tacit	Ordering	permute		
+(/: (+~ +/\)~ a1) { y	Rotate first major cells (1⊸⌽) of sublists of y indicated by starting mask a1	Expression	Structural	sub-vectors sub-lists sublists items elements 1st		
+(#/.~ {~ ~. i. ]) y	Count of total (not previous) occurrences of each cell of y	Tacit	Search	tally selfcount items elements duplicate repetitions appearances		
+{:@I."1 ' ' ~: d2	Indices of last non-space character in each row of d2	Expression	Search	nonblanks nonspaces characters text row-wise rowwise horizontally		
+*./\ *./"1 ' ' = d2	Indicate leading all-blank rows of d2	Expression	Text	spaces beginning masking locate indications allspace all-space lines start blanks		
+'"' (+.~ ~:/\)~@:= d1	Locations of texts between (and including) double-quotes	Expression	Text	strings		
+'"' (>~ ~:/\)~@:= d1	Locations of texts between (and excluding) double-quotes	Expression	Text	strings		
+(# (] -~ }.@] , [) I.) b1	Changing starting indicators b1 of sublists to lengths	Tacit	Partitioning	partitions change converting conversion segments		
+(# (] -~ }.@] , [) I.) i1	Segment lengths given the number of segments that start at each position	Tacit	Partitioning	chunk start leading converting change changing segments partitions		
 I. 0 = (|~ i.) j0	Proper divisors of j0	Expression	Number Theory	factorisation factorization		
 y #~ y ~: |.!.'' y	Remove consecutive duplicate major cells	Tacit	Search	list		
 0 = (>: i. >./ j1) |/ j1	Divisibility table	Expression	Number Theory	divides divisor matrix		
