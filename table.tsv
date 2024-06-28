@@ -45,6 +45,8 @@ m %. n	Matrix Divide: Multiplicatio of m with inversed n ((%. n) (+/ . *) m)	Pri
 m %: n	Root: The m'th of n	Primitive	Arithmetic	nthroot ⁿ√ ³√ ∛ ∜	https://code.jsoftware.com/wiki/Vocabulary/percentco#dyadic	
 ^ n	Exponential: eⁿ (the n-th power of the mathematical constant e)	Primitive	Arithmetic	star asterisk exponential etothepowerof naturalexponential exp() 2.718281828459045235360287471352662 antiln antilog ln^-1() ln⁻¹() log^-1() log⁻¹() lnₑ^-1() lnₑ⁻¹() logₑ^-1() logₑ⁻¹()	https://code.jsoftware.com/wiki/Vocabulary/hat#dyadic	
 m ^ n	Power: mⁿ (the n-th power of the m)	Primitive	Arithmetic	star asterisk raisedtothepowerof exponentiation pow() ** raising ^	https://code.jsoftware.com/wiki/Vocabulary/hat#dyadic	
+m (^!.1) n	Stope Function: Pochhammer symbol (rising factorial) in the hypergeometric series	Primitive	Arithmetic	raising	https://code.jsoftware.com/wiki/Vocabulary/hat#stope	
+m (^!._1) n	Stope Function: Number of permutations of n things taken m at a time	Primitive	Arithmetic	falling factorial Pochhammer hypergeometric variations nPk P(n, k) k-permutations	https://code.jsoftware.com/wiki/Vocabulary/hat#stope	
 |. y	Reverse: Rearrange leading axis of y in reverse order	Primitive	Structural	circlestile reversing dimension	https://code.jsoftware.com/wiki/Vocabulary/bardot	
 I |. y	Rotate: Rotates items of y along leading axis by I	Primitive	Structural	circlestile rotating shifting cyclically dimension lists	https://code.jsoftware.com/wiki/Vocabulary/bardot#dyadic	
 | n	Magnitude: Absolute value of n	Primitive	Mathematical	verticalbar pipe stile stroke verticalline modulo modulus amplitude	https://code.jsoftware.com/wiki/Vocabulary/bar	
@@ -681,6 +683,8 @@ x (-. , -.~) y	Symmetric set difference: cells that appear in exactly one argume
 {."1 (+/\@|.)^:(i. n0) 0 1x	First n0 Fibonacci numbers	Expression	Mathematical	sequence series recurrence golden ratio growth rabbit population	https://code.jsoftware.com/wiki/Essays/Fibonacci_Sequence	
 {. ({: +/\@, ])^:(n0) 1	Bell number Bₙ: number of ways to partition a set of size n0	Expression	Combinatorics	count equivalence relations rhyme schemes		
 (#/.~ {~ ~. i. ]) y1	Count of total (not previous) occurrences of each element of y1	Expression	Search	tally selfcount items elements		
+({. 0 1 $~ >: - 2&|) n1	Checkerboard of shape n1	Expression	Indices	grid alternate		
+1 _1 i."1&.|:~ j2	Change connection matrix j2 (¯1 to 1) to a node matrix	Expression	Graph Theory	graph connectivity table change converting conversion	https://code.jsoftware.com/wiki/Help/Phrases/11._C._Transformations	
 x i0 {{ m ({. , x , }.) y }} y	Insert x into y before major cell i0	Adverb	Structural	items elements		
 ({.~ -@>:@$)@({.~ >:@$) y	Pad y with a layer of fill elements on all sides	Tacit	Structural	expand enlarge outer outside around edges boundary border surround frame	https://code.jsoftware.com/wiki/NYCJUG/2023-10-10#Padding_an_Array	
 (#~ (+. |.!.1)@(' '&~:)) d1	Remove duplicate spaces, turning each sequence of spaces into one	Tacit	Text	delete trim reformat extraneous blanks multiple remove drop without		
