@@ -1,69 +1,64 @@
 SYNTAX	DESCRIPTION	CLASS	CATEGORY	KEYWORDS	LINK	EXAMPLE
-] y	Same: y	Primitive	Identity	dex righttack sameright default	https://code.jsoftware.com/wiki/Vocabulary/squarert#monadic	
-x ] y	Right: y	Primitive	Identity	dex righttack sameright	https://code.jsoftware.com/wiki/Vocabulary/squarert#dyadic	
-x ] y	Church Boolean false (x if false, else y)	Primitive	Boolean/Logical	falsy falsey 0	https://code.jsoftware.com/wiki/Vocabulary/squarert#dyadic	
-[ y	Same: y	Primitive	Identity	Identity-combinator lev lefttack	https://code.jsoftware.com/wiki/Vocabulary/squarelf#mondic	
-x [ y	Left: x	Primitive	Identity	lev lefttack sameleft defer ignore where	https://code.jsoftware.com/wiki/Vocabulary/squarelf#dyadic	
-x [ y	Church Boolean true (x if true, else y)	Primitive	Boolean/Logical	truthy 1	https://code.jsoftware.com/wiki/Vocabulary/squarelf#mondic	
-+ n	Conjugate: ('Identity' if n not complex)	Primitive	Mathematical	greek cross plus conj() conjugating	https://code.jsoftware.com/wiki/Vocabulary/plus#monadic	
+] y	Same: Returns noun y unchanged (identity)	Primitive	Identity	dex righttack sameright default	https://code.jsoftware.com/wiki/Vocabulary/squarert#monadic	
+x ] y	Right: Returns the noun value of y, ignoring x	Primitive	Identity	dex righttack sameright	https://code.jsoftware.com/wiki/Vocabulary/squarert#dyadic	
+[ y	Same: Returns noun y unchanged (identity)	Primitive	Identity	Identity-combinator lev lefttack	https://code.jsoftware.com/wiki/Vocabulary/squarelf#mondic	
+x [ y	Left: Returns the noun value of x, ignoring y	Primitive	Identity	lev lefttack sameleft defer ignore where	https://code.jsoftware.com/wiki/Vocabulary/squarelf#dyadic	
+x = y	Equal: Boolean result of compare x and y item by item	Primitive	Comparison	eq sameas ===	https://code.jsoftware.com/wiki/Vocabulary/eq#dyadic	
+a = b	Logical XNOR	Primitive	Boolean/Logical	gate materialbiconditional biimplication eqv nxor bothorneither exclusivenor materialequivalence ⇔ δ ẟ Kroneckerdelta iff logicalequivalence Epq doubleimplying both-or-neither		
+< y	Box: Create a box whose contents are y	Primitive	Structural	lt boxing scalarise scalarize enclosing atom	https://code.jsoftware.com/wiki/Vocabulary/lt#monadic	
+m < n	Lesser: Returns 1 where m is less than n, else 0	Primitive	Comparison	lt before precedes ≺ smaller lesser	https://code.jsoftware.com/wiki/Vocabulary/lt#dyadic	
+<. n	Floor: Rounding n down to integer	Primitive	Mathematical	ltdot rounddown down() floor()	https://code.jsoftware.com/wiki/Vocabulary/ltdot	
+m <. n	Lesser Of (Min): Minimum of m and n	Primitive	Mathematical	ltdot lesser smaller min()	https://code.jsoftware.com/wiki/Vocabulary/ltdot#dyadic	
+<: n	Decrement: Equivalent to n-1	Tacit	Arithmetic	decrease previous		
+m <: n	Less Or Equal: Returns 1 where m is less than or equal to n, else 0	Primitive	Comparison	before precedes ≤ ≦ smaller lesser same as	https://code.jsoftware.com/wiki/Vocabulary/ltco#dyadic	
+> y	Open: Unbox element or array of boxed elements.	Primitive	Structural	gt disclose open contentof element	https://code.jsoftware.com/wiki/Vocabulary/gt#monadic	
+m > n	Larger Than: Returns 1 where m is greater than n, else 0	Primitive	Comparison	gt after follows ≻ larger succeeds	https://code.jsoftware.com/wiki/Vocabulary/gt#dyadic	
+>. n	Ceiling: Rounding n up to integer	Primitive	Mathematical	upstile roundup ceiling seiling up() ceil()	https://code.jsoftware.com/wiki/Vocabulary/gtdot	
+m >. n	Greater Of (Max): Maximum of m and n	Primitive	Mathematical	upstile greater larger max() bigger	https://code.jsoftware.com/wiki/Vocabulary/gtdot#dyadic	
+>: n	Increment: Equivalent to n+1	Tacit	Arithmetic	increase next	https://code.jsoftware.com/wiki/Vocabulary/gtco#monadic	
+m >: n	Larger Or Equal: Returns 1 where m is greater than or equal to n, else 0	Primitive	Comparison	ge after follows ≥ ≧ larger same as succeeds	https://code.jsoftware.com/wiki/Vocabulary/gtco#dyadic	
++ n	Conjugate: (Identity if n not complex)	Primitive	Mathematical	greek cross plus conj() conjugating	https://code.jsoftware.com/wiki/Vocabulary/plus#monadic	
 + n	Conjugate: Mirror complex n across x-axis	Primitive	Circular/Trigonometric	greek cross conjugate negateimaginary mirroring reflecting reflection	https://code.jsoftware.com/wiki/Vocabulary/plus#monadic	
 m + n	Plus: Adding n to m	Primitive	Mathematical	greek cross plus addition	https://code.jsoftware.com/wiki/Vocabulary/plus#dyadic	
-- n	Negate: Negates value of n (equivalent 0-n)	Primitive	Mathematical	minus hyphen invert additiveinverse opposite dash negation signchange − negating	https://code.jsoftware.com/wiki/Vocabulary/minus#monadic	
-m - n	Minus: Subtract the value of n from m	Primitive	Mathematical	minus dash hyphen subtraction difference −	https://code.jsoftware.com/wiki/Vocabulary/minus#dyadic	
++. n	Real / Imaginary: Real and imaginary parts of complex number	Primitive	Mathematical	complexnumber re() im() separate parts values list tuple converting change changing	https://code.jsoftware.com/wiki/Vocabulary/plusdot#monadic	
+m +. n	Greatest Common Divisor of m and n	Primitive	Mathematical	gcd() gcf() factor hcf() highest gcm() measure hcd Caron hacek invertedcircumflex checkmark hachek wedge ∨	https://code.jsoftware.com/wiki/Vocabulary/plusdot#dyadic	
+a +. b	Logical OR between a and b	Primitive	Boolean/Logical	gate disjunction vel alternation Caron hacek invertedcircumflex checkmark hachek Apq	https://code.jsoftware.com/wiki/Vocabulary/plusdot#dyadic	
 * n	Sign: The sign of n if n is real; a point on the unit circle if n is complex	Primitive	Mathematical	cross sgn() sign() trend	https://code.jsoftware.com/wiki/Vocabulary/star#monadic	
 m * n	Times: Multiply m and n	Primitive	Mathematical	cross times multiplication product	https://code.jsoftware.com/wiki/Vocabulary/star#dyadic	
 m * n	Probabilistic AND	Primitive	Mathematical	fuzzy probability chance conjunction Kpq	https://code.jsoftware.com/wiki/Vocabulary/star#dyadic	
 a * n	Selecting elements satisfying condition a, others to 0	Primitive	Boolean/Logical	zero cells items		
-m +. n	Greatest Common Divisor of m and n	Primitive	Mathematical	gcd() gcf() factor hcf() highest gcm() measure hcd Caron hacek invertedcircumflex checkmark hachek wedge ∨	https://code.jsoftware.com/wiki/Vocabulary/plusdot#dyadic	
-a +. b	Logical OR between a and b	Primitive	Boolean/Logical	gate disjunction vel alternation Caron hacek invertedcircumflex checkmark hachek Apq	https://code.jsoftware.com/wiki/Vocabulary/plusdot#dyadic	
+*. n	Length/Angle: Magnitude and Angle of a complex number	Primitive	Mathematical	complexnumber polar arc() abs() separate parts absolute values list tuple converting change changing	https://code.jsoftware.com/wiki/Vocabulary/stardot#monadic	
 m *. n	Lowest Common Multiple of m and n	Primitive	Mathematical	least smallest lcm() denominator lcd() caret hat circumflex ^	https://code.jsoftware.com/wiki/Vocabulary/stardot#dyadic	
 a *. b	Logical AND between a and b	Primitive	Boolean/Logical	gate conjunction caret hat circumflex Kpq ^	https://code.jsoftware.com/wiki/Vocabulary/stardot#dyadic	
->. n	Ceiling: Rounding n up to integer	Primitive	Mathematical	upstile roundup ceiling seiling up() ceil()	https://code.jsoftware.com/wiki/Vocabulary/gtdot	
-m >. n	Larger Of (Max): Maximum of m and n	Primitive	Mathematical	upstile greater larger max() bigger	https://code.jsoftware.com/wiki/Vocabulary/gtdot#dyadic	
-<. n	Floor: Rounding n down to integer	Primitive	Mathematical	downstile rounddown down() floor()	https://code.jsoftware.com/wiki/Vocabulary/ltdot	
-m <. n	Lesser Of (Min): Minimum of m and n	Primitive	Mathematical	downstile lesser smaller min()	https://code.jsoftware.com/wiki/Vocabulary/ltdot#dyadic	
+- n	Negate: Negates value of n (equivalent 0-n)	Primitive	Mathematical	minus hyphen invert additiveinverse opposite dash negation signchange − negating	https://code.jsoftware.com/wiki/Vocabulary/minus#monadic	
+m - n	Minus: Subtract the value of n from m	Primitive	Mathematical	minus dash hyphen subtraction difference −	https://code.jsoftware.com/wiki/Vocabulary/minus#dyadic	
+-. b	Not: Boolean negation	Primitive	Logical	gate tilde logicalnot logicalnegation logicalcomplement ¬ negate inverting	https://code.jsoftware.com/wiki/Vocabulary/minusdot#monadic	
+-. m	Not: Probabilistic negation (1-m)	Primitive	Statistical	fuzzy probability chance logicalnot logicalnegation logicalcomplement ~ negate inverting	https://code.jsoftware.com/wiki/Vocabulary/minusdot#monadic	
+x -. y	Less: Items of x that are not in y	Primitive	Strutural	butnot except setdifference setsubtraction setminus ∖ removing remove delete drop erasing erase eliminate eliminating deleting	https://code.jsoftware.com/wiki/Vocabulary/minusdot#dyadic	
+-: n	Halve: n divided by 2	Primitive	Arithmetic	division midpoint half	https://code.jsoftware.com/wiki/Vocabulary/minusco#monadic	
+x -: y	Match: Compare if x and y match in shape and elements	Primitive	Comparison	testif equalunderbar identical? === equivalentto sameas	https://code.jsoftware.com/wiki/Vocabulary/minusco#dyadic	
+% n	Reciprocal: 1÷n	Primitive	Arithmetic	multiplicativeinverse opposite obelus inverting reciprocating per	https://code.jsoftware.com/wiki/Vocabulary/percent#monadic	
+m % n	Divide: Division of m by n	Primitive	Arithmetic	division over ⁄ divide per	https://code.jsoftware.com/wiki/Vocabulary/percent#dyadic	
+%. n	Matrix Inverse if square matrix, otherwise the left inverse	Primitive	Arithmetic	quaddivide table inversion	https://code.jsoftware.com/wiki/Vocabulary/percentdot#monadic	
+m %. n	Matrix Divide: Multiplicatio of m with inversed n ((%. n) (+/ . *) m)	Primitive	Arithmetic	division over ⁄ divide per	https://code.jsoftware.com/wiki/Vocabulary/percentdot#dyadic	
+%: n	Square Root	Primitive	Arithmetic	squareroot sqrt ²√ ^0.5 ^.5	https://code.jsoftware.com/wiki/Vocabulary/percentco#monadic	
+m %: n	Root: The m'th of n	Primitive	Arithmetic	nthroot ⁿ√ ³√ ∛ ∜	https://code.jsoftware.com/wiki/Vocabulary/percentco#dyadic	
+^ n	Exponential: eⁿ (the n-th power of the mathematical constant e)	Primitive	Arithmetic	star asterisk exponential etothepowerof naturalexponential exp() 2.718281828459045235360287471352662 antiln antilog ln^-1() ln⁻¹() log^-1() log⁻¹() lnₑ^-1() lnₑ⁻¹() logₑ^-1() logₑ⁻¹()	https://code.jsoftware.com/wiki/Vocabulary/hat#dyadic	
+m ^ n	Power: mⁿ (the n-th power of the m)	Primitive	Arithmetic	star asterisk raisedtothepowerof exponentiation pow() ** raising ^	https://code.jsoftware.com/wiki/Vocabulary/hat#dyadic	
 |. y	Reverse: Rearrange leading axis of y in reverse order	Primitive	Structural	circlestile reversing dimension	https://code.jsoftware.com/wiki/Vocabulary/bardot	
 I |. y	Rotate: Rotates items of y along leading axis by I	Primitive	Structural	circlestile rotating shifting cyclically dimension lists	https://code.jsoftware.com/wiki/Vocabulary/bardot#dyadic	
-% n	Reciprocal: 1÷n	Primitive	Mathematical	multiplicativeinverse opposite obelus inverting reciprocating per	https://code.jsoftware.com/wiki/Vocabulary/percent	
-m % n	Divide: Division of m by n	Primitive	Mathematical	division over ⁄ divide per	https://code.jsoftware.com/wiki/Vocabulary/percent#dyadic	
 | n	Magnitude: Absolute value of n	Primitive	Mathematical	verticalbar pipe stile stroke verticalline modulo modulus amplitude	https://code.jsoftware.com/wiki/Vocabulary/bar	
 m | n	Residue: Remainder after dividing n by m	Primitive	Mathematical	verticalbar pipe stile stroke verticalline modulo modulus divisionremainder divide % divmod() residual	https://code.jsoftware.com/wiki/Vocabulary/bar#dyadic	
 ! n	Factorial: Gamma function of n+1	Primitive	Mathematical	pling exclamation bang shriek countpermutations combinatorics fact() gamma() Γ	https://code.jsoftware.com/wiki/Vocabulary/bang	
 m ! n	Out Of: Number of selections of size m from n (n pick m)	Primitive	Mathematical	pling exclamation bang shriek binomial combinatorics countcombinations unordered selecting picking outof nCk C(n,k) choose choosing		
 a ! n	Selecting elements satisfying condition a, others to 1	Primitive	Boolean/Logical	one cells items		
-? j	Roll: Random number selected from i. j	Primitive	Mathematical	questionmark roll randominteger interrogationpoint query eroteme	https://code.jsoftware.com/wiki/Vocabulary/query	
-? b	Roll: Random real number between (0,1)	Primitive	Mathematical	questionmark roll randomfloat interrogationpoint query eroteme	https://code.jsoftware.com/wiki/Vocabulary/query	
-i0 ? j0	Deal: i0 random items from i. j0 (without replacement)	Primitive	Index Generation	questionmark interrogationpoint query eroteme distinct cells elements remove indices removing erasing erase eliminate eliminating delete deleting	https://code.jsoftware.com/wiki/Vocabulary/query#dyadic	
-m < n	Less Than: Returns 1 where m is less than n, else 0	Primitive	Comparison	lt before precedes ≺ smaller lesser	https://code.jsoftware.com/wiki/Vocabulary/lt#dyadic	
-m <: n	Less Or Equal: Returns 1 where m is less than or equal to n, else 0	Primitive	Comparison	before precedes ≤ ≦ smaller lesser same as	https://code.jsoftware.com/wiki/Vocabulary/ltco#dyadic	
-x = y	Equal: Boolean result of compare x and y item by item	Primitive	Comparison	sameas ===	https://code.jsoftware.com/wiki/Vocabulary/eq#dyadic	
-a = b	Logical XNOR	Primitive	Boolean/Logical	gate materialbiconditional biimplication eqv nxor bothorneither exclusivenor materialequivalence ⇔ δ ẟ Kroneckerdelta iff logicalequivalence Epq doubleimplying both-or-neither		
-m >: n	Larger Or Equal: Returns 1 where m is greater than or equal to n, else 0	Primitive	Comparison	ge after follows ≥ ≧ larger same as succeeds	https://code.jsoftware.com/wiki/Vocabulary/gtco#dyadic	
-m > n	Larger Than: Returns 1 where m is greater than n, else 0	Primitive	Comparison	gt after follows ≻ larger succeeds	https://code.jsoftware.com/wiki/Vocabulary/gt#dyadic	
+~. y	Nub: distinct major cells of y	Primitive	Sets	cup downshoe distinctitems uniqueelements nub eraseremoveduplicates repetitions items elements	https://code.jsoftware.com/wiki/Vocabulary/tildedot	
 ~: y	Nub Sieve: mask for major cells to leave the distinct (∪y)	Primitive	Sets	unique Boolean indication indicate ⍧ items elements masking indicating nub-sieve nubsieve	https://code.jsoftware.com/wiki/Vocabulary/tildeco	
 x ~: y	Not-Equal: Inverse boolean result of compare x and y item by item	Primitive	Comparison	ne unequal differentfrom != <> /=	https://code.jsoftware.com/wiki/Vocabulary/tildeco#duadic	
 a ~: b	Logical XOR	Primitive	Boolean/Logical	gate exclusivedisjunction eor exor ⊕ ⊻ ⇎ Jpq		
-+ y	Conjugate: mirror complex y across x-axis; 'Identity' if y not complex	Primitive	Complex Numbers	greek cross plus conj() conjugating		
-m + n	Add n to m	Primitive	Arithmetic	greek cross plus addition		
-- n	Negate: 0-n	Primitive	Arithmetic	minus hyphen invert additiveinverse opposite dash negation signchange − negating		
-m - n	Subtract n from m	Primitive	Arithmetic	minus dash hyphen subtraction difference −		
-* n	Sign, or direction for complex n	Primitive	Arithmetic	cross sgn() sign() trend		
-a * n	Select elements satisfying condition a, others to 0	Primitive	Data	zero cells items		
-m * n	Multiply m and n	Primitive	Arithmetic	cross times multiplication ∙ ⋅ · product		
-m1 * n1	Ring modulation of signal m1 by n1	Primitive	Specialty			
-/:~ y	Sort up	Primitive	Ordering	sort() ascending increasing sorting reordering ordering		
-a *. b	Logical AND	Primitive	Boolean	gate conjunction caret wedge hat circumflex Kpq ^		
-\:~ y	Sort down	Primitive	Ordering	sort() descending decreasing sorting reordering ordering		
-a +. b	Logical OR	Primitive	Boolean	gate disjunction vel alternation Caron hacek invertedcircumflex checkmark hachek Apq		
->. n	Round up to integer	Primitive	Arithmetic	upstile roundup ceiling seiling up() ceil()		
-m >. n	Maximum of m and n	Primitive	Arithmetic	upstile greater larger max() bigger		
-<. n	Round down to integer	Primitive	Arithmetic	downstile rounddown down() floor()		
-m <. n	Minimum of m and n	Primitive	Arithmetic	downstile lesser smaller min()		
-% n	Reciprocal: 1÷n	Primitive	Arithmetic	multiplicativeinverse opposite obelus inverting reciprocating per		
-m % n	Divide m by n	Primitive	Arithmetic	division over ⁄ divide per		
-%: n	Square Root	Primitive	Arithmetic	squareroot sqrt ²√ ^0.5 ^.5		
-m %: n	m'th Root of n	Primitive	Arithmetic	nthroot ⁿ√ ³√ ∛ ∜		
-~. y	Nub: distinct major cells of y	Primitive	Sets	cup downshoe distinctitems uniqueelements nub eraseremoveduplicates repetitions items elements	https://code.jsoftware.com/wiki/Vocabulary/tildedot	
+? j	Roll: Random number selected from i. j	Primitive	Mathematical	questionmark roll randominteger interrogationpoint query eroteme	https://code.jsoftware.com/wiki/Vocabulary/query#monadic	
+? 0	Random floating-point value in interval (0,1)	Primitive	Mathematical	questionmark roll randominteger interrogationpoint query eroteme	https://code.jsoftware.com/wiki/Vocabulary/query#monadic	
+i ? j	Deal: Select i items at random (without repetition) from i. j	Primitive	Mathematical	questionmark roll randominteger interrogationpoint query eroteme	https://code.jsoftware.com/wiki/Vocabulary/query#dyadic	
 name =. y	Define local	Syntax	Assignment	leftarrow gets is copula let define naming denotes means		
 name =: y	Define global	Syntax	Assignment	leftarrow gets is copula let define naming denotes means		
 _	Positive infinity	Syntax	Data	upper limit ∞ ∞ ¯ positiveinfinity ∞		
@@ -159,7 +154,6 @@ x F@[ y	Ignore right argument and call F monadically on x	Tacit	Function Applica
 0&>: n	Non-positive?	Tacit	Arithmetic	testif nonpositive?		
 (F ] ]) y	Apply function F but discard result and return the original value	Tacit	Function Application	is-yfunction do-yfunction enpassant noresult isyfunction doyfunction		
 (#~ F) y	Filter to only those elements of y that satisfy cell-wise criterion F	Expression	Selection	filtering where cells items		
-<: n	Decrement	Tacit	Arithmetic	decrease previous		
 (÷ F) n	Normalise, scaling so that the norm F is equal to 1	Expression	Data	normalise arbitrary custom F=1 vector list		
 x (F@[ G H@]) y	Split-Compose: apply G between (F x) and (H y), that is (F x) G (H y)	Tacit	Composition	composewith splitover (fX)G(hY) (fX)ghY		
 x (0)} y	Replace first major cell of y with x	Expression	Structural	substitute merge amend replace update 1st item element		
@@ -560,7 +554,7 @@ m1 +"1 n1 *"1 (#: i.) j1	Multi-dimensional arithmetic progression with dimension
 b1} x ,: y	Merge x and y using b1 (1 for x's element, 0 for y1's element)	Tacit	Structural	faro weave dovetail zipper zipping merging interweave interweaving interleave interleaving shuffle shuffling meshing alternative choose indicate masking indicating elements items major cells bitmask bit-mask		
 ({: , }.@}: , {.) y	Swap first and last major cells	Tacit	Structural	exchange swap head tail leading trailing elements items 1st start beginning ending		
 m1 +/@:|@:- n1	Manhattan distance between two points in n-space	Tacit	Geometric	taxicab L1 L-1 L1-distance ℓ1 ℓ-1 ℓ₁ L¹ d()		
-*/ >: i0 ({.~ -)~ i. j0	Number of ordered selections (permutations) of i0 items from j0 choices	Expression	Combinatorics	combinatorics permutations		
+i0 (! * !@[) j0	Number of ordered selections (permutations) of i0 items from j0 choices	Tacit	Combinatorics	combinatorics permutations		
 10 #. d1	Natural number from base-10 digits	Expression	Mathematical	frombase10 base-10 dec() decimal Conversion converting change changing		
 #. d1	Natural number from binary representation	Expression	Mathematical	frombase2 base-2 binary Conversion converting change changing		
 (+ %)/\ n1	Continued fraction convergents with terms n1	Expression	Mathematical	series sequence	https://code.jsoftware.com/wiki/Essays/Continued_Fractions	
@@ -753,7 +747,7 @@ AlphaNum_j_ -.~ d1	Remove non-alphanumeric ASCII characters	Tacit	Text	punctuati
 (*./\ '0' = d)} d,:' '	Replace leading zeros with spaces in d	Expression	Text	blanks nulls zeroes nils naughts noughts 0s falses falsehoods start beginning		
 {{ for_j. i. # y do. y =. y <. j ({"1 +/ {) y end. }} n2	Shortest path length matrix from weighted adjacency matrix n2, using Floyd-Warshall	Block Function	Graph Theory	roy wfi directed transitive closure algorithm pathfinding search lengths dense edges vertices follow connections	https://code.jsoftware.com/wiki/Essays/Floyd	
 (I. i1) +//. n	Sums (+´) of sublists of n with lengths given by i1	Expression	Data	segmented partitioned sub-vectors		
-1:`(<: ((0,]) + [ * ],0:) $:@<:)@.* i0	Stirling numbers of the first kind s(i0,k) for all k (see addon: math/misc/numbers)	Expression	Combinatorics	cycles	https://code.jsoftware.com/wiki/Essays/Stirling_Numbers	https://jsoftware.github.io/j-playground/bin/html2/#base64=MTpgKDw6ICgoMCxdKSArIFsgKiBdLDA6KSAkOkA8OilALiogMTAKbG9hZCAnbWF0aC9taXNjL251bWJlcnMnCns6IGN5Y2xlcyAxMA==
+((|.!.0@] + *) ,&0)/ 1,~ i. i0	Stirling numbers of the first kind s(i0,k) for all k (see addon: math/misc/numbers)	Expression	Combinatorics	cycles	https://code.jsoftware.com/wiki/Essays/Stirling_Numbers	https://jsoftware.github.io/j-playground/bin/html2/#base64=MTpgKDw6ICgoMCxdKSArIFsgKiBdLDA6KSAkOkA8OilALiogMTAKTkIuIEFsdGVybmF0aXZlbHkKMSBdRi4uKCh8LiEuMEBdICsgKikgMCAsfiBdKSB8LiBpLiAxMApOQi4gT3IKbG9hZCAnbWF0aC9taXNjL251bWJlcnMnCns6IGN5Y2xlcyAxMA==
 1:`(i.@>: ((0,]) + [ * ],0:) $:@<:)@.* i0	Stirling numbers of the second kind S(i0,k) for all k (see  addon: math/misc/numbers)	Expression	Combinatorics	subsets	https://code.jsoftware.com/wiki/Essays/Stirling_Numbers	https://jsoftware.github.io/j-playground/bin/html2/#base64=MTpgKGkuQD46ICgoMCxdKSArIFsgKiBdLDA6KSAkOkA8OilALiogMTAKbG9hZCAnbWF0aC9taXNjL251bWJlcnMnCns6IHN1YnNldHMgMTA=
 (z e. y)} z,:x	Replace all occurrences of elements from y in array z with x	Block Function	Structural	substitute merge amend update cells items		
 +/ m ^/~ I. 0 = (|~ i.@>:) j0	Sum of m'th powers of positive divisors of j0	Expression	Number Theory	sigma_x sigma_2 sigma_3 sigma_4 sigmax sigma2 sigma3 sigma4 σₓ(n) σ₂(n) σ₃(n) σ₄(n)		
