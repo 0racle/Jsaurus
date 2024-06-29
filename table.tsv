@@ -84,7 +84,7 @@ i ? j	Deal: Select i items at random (without repetition) from i. j	Primitive	Ma
 name =. y	Define local	Syntax	Assignment	leftarrow gets is copula let define naming denotes means		
 name =: y	Define global	Syntax	Assignment	leftarrow gets is copula let define naming denotes means		
 _	Positive infinity	Syntax	Data	upper limit ∞ ∞ ¯ positiveinfinity ∞		
-__	Negative infinity	Syntax	Data	lower limit -∞ ¯∞ ¯¯ negativeinfinity -∞		
+__	Negative infinity	Syntax	Data	lower limit -∞ ¯∞ _∞ ¯¯ negativeinfinity -∞		
 (x + y) * z	Precedence: z×x+y	Syntax	Syntax	roundparentheses grouping roundparens		
 'name1 name2' =. y	Multiple assignment	Syntax	Assignment	leftarrow get are copula let define list naming denote mean unpacking distributing distribution vector distributed pervasive pervading pervade unpacking unpacked		
 x1 , y1 ,… ,: z1	n-row table from n vectors	Syntax	Array	rows table lists		
@@ -149,7 +149,7 @@ x ,&.> y	Join corresponding boxed elements	Tacit	Structural	juxtapose tuples cel
 i0 # ,: y1	Table with i0 rows, each consisting of y1	Expression	Structural	fill table		https://jsoftware.github.io/j-playground/bin/html2/#base64=MyAjICw6ICdoZWxsbyc=
 i0 { /:~ y	i0'th-smallest major cell of y	Expression	Selection	leastof minimum lexicographically item element		
 i0 { \:~ y	i0'th-largest major cell of y	Expression	Selection	greatestof maximum biggest lexicographically item element		
-{. i0 |. y	Select major cell of y at cyclic offset i0 (default i0:¯1)	Expression	Selection	element item		https://jsoftware.github.io/j-playground/bin/html2/#base64=ey4gMTIgfC4gJ3NtaWxlJw==
+{. i0 |. y	Select major cell of y at cyclic offset i0	Expression	Selection	element item		https://jsoftware.github.io/j-playground/bin/html2/#base64=ey4gMTIgfC4gJ3NtaWxlJw==
 a0 {:: x ; y	Pick y if a0 is true or x if a0 is false	Expression	Selection	conditional selector pick choose		
 {: $ y	Length of last axis, assuming at least one axis	Expression	Array	count length() cells len() cells elements dimension ending		
 {: $ y	Number of columns in y2	Expression	Array	trailingshape		
@@ -160,7 +160,7 @@ i1 $ ,: y	Array of shape i1 filled with copies of y	Expression	Structural	copy r
 (#: i.) 2 2	Unit square	Tacit	Geometric			
 (#: i.) 3 $ 2	Unit cube	Constant	Geometric			
 (#: i.) 4 $ 2	Unit tesseract	Constant	Geometric			
-(#: i.@(*/)) y1	All ordered tuples choosing elements from i.&.> 2 3 4	Tacit	Indices	odometer indices major cells items		
+(#: i.@(*/)) y1	All ordered tuples choosing elements from i.&.> y1	Tacit	Indices	odometer indices major cells items		
 i0 {. j0 $ 1	Prefix List: length i0 with j0 ones on the left, the rest zeroes	Expression	Data	1s 0s zeros falses falsehoods trues truths		
 ,"_1 y	Convert to rank 2 array by flattening each cell to a row	Tacit	Structural	commabar ravelcells flattencells razecells Merge demoterank lessenrank reduce reducing		https://jsoftware.github.io/j-playground/bin/html2/#base64=LCJfMSBpLiAzIDMgMw==
 i0 $"0 y1	Table with i0 columns, each consisting of y1	Tacit	Structural	fill table		
@@ -210,7 +210,7 @@ F/ , y	Fold F over all elements without respect to shape	Expression	Function App
 ~:/\ b	Convert reflected Gray code to binary	Tacit	Boolean	flip change changing inverting negating bitmask bit-mask base-2 base2 mask Conversion converting change changing		
 ~:/\ b	Parity: Connect odd and even ones	Tacit	Boolean	flip change changing inverting negating bitmask bit-mask 1s running trues truths mask		
 <~/\.&.|. b	Indicate 1s preceded by an even number of 1s in their group	Tacit	Partitioning	indicating flipping turning change changing inverting negating bitmask bit-mask zeros zeroes falses ones trues truths falsehoods 1st mask		
-n * ¯1 ^ a	Change sign of n where a is 1	Expression	Arithmetic	signum conditionalnegation changing converting conversion element-wise		
+n * _1 ^ a	Change sign of n where a is 1	Expression	Arithmetic	signum conditionalnegation changing converting conversion element-wise		
 10&^ n	Common anti-logarithm	Tacit	Arithmetic	log⁻¹() log^1() lg⁻¹() lg10^1() log10⁻¹() log10^1() lg10⁻¹() lg10^1() log₁₀⁻¹() log₁₀^1() lg₁₀⁻¹() lg₁₀^1() antilogarithm		
 ^&3 n	Cube	Tacit	Arithmetic	³ ^3		
 3&%: n	Cube Root	Tacit	Arithmetic	squareroot cbrt ³√ ∛ ^0.333 ^.333 ^(1/3)		
@@ -242,8 +242,8 @@ x i."1 y	Indices of elements of x in corresponding rows of x	Tacit	Search	indexi
 \: x i. y	Grade down of y according to key x	Expression	Ordering	custom sort order descending		
 /: \: y	Rank cells of y descending (first is lower-ranked in a tie)	Expression	Ordering	falling down ordinals cardinals list rownumber		
 (<0 1) |: y2	Main diagonal of matrix	Expression	Selection	table		
-|. |: y2	Rotate 90° clockwise	Expression	Structural	turning rotating rotation -90° ¯90° quarter-turn quarterturn		
-|: |. y2	Rotate 90° counter-clockwise	Expression	Structural	turning rotating rotation -90° ¯90° quarter-turn quarterturn counterclockwise		
+|. |: y2	Rotate 90° clockwise	Expression	Structural	turning rotating rotation -90° _90° ¯90° quarter-turn quarterturn		
+|: |. y2	Rotate 90° counter-clockwise	Expression	Structural	turning rotating rotation -90° _90° ¯90° quarter-turn quarterturn counterclockwise		
 F&.|: y	Apply action F defined on rows to columns instead	Tacit	Function Application			
 |:"2 y	Transpose every submatrix of y	Tacit	Structural	cant ^T ⸆ ᵀ sub-matrix sub-table subtable planes		
 {. a.	Null character (NUL)	Constant	Text	\0 ^@ U+00 0x00h \u00 ≢00		
@@ -258,7 +258,7 @@ F&.|: y	Apply action F defined on rows to columns instead	Tacit	Function Applica
 7 { a.	Bell character (BEL)	Constant	Text	\a ^G U+07 0x07h \u07 ≢07 beep		
 8 { a.	Backspace character (BS)	Constant	Text	\b ^H U+08 0x08h \u08 ≢08		
 9 { a.	Horizontal Tab character (HT)	Constant	Text	\t ^i U+00 0x00h \u00 ≢00 tabulation		
-7 u: i	Characters from Unicode code point numbers	Expression	Text	utf-8 utf8 utf-16 utf16 utf-32 utf32 ucs-4 ucs4 ucs-2 ucs2 iso10646 ord() num() chr() char() ascii latin-1 windows-1252 ansi mapping UniversalCodedCharacterSet UniversalCharacterSet codepoints code-points converting change changing		
+7 u: i	Unicode characters from code point numbers	Expression	Text	utf-8 utf8 utf-16 utf16 utf-32 utf32 ucs-4 ucs4 ucs-2 ucs2 iso10646 ord() num() chr() char() ascii latin-1 windows-1252 ansi mapping UniversalCodedCharacterSet UniversalCharacterSet codepoints code-points converting change changing		
 3 u: c	Characters to Unicode code point numbers	Expression	Text	utf-8 utf8 utf-16 utf16 utf-32 utf32 ucs-4 ucs4 ucs-2 ucs2 iso10646 ord() num() chr() char() ascii latin-1 windows-1252 ansi mapping UniversalCodedCharacterSet UniversalCharacterSet codepoints code-points converting change changing	https://code.jsoftware.com/wiki/Vocabulary/UnicodeCodePoint	
 expr [ name =. y	Combining two lines into one	Expression	Syntax	lev lefttack where		
 o. 2	tau (2 pi)	Constant	Mathematical	Palais'circleconstant Palais'constant Palaisconstant 6.283185307179586476925286766559006 τ 𝜏		
@@ -289,7 +289,7 @@ i0 (] $~ [,~ #@] <.@% [) y1	Reshape y1 to i0-column table (truncated)	Expression
 {: , y	The last element of y	Expression	Selection	cell element		
 +@- n	Negate real part (“real conjugate”)	Tacit	Complex Numbers			
 -@+ n	Mirror complex n across y-axis	Tacit	Complex Numbers	negatereal mirroring reflecting reflection		
-m *@- n	Sign of difference (¯1:m is smaller, 0:m=n, 1:m is bigger)	Tacit	Data	signum cmp() <=> >-< spaceship space-ship three-way compare comparing comparison		
+m *@- n	Sign of difference (_1:m is smaller, 0:m=n, 1:m is bigger)	Tacit	Data	signum cmp() <=> >-< spaceship space-ship three-way compare comparing comparison		
 m <.@% n	Integer Division	Tacit	Arithmetic	intdiv() ≢ // divmod()		
 i.@# y	Indices of Major Cells of y	Tacit	Indices	enumerate number count items elements		
 i.@# y2	All row indices of table y2	Tacit	Indices	enumerate rows table		
@@ -305,7 +305,7 @@ _2 ]\ y1	Reshape list y1 into a two-column table (fills if too short)	Expression
 (<~ |.!.0) b	Boolean first ones in each group of ones	Tacit	Partitioning	beginningsofruns trues truths 1st binary base-2 base2 runs sequences blocks		
 (%~ i) j0	Start points when [0,1) is split into j0 intervals	Tacit	Sequences	unit normalized steps linear divide		
 i. >: j0	Integers from 0 to j0 inclusive	Expression	Sequences	unsigned natural whole numbers additional extra		
-(|~ *) n	Signed fractional part of n (e.g. ¯0.4 for ¯2.4)	Expression	Arithmetic	decimals		
+(|~ *) n	Signed fractional part of n (e.g. _0.4 for _2.4)	Expression	Arithmetic	decimals		
 a0 (}.~ -)~ y	Conditional drop of last element of y	Tacit	Structural	trailing cell item delete remove ending without		
 i0 ({.~ -)~ y	Pad y1 on the left to width i0	Tacit	Structural	extend left-align leftalign text		
 (-: |.) d1	Is d1 a palindrome?	Expression	Text	testif		
@@ -588,8 +588,8 @@ i0 (! * !@[) j0	Number of ordered selections (permutations) of i0 items from j0 
 (100 * ] % +/) n	Column-wise percentage per column	Tacit	Data	≢ vertically columnwise		
 ~:/ 0 = 400 100 4 |/ j	Is year j a leap year?	Expression	Specialty	testif gregoriancalendar 29thfeb29 29february29th		
 >./@(([ >. +)/\.) n1	Largest sum of any contiguous sublist	Expression	Data	maximum subarray sublist sub-array sub-list sub-vector biggest highest kadane's kadanes algorithm	https://code.jsoftware.com/wiki/Essays/Kadane_Algorithm;_J_Tutorial	
-; (+/\ a1) <@(F/\)/. y	Segmented scan: like F` but starting over whenever indicated by a1	Expression	Function Application	cumulativereduce rowwise sub-vectors sub-lists partitioned subvectors sublists row-wise horizontally		
-(F * 0 ~: [)/\.&.|. n	Segmented scan: like F` but starting over whenever 0 is seen	Expression	Function Application	cumulativereduce rowwise sub-vectors sub-lists partitioned subvectors sublists		
+; (+/\ a1) <@(F/\)/. y	Segmented scan: like F/\ but starting over whenever indicated by a1	Expression	Function Application	cumulativereduce rowwise sub-vectors sub-lists partitioned subvectors sublists row-wise horizontally		
+(F * 0 ~: [)/\.&.|. n	Segmented scan: like F/\ but starting over whenever 0 is seen	Expression	Function Application	cumulativereduce rowwise sub-vectors sub-lists partitioned subvectors sublists		
 i0 (* $ ] {. 1:) j0	Mark starting points for i0 sublists of width j0	Tacit	Partitioning	segmented partitioned vector starts beginnings list		
 x (<i j)} y2	Replace element i,j of matrix y2 with x	Tacit	Structural	modify change at index		
 (~: *. ~:&.|.) y	Indicate which cells of y appear exactly once	Tacit	Search	unique indication indicate items masking indicating		
@@ -604,12 +604,13 @@ x1 ,@:(,"0 1~) y1	Insert x1 after every element of y1	Tacit	Structural	merge cel
 (i.@# -: \:) n	Is n non-increasing?	Tacit	Ordering	testif descending? falling? down ordered? decreasing? sorted?		
 ({~ {.@/:@:|) n1	Element with the smallest magnitude (first in case of ties)	Tacit	Ordering	minimum absolute value closest nearest to 0 zero		
 ({~ {.@\:@:|) n1	Element with largest magnitude (first in case of ties)	Tacit	Ordering	maximum absolute value biggest farthest furthest away from 0 zero		
+(\: F/~) y1	Sort y1 with custom comparison F (less-than or similar)	Tacit	Ordering	ascending increasing sorting reordering by comparator three-result		
 (|. \: +/\ a1) { y	Reverse sublists of y indicated by starting mask a1	Expression	Structural			
 x (] /: i.) y	Move major cells of y that appear in x to the front	Tacit	Search	promote cells items		
 x (] \: i.) y	Move major cells of y that appear in x to the end	Tacit	Search	major cells elements trailing ending		
 (<"1 i2) { y	Select: each row of i2 selects a cell from y	Expression	Selection	rightshoeunderbar saneindexing ⊇ items elements index		
-m (+/ . *) n	Matrix product of m and n (¯1↑m ↔ 1↑≢n)	Tacit	Linear Algebra	dotproduct multiplication multiply		
-m (-/ . *) n	Alternating matrix product of m and n (¯1↑m ↔ 1↑≢n)	Tacit	Linear Algebra			
+m (+/ . *) n	Matrix product of m and n ({:#m ↔ {.#n)	Tacit	Linear Algebra	dotproduct multiplication multiply		
+m (-/ . *) n	Alternating matrix product of m and n ({:#m ↔ {.#n)	Tacit	Linear Algebra			
 a2 (+./ . *.) b2	Extend a transitive binary relation	Tacit	Graph Theory	extension base-2 base2		
 m2 (<./ . +) n2	Extend a distance table to next leg	Tacit	Graph Theory	extension matrix		
 ({~ n0 ? #) y	n0 random cells of y, chosen without replacement	Tacit	Random	srs draw without replacement removing		
@@ -653,7 +654,7 @@ i0 (+/"_1@(]\) % [) n	n-wise (i0) rolling average of n	Tacit	Data	rollingmean wi
 i0 (* $ -@] {. 1:) j0	Mark ending points for i0 sublists of width j0	Tacit	Partitioning	vector list trailing segments partitions		
 (3 %~ 2&^ - _1&^) j0	Jacobsthal number	Tacit	Mathematical	sequence Ernst j(n) A001045() A1045()		
 (-. (i. # y) e. i) # y	Remove major cells with indices i from y	Expression	Selection	without remove indices delete drop		
-x _1:`i:@.(e.~) y	Last indices in x of major cells y (¯1 if not found)	Expression	Search	indexin indexof finding locating locate positionof items elements location		
+x _1:`i:@.(e.~) y	Last indices in x of major cells y (_1 if not found)	Expression	Search	indexin indexof finding locating locate positionof items elements location		
 i1 {^:j0 i. # i1	Permutation i1 to the power of j0	Expression	Combinatorics	repeated		
 (i.@# -: |.@/:) n	Is n Strictly Decreasing?	Tacit	Ordering	testif descending? falling? down ordered? sorted?		
 (i.@# -: |.@\:) n	Is n Strictly Increasing?	Tacit	Ordering	testif ascending? rising? up ordered? sorted?		
@@ -705,7 +706,7 @@ x (-. , -.~) y	Symmetric set difference: cells that appear in exactly one argume
 {. ({: +/\@, ])^:(n0) 1	Bell number Bₙ: number of ways to partition a set of size n0	Expression	Combinatorics	count equivalence relations rhyme schemes		
 (#/.~ {~ ~. i. ]) y1	Count of total (not previous) occurrences of each element of y1	Expression	Search	tally selfcount items elements		
 ({. 0 1 $~ >: - 2&|) n1	Checkerboard of shape n1	Expression	Indices	grid alternate		
-1 _1 i."1&.|:~ j2	Change connection matrix j2 (¯1 to 1) to a node matrix	Expression	Graph Theory	graph connectivity table change converting conversion	https://code.jsoftware.com/wiki/Help/Phrases/11._C._Transformations	
+1 _1 i."1&.|:~ j2	Change connection matrix j2 (_1 to 1) to a node matrix	Expression	Graph Theory	graph connectivity table change converting conversion	https://code.jsoftware.com/wiki/Help/Phrases/11._C._Transformations	
 x i0 {{ m ({. , x , }.) y }} y	Insert x into y before major cell i0	Adverb	Structural	items elements		
 ({.~ -@>:@$)@({.~ >:@$) y	Pad y with a layer of fill elements on all sides	Tacit	Structural	expand enlarge outer outside around edges boundary border surround frame	https://code.jsoftware.com/wiki/NYCJUG/2023-10-10#Padding_an_Array	
 (#~ (+. |.!.1)@(' '&~:)) d1	Remove duplicate spaces, turning each sequence of spaces into one	Tacit	Text	delete trim reformat extraneous blanks multiple remove drop without		
