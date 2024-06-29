@@ -47,17 +47,37 @@ m %: n	Root: The m'th of n	Primitive	Arithmetic	nthroot ⁿ√ ³√ ∛ ∜	htt
 m ^ n	Power: mⁿ (the n-th power of the m)	Primitive	Arithmetic	star asterisk raisedtothepowerof exponentiation pow() ** raising ^	https://code.jsoftware.com/wiki/Vocabulary/hat#dyadic	
 m (^!.1) n	Stope Function: Pochhammer symbol (rising factorial) in the hypergeometric series	Primitive	Arithmetic	raising	https://code.jsoftware.com/wiki/Vocabulary/hat#stope	
 m (^!._1) n	Stope Function: Number of permutations of n things taken m at a time	Primitive	Arithmetic	falling factorial Pochhammer hypergeometric variations nPk P(n, k) k-permutations	https://code.jsoftware.com/wiki/Vocabulary/hat#stope	
-|. y	Reverse: Rearrange leading axis of y in reverse order	Primitive	Structural	circlestile reversing dimension	https://code.jsoftware.com/wiki/Vocabulary/bardot	
-I |. y	Rotate: Rotates items of y along leading axis by I	Primitive	Structural	circlestile rotating shifting cyclically dimension lists	https://code.jsoftware.com/wiki/Vocabulary/bardot#dyadic	
+$ y	Shape Of: The length of each axis of y (or empty for atoms)	Primitive	Structural	dimensions rho ρ ϱ rank axes	https://code.jsoftware.com/wiki/Vocabulary/dollar#monadic	
+i $ y	Shape: Items of y are shaped to i	Primitive	Structural	zig zag rho mold form dimension array ⍴ ρ ϱ mould dim() axis cyclically repeat repetition repeats repeating take taking elements of	https://code.jsoftware.com/wiki/Vocabulary/dollar#dyadic	
+$. m	Sparse: Representation of m that only stores non-zero atoms	Primitive	Structural		https://code.jsoftware.com/wiki/Vocabulary/dollardot#monadic	
+n $. m	Sparse: Change sparse representation specified by n	Primitive	Structural		https://code.jsoftware.com/wiki/Vocabulary/dollardot#dyadic	
+[x] $: y	Self-Reference: Stands for the verb currently being executed	Primitive	Functional	recurse recursion inner callsite caller scope	https://code.jsoftware.com/wiki/Vocabulary/dollarco	
+~. y	Nub: Removes duplicates from a list	Primitive	Search	distinctitems uniqueelements eraseremoveduplicates repetitions items elements	https://code.jsoftware.com/wiki/Vocabulary/tildedot	
+~: y	Nub Sieve: Indicate the first time an item appears in y (unique mask)	Primitive	Search	unique indication indicate ⍧ items elements masking indicating	https://code.jsoftware.com/wiki/Vocabulary/tildeco#monadic	
+x ~: y	Not-Equal: Inverse boolean result of comparing x and y item by item	Primitive	Comparison	ne unequal differentfrom != <> /=	https://code.jsoftware.com/wiki/Vocabulary/tildeco#duadic	
+a ~: b	Logical XOR	Primitive	Boolean/Logical	gate exclusivedisjunction eor exor ⊕ ⊻ ⇎ Jpq		
 | n	Magnitude: Absolute value of n	Primitive	Mathematical	verticalbar pipe stile stroke verticalline modulo modulus amplitude	https://code.jsoftware.com/wiki/Vocabulary/bar	
 m | n	Residue: Remainder after dividing n by m	Primitive	Mathematical	verticalbar pipe stile stroke verticalline modulo modulus divisionremainder divide % divmod() residual	https://code.jsoftware.com/wiki/Vocabulary/bar#dyadic	
+|. y	Reverse: Rearrange leading axis of y in reverse order	Primitive	Structural	circlestile reversing dimension	https://code.jsoftware.com/wiki/Vocabulary/bardot	
+i |. y	Rotate: Rotates items of y along leading axis by i	Primitive	Structural	circlestile rotating shifting cyclically dimension lists	https://code.jsoftware.com/wiki/Vocabulary/bardot#dyadic	
+|: y	Transpose: Reverses the axes of an array y	Primitive	Structural	circlebackslash cant rotateaxes ^T ⸆ ᵀ reordering ordering rotating dimensions	https://code.jsoftware.com/wiki/Vocabulary/barco#monadic	
+i1 |: y	Rearrange Axes: Move axis i1 become the last axis	Primitive	Structural	circlebackslash diagonal reorderaxes reordering dimensions shuffle slice shuffling slicing	https://code.jsoftware.com/wiki/Vocabulary/barco#dyadic	
+, y	Ravel: Produces a list containing all the atoms in y	Primitive	Structural	stack merge flatten column-wise columnwise	https://code.jsoftware.com/wiki/Vocabulary/comma#monadic	
+x , y	Append: Creates an array containing the items of x followed by the items of y	Primitive	Structural	concatenate stack columnwise connect join	https://code.jsoftware.com/wiki/Vocabulary/comma#dyadic	
+,. y	Ravel Items: Creates a table from items of y	Primitive	Structural	commabar flattencells razecells merge demoterank lessenrank reduce reducing	https://code.jsoftware.com/wiki/Vocabulary/commadot#monadic	
+x ,. y	Stitch: Joins each item of x to the corresponding item of y	Primitive	Structural	extend with next merge join concatenate table list connect	https://code.jsoftware.com/wiki/Vocabulary/commadot#dyadic	
+,: y	Itemize: Increase rank of y, creating an array whose single item is y	Primitive	Structural	additional dimensions axes axis items elements cells extend shape add beginning first 1st rowmatrixfromvector	https://code.jsoftware.com/wiki/Vocabulary/commaco#monadic	
+x ,: y	Laminate: Creates a two-item, joining x and y along new axis	Primitive	Structural	comma combine juxtapose dimension stack	https://code.jsoftware.com/wiki/Vocabulary/commaco#dyadic	
+# y	Tally: Counts the items in y	Primitive	Selection	count length() cells len() major cells elements dimension	https://code.jsoftware.com/wiki/Vocabulary/number#monadic	
+i1 # y	Copy: Copy major cells of y i1 times	Primitive	Selection	compressing selecting items vertically rowsofmatrix columnwise column-wise dimension 1st start beginning down bitmask bit-mask	https://code.jsoftware.com/wiki/Vocabulary/number#dyadic	
+a1 # y	Copy: Filter major cells of y according to mask a1	Primitive	Selection	compressing selecting items vertically rowsofmatrix columnwise column-wise dimension 1st start beginning down bitmask bit-mask	https://code.jsoftware.com/wiki/Vocabulary/number#dyadic	
+#. b1	Base 2: Binary b1 as a decimal number	Primitive	Mathematical	decode decoding uptack pack frommixedradix fromradix basevalue base-value conversion converting change changing	https://code.jsoftware.com/wiki/Vocabulary/numberdot#monadic	
+i #. j	Base: Evaluate j in number system i	Primitive	Mathematical	decode decoding uptack pack frommixedradix fromradix basevalue base-value conversion converting change changing	https://code.jsoftware.com/wiki/Vocabulary/numberdot#dyadic	
+#: j	Antibase 2:	Primitive	Mathematical	encode antibase tobase encode downtack representation unpack tomixedradix toradix conversion inversebase converting change changing	https://code.jsoftware.com/wiki/Vocabulary/numberco#monadic	
+i #: j	Antibase: Encode value j in number system i	Primitive	Mathematical	encode tobase encode downtack representation unpack tomixedradix toradix conversion inversebase converting change changing	https://code.jsoftware.com/wiki/Vocabulary/numberco#dyadic	
 ! n	Factorial: Gamma function of n+1	Primitive	Mathematical	pling exclamation bang shriek countpermutations combinatorics fact() gamma() Γ	https://code.jsoftware.com/wiki/Vocabulary/bang	
 m ! n	Out Of: Number of selections of size m from n (n pick m)	Primitive	Mathematical	pling exclamation bang shriek binomial combinatorics countcombinations unordered selecting picking outof nCk C(n,k) choose choosing		
 a ! n	Selecting elements satisfying condition a, others to 1	Primitive	Boolean/Logical	one cells items		
-~. y	Nub: distinct major cells of y	Primitive	Sets	cup downshoe distinctitems uniqueelements nub eraseremoveduplicates repetitions items elements	https://code.jsoftware.com/wiki/Vocabulary/tildedot	
-~: y	Nub Sieve: mask for major cells to leave the distinct (∪y)	Primitive	Sets	unique Boolean indication indicate ⍧ items elements masking indicating nub-sieve nubsieve	https://code.jsoftware.com/wiki/Vocabulary/tildeco	
-x ~: y	Not-Equal: Inverse boolean result of compare x and y item by item	Primitive	Comparison	ne unequal differentfrom != <> /=	https://code.jsoftware.com/wiki/Vocabulary/tildeco#duadic	
-a ~: b	Logical XOR	Primitive	Boolean/Logical	gate exclusivedisjunction eor exor ⊕ ⊻ ⇎ Jpq		
 ? j	Roll: Random number selected from i. j	Primitive	Mathematical	questionmark roll randominteger interrogationpoint query eroteme	https://code.jsoftware.com/wiki/Vocabulary/query#monadic	
 ? 0	Random floating-point value in interval (0,1)	Primitive	Mathematical	questionmark roll randominteger interrogationpoint query eroteme	https://code.jsoftware.com/wiki/Vocabulary/query#monadic	
 i ? j	Deal: Select i items at random (without repetition) from i. j	Primitive	Mathematical	questionmark roll randominteger interrogationpoint query eroteme	https://code.jsoftware.com/wiki/Vocabulary/query#dyadic	
@@ -536,7 +556,8 @@ f&{{ (x`:0) y }}	Function that applies all functions in gerund f and returns all
 (f`:0)"_ y	Apply each function in gerund f to the whole of y	Expression	Function Application	functions each every list gerund elements collect		
 f {{ (x`:6) y }} y	Function to apply gerund f to y as a function	DirectDef	Function Application	call tacit dynamic value subject		
 ({~ ?~@#) y	Randomly reorder (shuffle) cells of y	Tacit	Random	permutation knuth fisher yates		
-({~ ?~@#) y	Random element of list y	Tacit	Random	deal one select		
+({~ ?@#) y	Random element of list y	Tacit	Random	deal pick select one		
+n (] {~ [ ?@$ #@]) y	Random elements of list y in shape of n	Tacit	Random	deal one select		
 ' ' -.~ d1	Remove spaces from string	Expression	Text	deletespaces blanks drop without		
 *./"1 ' ' = d2	Mask indicating all-blank rows of table d2	Expression	Text	spaces empty filter indicate masking indicating blanks bitmask bit-mask		
 +/"1 ' ' ~: d2	Lengths of words in table d2 if padded with trailing spaces	Expression	Text	spaces blanks count varchar		
