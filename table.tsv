@@ -90,7 +90,7 @@ i0 {. y	Take: The leading i0 items of y	Primitive	Selection	pike uparrow table g
 {: y	Tail: The last item of y	Primitive	Selection	y[-1] x[-1] trailing element item ending	https://code.jsoftware.com/wiki/Vocabulary/curlylfco#monadic	
 }. y	Behead: Drop the leading item from y	Primitive	Selection	drop chop leading element item 1st delete start beginning without	https://code.jsoftware.com/wiki/Vocabulary/curlyrtdot#monadic	
 i0 }. y	Drop: Drop the leading i0 items of y	Primitive	Selection	skip delete remove without	https://code.jsoftware.com/wiki/Vocabulary/curlyrtdot#dyadic	
-}: y	Curtail:	Primitive	Selection	drop chop trailing element item delete ending without	https://code.jsoftware.com/wiki/Vocabulary/curlyrtco#monadic	
+}: y	Curtail: Drop the last item from y	Primitive	Selection	drop chop trailing element item delete ending without	https://code.jsoftware.com/wiki/Vocabulary/curlyrtco#monadic	
 name =. y	Define local	Syntax	Assignment	leftarrow gets is copula let define naming denotes means		
 name =: y	Define global	Syntax	Assignment	leftarrow gets is copula let define naming denotes means		
 _	Positive infinity	Syntax	Data	upper limit ∞ ∞ ¯ positiveinfinity ∞		
