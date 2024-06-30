@@ -81,6 +81,16 @@ a ! n	Selecting elements satisfying condition a, others to 1	Primitive	Boolean/L
 ? j	Roll: Random number selected from i. j	Primitive	Mathematical	questionmark roll randominteger interrogationpoint query eroteme	https://code.jsoftware.com/wiki/Vocabulary/query#monadic	
 ? 0	Random floating-point value in interval (0,1)	Primitive	Mathematical	questionmark roll randominteger interrogationpoint query eroteme	https://code.jsoftware.com/wiki/Vocabulary/query#monadic	
 i ? j	Deal: Select i items at random (without repetition) from i. j	Primitive	Mathematical	questionmark roll randominteger interrogationpoint query eroteme	https://code.jsoftware.com/wiki/Vocabulary/query#dyadic	
+{ y	Catalogue: Combine items from boxed list	Primitive	Structural	n-fold sets family pairings tuples table	https://code.jsoftware.com/wiki/Vocabulary/curlylf#monaidc	
+{ y	Catalogue: Combine items from boxed lists	Primitive	Structural	n-fold sets family pairings tuples table cartesian	https://code.jsoftware.com/wiki/Vocabulary/curlylf#monadic	
+{ x1;y1	Cartesian product of of items in x and y (as boxed table)	Primitive	Structural	n-fold sets family pairings tuples table cartesian	https://code.jsoftware.com/wiki/Vocabulary/curlylf#Common_uses	
+x { y	From: Selects the item with index x from the array y	Primitive	Selection	items elements getting picking selecting permutation permuting	https://code.jsoftware.com/wiki/Vocabulary/curlylf#dyadic	
+{. y	Head: The leading item of y	Primitive	Selection	first topmostrow subarray dimension cell item 1st start beginning	https://code.jsoftware.com/wiki/Vocabulary/curlylfdot#monadic	
+i0 {. y	Take: The leading i0 items of y	Primitive	Selection	pike uparrow table grab first last chop	https://code.jsoftware.com/wiki/Vocabulary/curlylfdot#dyadic	
+{: y	Tail: The last item of y	Primitive	Selection	y[-1] x[-1] trailing element item ending	https://code.jsoftware.com/wiki/Vocabulary/curlylfco#monadic	
+}. y	Behead: Drop the leading item from y	Primitive	Selection	drop chop leading element item 1st delete start beginning without	https://code.jsoftware.com/wiki/Vocabulary/curlyrtdot#monadic	
+i0 }. y	Drop: Drop the leading i0 items of y	Primitive	Selection	skip delete remove without	https://code.jsoftware.com/wiki/Vocabulary/curlyrtdot#dyadic	
+}: y	Curtail:	Primitive	Selection	drop chop trailing element item delete ending without	https://code.jsoftware.com/wiki/Vocabulary/curlyrtco#monadic	
 name =. y	Define local	Syntax	Assignment	leftarrow gets is copula let define naming denotes means		
 name =: y	Define global	Syntax	Assignment	leftarrow gets is copula let define naming denotes means		
 _	Positive infinity	Syntax	Data	upper limit ∞ ∞ ¯ positiveinfinity ∞		
