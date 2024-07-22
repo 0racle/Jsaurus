@@ -847,8 +847,8 @@ c1 ((#@] # 0:) {:F..(] >. [ >./\@:+ |.!.0@]) =/) d1	Length of longest common sub
 a1 (>: {{ -. ~:/\ (~: 1, }:)&.(x&#) x *. y }} ]) b1	Leading ones (*./\) in each sublist of b1 indicated by starting mask a1 (for large datasets)	Tacit	Partitioning	1s trues truths start beginning		
 ; a1 <@(+/\);.1 n	Cumulative sums (+/\) over sublists of n indicated by a1 (for small datasets)	Expression	Partitioning	sub-vectors +\		
 +/\ (a1 (# (]+[-~0,}:@[)~ [ # 0 +/\@, }:@]) n) (I. a1)} n	Cumulative sums (+/\) over sublists of n indicated by a1 (for large datasets)	Expression	Partitioning	sub-vectors +\		
-; a1 <@(~:/\);.1 b1	Running parity (~:/\) over sublists of b indicated by a1 (for small datasets)	Block Function	Partitioning	sub-vectors sublists sub-lists ≠\		
-~:/\ (a1 (# (]~:[~:0,}:@[)~ [ # 0 ~:/\@, }:@]) b) (I. a1)} b	Running parity (~:/\) over sublists of b indicated by a1	Block Function	Partitioning	sub-vectors sublists sub-lists ≠\		
+; a1 <@(~:/\);.1 b	Running parity (~:/\) over sublists of b indicated by a1 (for small datasets)	Block Function	Partitioning	sub-vectors sublists sub-lists ≠\		
+~:/\ (a1 (# (]~:[~:0,}:@[)~ [ # 0 ~:/\@, }:@]) b) (I. a1)} b	Running parity (~:/\) over sublists of b indicated by a1 (for large datasets)	Block Function	Partitioning	sub-vectors sublists sub-lists ≠\		
 ,@((# , {.);.1~ (~: |.!.0))^:(j0) 1	Term j0 of the look-and-say sequence	Expression	Recreational	conways morris number digits repeating		
 a1 >./;.1 n	Minima (⌊´) of sublists of y indicated by a1	Tacit	Partitioning	segmented partitioned array minimums smallest least major cells items		
 a1 <./;.1 n	Maxima of sublists of y indicated by a1	Tacit	Partitioning	segmented partitioned array maximums greatestif largest biggest major cells items		
@@ -859,7 +859,7 @@ Num_j_&(i. ".@:{ ' ',~ [) d1	Extract natural numbers from a string	Tacit	Text	fr
 (i.@! A. i.) j0	All permutations of i.j0, as table rows in lexicographical order	Tacit	Combinatorics	combinatorics ordered orderings anagrams without replacement list		
 ~. i0 {.&.|: (i.@! A. i.) j0	All permutations of i0 items from i.j0, as table rows in lexicographical order	Expression	Combinatorics	combinatorics ordered orderings anagrams without replacement list nPk choose	https://code.jsoftware.com/wiki/Fifty_Shades_of_J/Chapter_33	
 i0 ((0,. $:&.<:), >:@:($: <:))`(<: i.@, [)@.(>: +. 0 = [) j0	All length-i0 combinations of i.j0, as table rows in lexicographical order	Tacit	Combinatorics	combinatorics selections list subset sublists subsequences choices choose	https://rosettacode.org/wiki/Combinations#J	
-(+/@:*:@(-"_1 _ +/ % #) % <:@#) n1	Sample variance (see addon: stats/var)	Tacit	Statistical	σ² s² σ^2 s^2 empirical Var(x) dispersion		https://jsoftware.github.io/j-playground/bin/html2/#base64=bG9hZCAnc3RhdHMnCnZhciB5
+(+/@:*:@(-"_1 _ +/ % #) % <:@#) n1	Sample variance (see addon: stats/var)	Tacit	Statistical	σ² s² σ^2 s^2 empirical Var(x) dispersion		https://jsoftware.github.io/j-playground/bin/html2/#base64=bG9hZCAnc3RhdHMnCnZhciAyIDEzIDkgMTkgMTIgNCA2IDQ=
 c1 ((>:@#@] $ #@[ + #@]) {:F.:(] <./\@:<. ({.@],}:@])-0,1+[) [ =/ |.@]) d1	Levenshtein distance (number of single-character edits) between strings	Tacit	Text	fuzzy match		
 ((0 i.~15 3 5|]){::'FizzBuzz';'Fizz';'Buzz';":)"0 >: i. 100	FizzBuzz	Tacit	Recreational	fizz buzz interview counting	https://code.jsoftware.com/wiki/NYCJUG/FizzBuzz	
 y1 (I. d0 = c1)} c1	Replace the instances of d0 in c1 with the strings in list y1 in order	Expression	Text	substitute merge amend update translate transform map selective search-and-replace find-and-replace items lists set interpolate		
