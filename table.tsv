@@ -714,7 +714,6 @@ i0 {.!.({: y) y	Extend y with last cell of y to length i0	Tacit	Data	filling enl
 F^:_ y	Fixed point of F if applied repeatedly to y	Expression	Function Application	fixpoint ycombinator repeated iterated until convergence powerlimit stable		
 m (1r3p1 * ] * *) n	Volume of cone with height m and radius n	Tacit	Geometric	lengths	https://code.jsoftware.com/wiki/JPhrases/Geometry	
 (%: o. 1) %~ ^ - *~ n	Gaussian or normal distribution with mean 0 and variance 1/2	Expression	Statistical	statistics probability bell curve pdf probability density function		
-dlb d1	Remove leading spaces	Tacit	Text	delete blanks beginning start drop without		
 (#~ '0' +./\@:~: ]) d1	Remove leading zero characters	Tacit	Text	zeros 0s trim left falses falsehoods start beginning		
 'FDCBA' {~ (<: 60 70 80 90) I. j	Students grades given score	Expression	Specialty			
 ' #' {~ j1 >/ i. >./ j1	Bar chart (as characters)	Expression	Data	curve graph plotting		https://jsoftware.github.io/j-playground/bin/html2/#base64=ajEgPS4gPjogPyAxMCAkIDEwCicgIycge34gajEgPi8gaS4gPi4vIGoxCk5CLiBPciB5b3UgY291bGQganVzdCB1c2UgcGxvdApsb2FkICdwbG90JwonYmFyJyBwbG90IGox
@@ -740,10 +739,13 @@ x (-. , -.~) y	Symmetric set difference: cells that appear in exactly one argume
 1 _1 i."1&.|:~ j2	Change connection matrix j2 (_1 to 1) to a node matrix	Expression	Graph Theory	graph connectivity table change converting conversion	https://code.jsoftware.com/wiki/Help/Phrases/11._C._Transformations	
 x i0 {{ m ({. , x , }.) y }} y	Insert x into y before major cell i0	Adverb	Structural	items elements		
 ({.~ -@>:@$)@({.~ >:@$) y	Pad y with a layer of fill elements on all sides	Tacit	Structural	expand enlarge outer outside around edges boundary border surround frame	https://code.jsoftware.com/wiki/NYCJUG/2023-10-10#Padding_an_Array	
-(#~ (+. |.!.1)@(' '&~:)) d1	Remove duplicate spaces, turning each sequence of spaces into one	Tacit	Text	delete trim reformat extraneous blanks multiple remove drop without		
-(#~ (+. |.!.0)@(' '&~:)) d1	Remove leading and duplicate spaces	Tacit	Text	delete trim without consecutive extraneous normalise normalize blanks multiple drop start beginning		
-(#~ (+. 1 |.!.0 ])@(' '&~:)) d1	Remove trailing and duplicate spaces	Tacit	Text	delete trim without consecutive extraneous normalise normalize blanks multiple drop start ending		
-(#~ (+. |.!.1)@(' '&~:))@dltb d1	Remove leading, trailing and duplicate spaces	Tacit	Text	delete trim reformat extraneous normalise normalize blanks multiple drop start beginning ending without		
+dlb d1	Remove leading spaces	Tacit	Text	delete blanks beginning start drop without		
+dtb d1	Remove trailing spaces	Tacit	Text	delete blanks drop ending without		
+(#~ '  ' -.@E. ])	Remove duplicate spaces, turning each sequence of spaces into one	Tacit	Text	delete trim reformat extraneous blanks multiple remove drop without		
+(#~ '  ' -.@E. ])@dlb d1	Remove leading and duplicate spaces	Tacit	Text	delete trim without consecutive extraneous normalise normalize blanks multiple drop start beginning		
+(#~ '  ' -.@E. ])@dtb d1	Remove trailing and duplicate spaces	Tacit	Text	delete trim without consecutive extraneous normalise normalize blanks multiple drop start ending		
+' ' (] #~ (+./\. *. +./\)@:~:) d1	Remove leading and trailing spaces from d1 (stdlib: dltb)	Tacit	Text	trim left right blanks start beginning ending		
+(#~ '  ' -.@E. ])@dltb d1	Remove leading, trailing and duplicate spaces	Tacit	Text	delete trim reformat extraneous normalise normalize blanks multiple drop start beginning ending without		
 (#~ ' ' +./"1@:~: ]) d2	Remove all-blank rows	Tacit	Text	all-space allspace empty remove delete drop space without		
 (u: ; 48 65 ([ + i.@])&.> 10 26) i. d	Translate characters to digits (bases 2 through 36, uppercase letters only)	Expression	Text	base-2 base2 binary Boolean base16 base-16 hexadecimal base36 base-36 letters 0123456789abcdef converting change changing		
 -. 1 (, # ,~) a1 (+. # [) b1	Any element true (+./) for each sublist of b1 indicated by starting mask a1	Expression	Boolean	sub-vector cell item ∨/¨a1⊂[1]b1		
@@ -769,8 +771,7 @@ x0 ((#\ * =@i.@#)@] { ,) y1	Diagonal matrix of x0, with y1 along diagonal	Tacit	
 x (<@,"0~ i. # y2)} y2	Matrix y2 with main diagonal changed to x1 ((#x1)=(<.$y2)) or x0	Tacit	Linear Algebra	inplace update table		
 (0 ~:/ .= 4 100 400 |/ ]) j	Number of days in February of year j (YYYY)	Tacit	Specialty	gregoriancalendar feb29 29february29th feb28 28february28th length	https://code.jsoftware.com/wiki/JPhrases/DateTime	
 +/@:(|@-)"1/~ n2	Manhattan distance table given one point in each row of n2	Tacit	Geometric	taxicab L1 L-1 L1-distance ℓ1 ℓ-1 ℓ₁ L¹ d() matrix		
-(#~ +./\&.|.@(' '&~:)) d1	Remove trailing spaces	Tacit	Text	delete blanks drop ending without		
-+/\ (- |.!.'')/ '()' =/ d1	Depth of parentheses	Expression	Text	bracket brace nesting level parenthesis parens		
++/\ (- |.!.0)/ '()' =/ d1	Depth of parentheses	Expression	Text	bracket brace nesting level parenthesis parens		
 y1 #;.1~ 1, 2 ~:/\ y1	Lengths of sublists of y1 having equal elements	Expression	Partitioning	runs changes identical consistent cells items		
 (- i0) <\ y	Split y into boxed groups of length i0, plus a shorter one at the end if needed	Tacit	Partitioning	chunk divide dividing cut partition distribute greedy		
 i0 (] {.~ #@] + [ | -@#@]) y	Increase the leading dimension of y to multiple of i0	Tacit	Structural	1st axis divisibleby pad extend first start beginning		
@@ -778,7 +779,7 @@ i1 (] {.~ $@] + [ | -@$@]) y	Increase the dimensions of y to multiples of i1	Tac
 ((! +:) % >:) n	Catalan number Cₙ: number of ways to nest n pairs of parentheses	Expression	Combinatorics	numbers dyck words binary trees mountain ranges		https://jsoftware.github.io/j-playground/bin/html2/#base64=bG9hZCAnbWF0aC9taXNjL251bWJlcnMnCig1ITo1KSA8J2NhdGFsYW4nCmNhdGFsYW4gNQ==
 i1 (] #~ [ -.@e.~ i.@#@]) y	Remove major cells at indices i1 from y	Tacit	Selection	elements items without positions		
 (# *./@~:@:| (+ i.@#)) j1	Valid siteswap pattern for juggling?	Tacit	Specialty	testif beat		
-x (*./\&.|.@e.~ (#~ -.)~ ]) y	Remove cells that appear in x from end of y	Tacit	Selection	trim trailing right cells items list ending		
+x (*./\.@e.~ (#~ -.)~ ]) y	Remove cells that appear in x from end of y	Tacit	Selection	trim trailing right cells items list ending		
 i0 (] % [ %: +/@(^~ |)) n	Normalisation by i0-norm	Tacit	Geometric	Lp-normalise Lp-normalize Lp-normalization L-p ℓp ℓ-p		
 (#"1~ +./@(' ' ~: ])) d2	Remove blank columns	Block Function	Text	all-space allspace empty remove delete drop space without		
 (' ' = d2)} d2 ,: '-'	Replace all spaces with dashes in d2	Expression	Text	blanks substitute format		
@@ -788,7 +789,7 @@ m0 + c0 * i. >: <. c0 %~ n0 - m0	Range starting at m0 with step size c0, ending 
 i0 (!@] % [ *&! -~) j0	Number of unordered selections (combinations) of i0 items from j0 choices	Tacit	Combinatorics	exclamation bang shriek binomial combinatorics countcombinations choose unordered selecting picking outof nCk C(n,k)		
 _2 -~/\ 0&(, I.@:~: ,~) b1	Lengths of groups of ones in b1	Expression	Partitioning	runs 1s trues truths		
 _2 -~/\\ 0&(, I.@:~: ,~) b1	Start and length of groups of 1s in b1	Expression	Partitioning	runs sequences blocks trues truths 1st ones		
-x0 (] #~ (+./\ *. (+. |.!.''))@:~:) y1	Remove leading, trailing and duplicate x0's	Tacit	Selection	trim left right spaces multiple consecutive blanks start beginning ending		
+x0 (] #~ (+./\. *. +./\ *. (+. |.!.0))@:~:) y1	Remove leading, trailing and duplicate x0's	Tacit	Selection	trim left right spaces multiple consecutive blanks start beginning ending		
 i.&.(p:inv) j0	Primes less than j0	Expression	Number Theory	primesuntil numbers	https://code.jsoftware.com/wiki/Essays/Primes_Less_Than_n	
 i0 ([ - (* * i.@>:@|)@-) j0	Consecutive integers from i0 to j0 inclusive (in any order)	Tacit	Sequences	inclusive range closed interval seq() sequence … any either direction unordered		
 (<. 0.5 + ])&.((10 ^ x) * ])	Round n to i0 decimal places	Expression	Rounding	precision banking banker's bank's (⍎⍕)		
@@ -815,15 +816,14 @@ m0 {{ y +/@:* */\ 1, }: x % #\ y }} n1	Value of Taylor series with coefficients 
 ((= >./)@(#/.~) # ~.) y	Modes: Most frequent major cells of y	Tacit	Statistical	average items elements		
 ((i. >./)@(#/.~) { ~.) y	Mode: First most frequent major cell of y	Tacit	Statistical	average items elements		
 - +/ 2 (^. * ]) (#/. % #) y	Shannon entropy of array y	Expression	Statistical	informationtheory text message string		
-(+/ % # - 1:)&.(*~)@(- +/ % #) n1	Sample standard deviation	Tacit	Statistical	stddev σ sigma SD empirical		https://jsoftware.github.io/j-playground/bin/html2/#base64=RiA9OiAoKy8gJSAjIC0gMTopJi4oKn4pQCgtICsvICUgIykKRiBuMSA9LiAyIDEzIDkgMTkgMTIgNCA2IDQKTkIuIHByZWZlciBzdGF0cy9zdGRkZXYKbG9hZCAnc3RhdHMnCihzdGRkZXYgLTogRikgbjE=
-(+/ % #)&.(*~)@(- +/ % #) n1	Theoretical standard deviation	Tacit	Statistical	stddev σ sigma SD		https://jsoftware.github.io/j-playground/bin/html2/#base64=RiA9OiAoKy8gJSAjKSYuKCp+KUA6KC0gKy8gJSAjKQpGIG4xID0uIDIgMTMgOSAxOSAxMiA0IDYgNApOQi4gcHJlZmVyIHN0YXRzL3N0ZGRldnAKbG9hZCAnc3RhdHMnCihzdGRkZXZwIC06IEYpIG4x
+(+/ % # - 1:)&.(*~)@(- +/ % #) n1	Sample standard deviation (see addon: stats/stddev)	Tacit	Statistical	stddev σ sigma SD empirical		https://jsoftware.github.io/j-playground/bin/html2/#base64=RiA9OiAoKy8gJSAjIC0gMTopJi4oKn4pQCgtICsvICUgIykKRiBuMSA9LiAyIDEzIDkgMTkgMTIgNCA2IDQKTkIuIHByZWZlciBzdGF0cy9zdGRkZXYKbG9hZCAnc3RhdHMnCihzdGRkZXYgLTogRikgbjE=
+(+/ % #)&.(*~)@(- +/ % #) n1	Theoretical standard deviation (see addon: stats/stddevp)	Tacit	Statistical	stddev σ sigma SD		https://jsoftware.github.io/j-playground/bin/html2/#base64=RiA9OiAoKy8gJSAjKSYuKCp+KUA6KC0gKy8gJSAjKQpGIG4xID0uIDIgMTMgOSAxOSAxMiA0IDYgNApOQi4gcHJlZmVyIHN0YXRzL3N0ZGRldnAKbG9hZCAnc3RhdHMnCihzdGRkZXZwIC06IEYpIG4x
 i0 (+/ % #) {{ u (y - u y) ^ x }} n1	i0'th moment of n1	Tacit	Statistical			
 1 = i0 +. j0	Are i0 and j0 co-prime?	Tacit	Number Theory	coprime? relatively mutually testif		
 (= -: +/@(*"1 _ |:)) n2	Is square matrix n2 orthogonal?	Expression	Linear Algebra	testif Orthogonal?		
-' ' (] #~ (+./\. *. +./\)@:~:) d1	Remove leading and trailing spaces from d1 (stdlib: dltb)	Tacit	Text	trim left right blanks start beginning ending		
 (,: ' -' {~ ' ' ~: ]) d1	Underline non-spaces in a string	Tacit	Text	blanks wordunderlinewords wordunderscorewords		
 a1 (*. +. +. ([ #inv 2 </\ 0, #) ]) b1	Indicate first one in each sublist of b1 indicated by starting mask a1	Tacit	Partitioning	sub-vector 1st		
--:@(+/)@((<. , >.)@(-:@<:@#) { /:~) n1	Median of non-empty n1, averaging two values for even lengths	Tacit	Statistical	average	https://code.jsoftware.com/wiki/Addons/stats/base/univariate#median	https://jsoftware.github.io/j-playground/bin/html2/#base64=bG9hZCAnc3RhdHMnCm1lZGlhbiBmLgptZWRpYW4gMiAxMyA5IDE5IDEyIDQgNiA0
+-:@(+/)@((<. , >.)@(-:@<:@#) { /:~) n1	Median of non-empty n1, averaging two values for even lengths (see addon: stats/median)	Tacit	Statistical	average	https://code.jsoftware.com/wiki/Addons/stats/base/univariate#median	https://jsoftware.github.io/j-playground/bin/html2/#base64=bG9hZCAnc3RhdHMnCm1lZGlhbiBmLgptZWRpYW4gMiAxMyA5IDE5IDEyIDQgNiA0
 a1 ~:/\@(+. ([ #inv 2 ~:/\ 0, #) ]) b1	State of switch when b1 turns on and a1 turns off (initially off)	Tacit	Partitioning	signal on/off		
 a1 ~:/\@(+. ([ #inv 2 ~:/\ 0, #) ]) b1	Not leading zeroes (+./\) in each sublist of b1 indicated by starting mask a1	Tacit	Partitioning	zeros 0s falses falsehoods start beginning		
 (-/ .*) n2	Determinant of 3x3 matrix, or vector triple product of its rows or columns	Expression	Linear Algebra	scalar box signed volume parallelepiped		
@@ -840,18 +840,26 @@ c1 -.&a:@(#@[ }.&.> [ (E. <;.1 ]) ,) d1	Split list d1 at sub-sequence of charact
 %&{./"_1 +/@:*"1 _/\ (1 0,:~ 1,~ ])"0 n1	Continued fraction convergents with terms n1, in linear time	Expression	Mathematical	series sequence		
 x +//.@(*/) y	Polynomial Product	Expression	Mathematical	Polynomial product, multiplying each term in one polynomial by each term in the other polynomial	https://code.jsoftware.com/wiki/Phrases/Polynomials	https://jsoftware.github.io/j-playground/bin/html2/#base64=MSAxIDFyMiArLy8uQCgqLykgMSAxcjM=
 (%: %~ 0j2p1&% ^@* */~@i.)@# y	Fourier basis	Expression	Mathematical	fourier basis, representing the fundamental frequencies associated with a sequence of samples	https://code.jsoftware.com/wiki/Guides/Fourier_Transform	https://jsoftware.github.io/j-playground/bin/html2/#base64=KCU6ICV+IDBqMnAxJiUgXkAqICovfkBpLikgNAooKy8gLiogKCU6ICV+IDBqMnAxJiUgXkAqICovfkBpLilAIykgaS40
-(|.~ (2 -@<.@%~ [: +/ ' ' *./\@:= |.))"1 d2	Center flush left character array	Tacit	Text	centre align		
+(|.~ -@<.@-:@(+/)@(*./\.)@(' '&=))"1 d2	Center flush left character array	Tacit	Text	centre align	https://code.jsoftware.com/wiki/JPhrases/Character	
 +./@((1 ,: ]) *. 3 4 =/ (,/ ,"0/~ i: 1) +/@:|. ]) b2	Conway's Game of Life: next generation	DirectDef	Recreational	gol conways cellularautomaton sub-array		
 c1 ((#@] # 0:) {:F..(] >. [ >./\@:+ |.!.0@]) =/) d1	Length of longest common substring	Tacit	Text	fuzzy match lcs		
 ; a1 <@(*./\);.1 b1	Leading ones (*./\) in each sublist of b1 indicated by starting mask a1 (for small datasets)	Expression	Partitioning	1s trues truths start beginning		
 a1 (>: {{ -. ~:/\ (~: 1, }:)&.(x&#) x *. y }} ]) b1	Leading ones (*./\) in each sublist of b1 indicated by starting mask a1 (for large datasets)	Tacit	Partitioning	1s trues truths start beginning		
-; a1 <@(+/\);.1 n	Cumulative sums over sublists of n indicated by a1 (for small datasets)	Expression	Partitioning	sub-vectors +\		
-+/\ (a1 (# (]+[-~0,}:@[)~ [ # 0 +/\@, }:@]) n) (I. a1)} n	Cumulative sums over sublists of n indicated by a1 (for large datasets)	Expression	Partitioning	sub-vectors +\		
+; a1 <@(+/\);.1 n	Cumulative sums (+/\) over sublists of n indicated by a1 (for small datasets)	Expression	Partitioning	sub-vectors +\		
++/\ (a1 (# (]+[-~0,}:@[)~ [ # 0 +/\@, }:@]) n) (I. a1)} n	Cumulative sums (+/\) over sublists of n indicated by a1 (for large datasets)	Expression	Partitioning	sub-vectors +\		
+; a1 <@(~:/\);.1 b1	Running parity (~:/\) over sublists of b indicated by a1 (for small datasets)	Block Function	Partitioning	sub-vectors sublists sub-lists ≠\		
+~:/\ (a1 (# (]~:[~:0,}:@[)~ [ # 0 ~:/\@, }:@]) b) (I. a1)} b	Running parity (~:/\) over sublists of b indicated by a1	Block Function	Partitioning	sub-vectors sublists sub-lists ≠\		
+,@((# , {.);.1~ (~: |.!.0))^:(j0) 1	Term j0 of the look-and-say sequence	Expression	Recreational	conways morris number digits repeating		
+a1 >./;.1 n	Minima (⌊´) of sublists of y indicated by a1	Tacit	Partitioning	segmented partitioned array minimums smallest least major cells items		
+a1 <./;.1 n	Maxima of sublists of y indicated by a1	Tacit	Partitioning	segmented partitioned array maximums greatestif largest biggest major cells items		
 (I. z e. x1) (y1 {~ x1 i. ]) (@{)`[`]} z	Replace elements of z that appear in x1 with the corresponding element from y1	Adverb	Structural	substitute merge amend update translate transform map selective search-and-replace find-and-replace items lists set cells		
+10 #.inv j0	Base-10 digits of natural number j0	Block Modifier	Mathematical	base10 decimal base-10		
+((i. - >.@-:) ([ |."_1&.|: |."_1) i.@,~) j0	a magic square, odd side j0 (0 ~: 2 | j0)	Tacit	Recreational			
+Num_j_&(i. ".@:{ ' ',~ [) d1	Extract natural numbers from a string	Tacit	Text	frombase10 base-10 dec() decimal Conversion converting change changing scanf read		
 (i.@! A. i.) j0	All permutations of i.j0, as table rows in lexicographical order	Tacit	Combinatorics	combinatorics ordered orderings anagrams without replacement list		
 ~. i0 {.&.|: (i.@! A. i.) j0	All permutations of i0 items from i.j0, as table rows in lexicographical order	Expression	Combinatorics	combinatorics ordered orderings anagrams without replacement list nPk choose	https://code.jsoftware.com/wiki/Fifty_Shades_of_J/Chapter_33	
 i0 ((0,. $:&.<:), >:@:($: <:))`(<: i.@, [)@.(>: +. 0 = [) j0	All length-i0 combinations of i.j0, as table rows in lexicographical order	Tacit	Combinatorics	combinatorics selections list subset sublists subsequences choices choose	https://rosettacode.org/wiki/Combinations#J	
-(+/@:*:@(-"_1 _ +/ % #) % <:@#) n1	Sample variance	Tacit	Statistical	σ² s² σ^2 s^2 empirical Var(x) dispersion		https://jsoftware.github.io/j-playground/bin/html2/#base64=bG9hZCAnc3RhdHMnCnZhciB5
+(+/@:*:@(-"_1 _ +/ % #) % <:@#) n1	Sample variance (see addon: stats/var)	Tacit	Statistical	σ² s² σ^2 s^2 empirical Var(x) dispersion		https://jsoftware.github.io/j-playground/bin/html2/#base64=bG9hZCAnc3RhdHMnCnZhciB5
 c1 ((>:@#@] $ #@[ + #@]) {:F.:(] <./\@:<. ({.@],}:@])-0,1+[) [ =/ |.@]) d1	Levenshtein distance (number of single-character edits) between strings	Tacit	Text	fuzzy match		
 ((0 i.~15 3 5|]){::'FizzBuzz';'Fizz';'Buzz';":)"0 >: i. 100	FizzBuzz	Tacit	Recreational	fizz buzz interview counting	https://code.jsoftware.com/wiki/NYCJUG/FizzBuzz	
 y1 (I. d0 = c1)} c1	Replace the instances of d0 in c1 with the strings in list y1 in order	Expression	Text	substitute merge amend update translate transform map selective search-and-replace find-and-replace items lists set interpolate		
