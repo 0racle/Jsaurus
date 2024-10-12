@@ -373,6 +373,7 @@ x +/ .* y	Matrix (inner) product of m and n ({:$m ↔ {.$n)	Expression	Mathemati
 (+. ~:/\) y	Places between pairs of ones	Tacit	Boolean	1s trues truths		
 +/\ |.!.'' j1	Starting positions of sublists having lengths j1	Expression	Partitioning	sub-vectors sub-lists sublists		
 +/\ i. j0	First j0 triangular numbers	Expression	Sequences	oeisA000217 oeisA217 1st		
+(* -:@>:) j	j-th triangular number	Tacit	Sequences	oeisA000217 oeisA217		
 F~/\. y	Scan from end with F	Tacit	Function Application	cumulativereduce rowwise backscan backwards suffix scanning row-wise horizontally trailing ending		
 U@(F~/)\. y	Scan from end with F post-processed with U	Tacit	Function Application	cumulativereduce rowwise backscan backwards suffix scanning row-wise horizontally trailing ending		
 (- |.!.0) n	Difference of adjacent pairs with seed value	Tacit	Data	differences deltas changes steps		
@@ -411,7 +412,7 @@ y ({~ \:) a1	Moving cells of y indicated by a1 to the start of y	Tacit	Structura
 (-: ~.) y	Are all major cells of y distinct?	Tacit	Search	testif alldifferent? allunequal? noduplicates? nodups? items elements alldistinct? allunique?		
 |:;.0 y	Reflect counter-diagonally	Expression	Structural	mirroring reflecting reflection counterdiagonally mirror		
 <"1 |: y2	Table to list of boxed column lists	Expression	Structural	split table lists into columns vertically column-wise columnwise boxed enclosed table matrix transforming transformation change changing into inverting inversion		
-|:@+ n2	Conjugate Transpose	Tacit	Linear Algebra	self-adjoint selfadjoin Yᴴ y^H y† y^† Aᴴ a^H a† a^�		
+|:@+ n2	Conjugate Transpose	Tacit	Linear Algebra	self-adjoint selfadjoin Yᴴ y^H y† y^† Aᴴ a^H a† a^†		
 (-: |:) y2	Is y2 a symmetric matrix?	Tacit	Linear Algebra	testif		
 'name1 name2' =. name2;name1	Swap variable values	Expression	Assignment	leftarrow get are copula let redefine redefining list renaming denote mean unpacking redistributing redistribution vector exchange exchanging swapping variables		
 32 + 1.8 * n	Celsius to Fahrenheit	Expression	Specialty	°Fahrenheit °Celsius f2c() ftoc() converting change changing		
@@ -580,7 +581,8 @@ i + (i }. b1) i. 1	Index of first one after index i0 in b1	Expression	Search	1st
 , x1 ,"1 0 y1	Insert x1 before every element of y1	Expression	Structural	merge cell item		
 , 1 0 1 *./^:(j0) 1	Cantor set iteration j0	Expression	Geometric	fractal ternary middle third		
 (|. \: I. i1) { y	Reverse sublists of y having lengths i1	Expression	Partitioning			
-(~.@#~ -.@~:) y	Distinct major cells that appear at least twice	Tacit	Search	duplicated duplicates nonunique items elements		
+(~:&.|. *: ~:) y	Mask of major items of y that appear at least twice	Tacit	Search	duplicated duplicates nonunique items elements		
+(~.@#~ -.@~:) y	Distinct major items of y that appear at least twice	Tacit	Search	duplicated duplicates nonunique items elements		
 ((i.~ ~.) { F@~.) y	Apply deterministic cell-wise F to cells of y, avoiding extra calls for duplicate cells	Tacit	Function Application	performance memoisation memoization quick speed		
 (=/~ ~.) (i.~ ~.) y	Table of which unique matches each major cell of y	Expression	Search	nub distinctitems uniqueelemenets matrix items elements		
 f&{{ (x`:0) y }}	Function that applies all functions in gerund f and returns all results	Adverb	Function Application	each every list gerund elements to both arguments collect		
@@ -663,7 +665,7 @@ i ([ ^~ 1 + %~) n	Effective rate of interest with nominal rate n for i periods	T
 x1 (e.~ *./@, e.) y1	Are x1 and y1 equivalent as sets?	Tacit	Sets	equivalence		
 0 (, + ,~)^:(i0) 1	Row i0 of Pascal's triangle	Expression	Combinatorics	pascal'striangle numberofcombinations pascalstriangle		
 x ({~ ({~ /:)~ ]) j1	Sort indices j1 according to data x	Tacit	Ordering	permute		
-(/: (+~ +/\)~ a1) { y	Rotate first major cells (1⊸⌽) of sublists of y indicated by starting mask a1	Expression	Structural	sub-vectors sub-lists sublists items elements 1st		
+(/: (+~ +/\)~ a1) { y	Rotate first major cells (1&|.) of sublists of y indicated by starting mask a1	Expression	Structural	sub-vectors sub-lists sublists items elements 1st		
 (#/.~ {~ ~. i. ]) y	Count of total (not previous) occurrences of each cell of y	Tacit	Search	tally selfcount items elements duplicate repetitions appearances		
 {:@I."1 ' ' ~: d2	Indices of last non-space character in each row of d2	Expression	Search	nonblanks nonspaces characters text row-wise rowwise horizontally		
 *./\ *./"1 ' ' = d2	Indicate leading all-blank rows of d2	Expression	Text	spaces beginning masking locate indications allspace all-space lines start blanks		
