@@ -785,7 +785,8 @@ x (*./\.@e.~ (#~ -.)~ ]) y	Remove cells that appear in x from end of y	Tacit	Sel
 i0 (] % [ %: +/@(^~ |)) n	Normalisation by i0-norm	Tacit	Geometric	Lp-normalise Lp-normalize Lp-normalization L-p ℓp ℓ-p		
 (#"1~ +./@(' ' ~: ])) d2	Remove blank columns	Block Function	Text	all-space allspace empty remove delete drop space without		
 (' ' = d2)} d2 ,: '-'	Replace all spaces with dashes in d2	Expression	Text	blanks substitute format		
-i1 ((<. #) {. ]) y	Take up to i1 positions from axes of y	Tacit	Selection	limit major cells items		
+i1 (] {.~ [ <. #@[ {. $@]) y	Take up to i1 positions from axes of y	Tacit	Selection	limit major cells items		
+i0 ((<. #) {. ]) y	Take up to i0 items of y (where i0 is positive)	Tacit	Selection	limit major cells items head first		
 m0 + c0 * i. >: >. c0 %~ n0 - m0	Range starting at m0 with step size c0, ending after n0	Expression	Sequences	sequence interval		
 m0 + c0 * i. >: <. c0 %~ n0 - m0	Range starting at m0 with step size c0, ending at or before n0	Expression	Sequences	sequence interval		
 i0 (!@] % [ *&! -~) j0	Number of unordered selections (combinations) of i0 items from j0 choices	Tacit	Combinatorics	exclamation bang shriek binomial combinatorics countcombinations choose unordered selecting picking outof nCk C(n,k)		
