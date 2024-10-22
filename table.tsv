@@ -262,8 +262,8 @@ a1 #"1 y	Filter columns of y according to mask a1	Tacit	Selection	compressing sl
 i1 #"1 y	Replicate along last axis of y	Tacit	Selection	compressing slash solidus copying repeatingeachcolumns dimension horizontally replicating rowwise row-wise across		
 x e."1 y	Which elements of x belong to corresponding row of y (#x ↔ #y)	Tacit	Search	testif memberof isin membership containedin has cells items		
 x i."1 y	Indices of elements of x in corresponding rows of x	Tacit	Search	indexin indexof find locate positionof rowwise row-wise locating cells items location horizontally		
-1 = (<: x) I. y	Is y within the range [x₀,x₁)	Expression	Data	testif ≤y< ≤x< tao totalarrayordering interval inrange?		
-1 ~: (<: x) I. y	Is y outside the range [x₀,x₁)	Expression	Data	testif >y≥ >x≥ tao totalarrayordering interval outsiderange?		
+x >/"1@:(<:"1 0) y	Is y within the range [x₀,x₁)	Expression	Data	testif ≤y< ≤x< tao totalarrayordering interval brackets inrange?		
+x =/"1@:(<:"1 0) y	Is y outside the range [x₀,x₁)	Expression	Data	testif >y≥ >x≥ tao totalarrayordering interval brackets outsiderange?		
 {. /: y	Index of smallest cell in y (earliest index for ties)	Expression	Ordering	find locate positionof minimum lexicographically lexically locating location lesser smaller smallest lowest least		
 /: x i. y	Grade up of y according to key x	Expression	Ordering	custom sort order ascending		
 /: /: y	Rank cells of y, giving a permutation with the same ordering (first is lower in a tie)	Expression	Ordering	ascending rising up ordinals cardinals list rownumber		
@@ -709,6 +709,7 @@ i0 {.!.({: y) y	Extend y with last cell of y to length i0	Tacit	Data	filling enl
 1 = # q: n0	Is n0 a prime?	Expression	Number Theory	testif isprime primality		
 (100 * ] % +/)"1 n2	Row-wise percentage per row	Tacit	Statistical	≢ horizontally rowwise		
 }. y1 #~ (i0 = +/\ {. = y1)	The i0'th sublist of y1, where sublists are separated by {.y1	Expression	Text	select pick partitionedvector segmentedstring index cell item 1st		
+x (#@[ ({. i.&(,.   i.~ (] - {) /:@/:) }.) [ i. ,) y	Progressive Index of: like x i. y, but each item of x matches only one y	Tacit	Search	indexin indexof matchingpositionof find locatecorresponding PDI remove	https://code.jsoftware.com/wiki/Essays/Progressive_Index-Of	
 (*. *./\@(= +./\)) b	Indicate first group of ones (in each column)	Tacit	Boolean	sequence run trues truths 1st		
 ((#~ ,"1 0 ;@:(i.&.>)@]) >:@#@~."1)^:(]`(''"_)) n0	All set partitions of n0 items, as Group arguments	Expression	Combinatorics	count equivalence relations rhyme schemes	https://code.jsoftware.com/wiki/Essays/Set_Partitions	
 (/: (i. # x), i1) { x, y	Insert cells of y into x after positions i1	Expression	Structural	add items elements index indices splice		
