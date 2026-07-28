@@ -638,8 +638,8 @@ x1 ,@:(,"0 1~) y1	Insert x1 after every element of y1	Tacit	Structural	merge cel
 ({~ {.@\:@:|) n1	Element with largest magnitude (first in case of ties)	Tacit	Ordering	maximum absolute value biggest farthest furthest away from 0 zero		
 (\: F/~) y1	Sort y1 with custom comparison F (less-than or similar)	Tacit	Ordering	ascending increasing sorting reordering by comparator three-result		
 (|. \: +/\ a1) { y	Reverse sublists of y indicated by starting mask a1	Expression	Structural			
-x (] /: i.) y	Move major cells of y that appear in x to the front	Tacit	Search	promote cells items		
-x (] \: i.) y	Move major cells of y that appear in x to the end	Tacit	Search	major cells elements trailing ending		
+x (] \: e.~) y	Move major cells of y that appear in x to the front	Tacit	Search	major cells elements trailing ending
+x (] /: e.~) y	Move major cells of y that appear in x to the end	Tacit	Search	promote cells items
 (<"1 i2) { y	Select: each row of i2 selects a cell from y	Expression	Selection	rightshoeunderbar saneindexing ⊇ items elements index		
 m (+/ . *) n	Matrix product of m and n ({:#m ↔ {.#n)	Tacit	Linear Algebra	dotproduct multiplication multiply		
 m (-/ . *) n	Alternating matrix product of m and n ({:#m ↔ {.#n)	Tacit	Linear Algebra			
